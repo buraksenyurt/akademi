@@ -2,29 +2,38 @@
 
 Ders sırasında üzerinde durduğumuz konulara ait kısa bilgiler.
 
+## Çizimler
+
+Kabaca bir client/server mimari düzeneğinden bahsettik.
+
+![client_server.png](client_server.png)
+
+C# ile yazılan bir kodun çalışma zamanına girişinden bahsettik.
+
+![compile_runtime.png](compile_runtime.png)
+
 ## Sözlük
 
-OOP - Object Oriented Programming (Hem C# hem Java nesne yönelimli dillerdir)
-ERP - Enterprise Resource Planning
-github
-github Repository
-open source
-Ubuntu(Linux)
-Microsoft .Net ve C# platform bağımsız çalışır(Cross - Platform)
-Bayi Otomasyon Sistemi
-Internet/Intranet arasındaki farklar?
-Veritabanları RDBMS(Relational Database Management System), NoSQL
-C# derlenebilir bir dildir.(Compiler söz konusudur)
-Framework - Programları yazmamızı kolaylaştıran kütüphaneler(libraries) topluluğudur.
-Sistemde .net yüklü mü nasıl anlarım? Komut satırından dotnet --version yazarak öğrenebiliriz.
-MVC (Model View Controller)
-SPA (Single Page Application)
-MD Markdown formatındaki dosyalardır
+- OOP - Object Oriented Programming (Hem C# hem Java nesne yönelimli dillerdir)
+- ERP - Enterprise Resource Planning
+- github ve github Repository
+- open source
+- Ubuntu(Linux)
+- Microsoft .Net ve C# platform bağımsız çalışır(Cross - Platform)
+- Bayi Otomasyon Sistemi
+- Internet/Intranet arasındaki farklar?
+- Veritabanları RDBMS(Relational Database Management System), NoSQL
+- C# derlenebilir bir dildir.(Compiler söz konusudur)
+- Framework - Programları yazmamızı kolaylaştıran kütüphaneler(libraries) topluluğudur.
+- Sistemde .net yüklü mü nasıl anlarım? Komut satırından dotnet --version yazarak öğrenebiliriz.
+- MVC (Model View Controller)
+- SPA (Single Page Application)
+- MD Markdown formatındaki dosyalardır
 
 ## Yardımcı Linkler
 
-.Net platformunu sisteme yüklemek için -> https://dotnet.microsoft.com/en-us/
-.Net plaformu için C# ile kod yazmamızı kolaylaştıran VS Code -> https://code.visualstudio.com/
+- .Net platformunu sisteme yüklemek için -> https://dotnet.microsoft.com/en-us/
+- .Net plaformu için C# ile kod yazmamızı kolaylaştıran VS Code -> https://code.visualstudio.com/
 
 ## Kullandığımız Komutlar
 
