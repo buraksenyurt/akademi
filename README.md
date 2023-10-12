@@ -1,3 +1,3 @@
 # Akademi - C# ile Programlama - ESOGU
 
-Sektör kampüste projesi kapsamında ESOGU - C# ile Programlama dersine ait notların yer aldığı repodur.
+Sektör kampüste projesi kapsamında **ESOGU - C# ile Programlama** seçmeli dersine ait notların yer aldığı genel repodur. Dönem boyunca C# programlama dili temel unsurları ile anlatılacak olup nesne yönelimli dil özellikleri üzerinde durulması planlanmaktadır. Dersler Lesson_00, Lesson_01 ... formasyonunda klasörlendirilmektedir. Ders sırasında anlatılanlara ait hatırlatıcı bazı notlar Documents klasölerinde, yazılan program kodları ise Projects klasöründe toparlanacaktır. Bir sonraki ders için verilen ödevler Documents klasörlerindeki Readme dosyalarında bildirilecektir.
