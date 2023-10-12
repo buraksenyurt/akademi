@@ -31,12 +31,19 @@ MD Markdown formatındaki dosyalardır
 ```bash
 # sistemde yüklü dotnet sürümünü öğrenmek için
 dotnet --version
+
 # dotnet ile açabileceğimiz proje şablonlarını-template öğrenmek için  
 dotnet new list 
+
 # eski stilde bir console projesi açmak için
 dotnet new console --use-program-main -o hello_world
+
 # yeni nesil console projesi açmak için
+dotnet new console -o hello_world_2
+
+# bir dotnet projesini çalıştırmak için
 dotnet run 
+
 # ortak repomuzu sisteminize indirmek için
 git clone https://github.com/buraksenyurt/akademi
 ```
