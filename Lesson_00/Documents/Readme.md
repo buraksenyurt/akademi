@@ -1,4 +1,4 @@
-# Ders Notları
+# Lesson_00 : Ders Notları
 
 Ders sırasında üzerinde durduğumuz konulara ait kısa bilgiler.
 
