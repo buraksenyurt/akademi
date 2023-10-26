@@ -1,6 +1,8 @@
 # Lesson_02
 
+Bu derste bir önceki derste yaptıklarımızın üstüne koyarak bir ToDo uygulamasının temellerini atmaya çalıştık. İlk amacımız if,else, sonsuz döngü, değişken dönüşümleri, input almak gibi işlevleri yapabilmek. Kodumuz olabildiğince kirli durumda. Daha iyi hale getirmek için gereklilikleri ortaya koymaya çalışıyoruz. Derste işlediğimiz örnek özelinde aşağıdaki temadan esinlendiğimizi söyleyebiliriz.
 
+![todo_idea.png](todo_idea.png)
 
 ## Uygulamanın Handikapları
 
@@ -18,8 +20,8 @@
 
 - .Net veri türleri için CTS(Common Type System) adı verilen mekanizmayı kullanılır.
 - var keyword'ü ile tanımlanan değişkenler derleme zamanında eşitliğin sağ tarafındaki veri içeriğine göre otomatikman set edilir. dynamic keyword ise bunu çalışma zamanında(runtime) yapar. Daha çok reflection konusunda işimize yarar ve kullanılır.
-- User Story:
-- Agile metodolojiler:
+- User Story: Genellikle çevik metodolojilerde sıklıkla kullanılır. Ürün sahibi ya da iş sahibi elindeki feature'dan ne beklediğini açıkça belirtir. Örneğin, "Müşteri olarak ana ekrana girdiğimde arama kutucuğuna ürün adını yazdığımca önerilerin otomatik olarak çıkmasını istiyorum" gibisinden. Bunun biraz daha detaylı ve iyi ifadesi programcıya kodlamayı nasıl yapacağına dair fikirler verir, bunla ilgili ipuçları barındırır.
+- Agile metodolojiler: Günümüz iş modellerinin çoğu Waterfall yerine Agile(Çevik) metodolojilerle geliştirilmektedir. En yaygın kullanılanları arasında Kanban ve Scrum vardır.
 - Oyun motorlarında her kareyi ele alan hep bir sonsuz döngü vardır.
 
 ## Yardımcı Linkler
@@ -40,3 +42,7 @@ dotnet run
 ## Araştırsak İyi Olur
 
 - if else bloğu yerine switch bloğu ile nasıl ilerleriz. Lütfen kodun içerisindeki TODO kısmına bakınız.
+
+## Evde Çalışmak için Atıştırmalıklar
+
+- Bu dersteki örnekten esinlenerek kitaplarınız için bir program yazmayı deneyebilirsiniz. Ekrandan kitaba ait bir takım bilgileri alıp bunları doğru türdeki değişkenlerde saklayan ve sonucu ekrana bastıran, kullanıcının istediği kadar kitap girebildiği bir süreç tasarlayabilirsiniz. Bonus olarak kitap ve yazar arasındaki olası çoklu ilişkiyi(many-to-many relation) şu ana kadar gördüğümüz enstrümanlarla tesis edip edemeyeceğimizi araştırabilirsiniz.
