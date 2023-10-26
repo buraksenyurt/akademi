@@ -13,7 +13,7 @@ class Program
         var title = "C# çalışmak";
         var duration = 3;
         var durationType = DurationType.Hour;
-        var size = TaskSize.S; // T-Shirt Size tipinden büyüklük
+        var taskSize = TaskSize.S; // T-Shirt Size tipinden büyüklük
 
         Console.WriteLine("Merhaba. Ben görev listesi yardımcın.");
         Console.WriteLine("Çıkmak için q/Q tuşlarına sonrasında Enter'a basın.");
@@ -77,19 +77,19 @@ class Program
                 var taskSizeInput = Console.ReadLine();
                 if (taskSizeInput.ToUpper() == "S")
                 {
-                    size = TaskSize.S;
+                    taskSize = TaskSize.S;
                 }
                 else if (taskSizeInput.ToUpper() == "M")
                 {
-                    size = TaskSize.M;
+                    taskSize = TaskSize.M;
                 }
                 else if (taskSizeInput.ToUpper() == "L")
                 {
-                    size = TaskSize.L;
+                    taskSize = TaskSize.L;
                 }
                 else if (taskSizeInput.ToUpper() == "X")
                 {
-                    size = TaskSize.XL;
+                    taskSize = TaskSize.XL;
                 }
                 else
                 {
@@ -98,7 +98,7 @@ class Program
                 }
 
                 Console.WriteLine("Tebrikler. Görev sisteme yazıldı");
-                Console.WriteLine($"{id} - {title}({size}) - {duration} {durationType}");
+                Console.WriteLine($"{id} - {title}({taskSize}) - {duration} {durationType}");
             }
         }
 
@@ -120,4 +120,27 @@ enum TaskSize
     M,
     L,
     XL
+}
+enum TaskState{
+    Todo,
+    InProgress,
+    Completed,
+    Undone
+}
+
+// Aslında uygulamanın ana konusu olan görev(Task) bir sınıf olarak tasarlanabilir.
+// Aşağıdaki sınıfı hem okunabilir hem de yazılabilir tipte özellikleri var.
+// Id, Title, DurationType, Duration, TaskSize bir görev nesnesinin niteliklerini ifade eder. Auto Property formatında yazılmışlardır.
+// Burada sistem içinde dolaşıma tabii olacak kendi veri modelimizi tanımlamış oluyoruz.
+class Task
+{
+    public int Id { get; set; } 
+    public string Title { get; set; }
+    public DurationType DurationType { get; set; }
+    public byte Duration { get; set; }
+    public TaskSize TaskSize { get; set; }
+    // Bir Task'ın güncel durumu(state bilgisi) her an okunabilir,
+    // sadece belli bir aksiyon gerçekleştiğinde değiştirilebilir.
+    // Bu yüzden read only tanımlanmıştır.
+    public TaskState State { get; } // Sadece get var ise bu read-only(yalnızca okunabilir) anlamındadır.
 }
