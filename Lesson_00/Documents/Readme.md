@@ -1,4 +1,4 @@
-# Lesson_00 : Ders Notları
+# Lesson_00 : Girizgah, İlk Kurulumlar ve Merhaba Dünya
 
 Ders sırasında üzerinde durduğumuz konulara ait kısa bilgiler.
 

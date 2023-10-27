@@ -1,4 +1,4 @@
-# Lesson_01
+# Lesson_01 : Değişken Tanımlama, İlkel Veri Türleri, Tip Dönüşüm Sorunları
 
 Bu derste temel veri tiplerine ve değişken tanımlamalarına baktık. Terminalden girdi _(input)_ alıp ekrana yazdırmayı denedik. Convert işlemlerinde programı kırabilecek istisnalara _(Exception)_ durumuna baktık. Ayrıca bellek yönetiminde önemli bir konu olan stack ve heap kavramlarından, Garbage Collector mekanizmasından ve dolayısıyla değişkenlerin bellekte nasıl konuşlandırıldığından bahsettik.
 
@@ -36,6 +36,10 @@ dotnet build
 
 # Yazdığımız uygulamayı çalıştırmak için
 dotnet run
+
+# bu projeyi soluiton'a eklemek için akademi klasöründeyken
+# aşağıdaki komutu çalıştırmak yeterlidir
+dotnet sln add Lesson_01/Projects/ShopApp/
 ```
 
 ## Araştırsak İyi Olur

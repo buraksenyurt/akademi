@@ -1,4 +1,4 @@
-# Lesson_02
+# Lesson_02 : Değişken Tanımları, Veri Türleri, Sonsuz Döngüler, Basit Koşullu İfadeler, TodoApp Giriş
 
 Bu derste bir önceki derste yaptıklarımızın üstüne koyarak bir ToDo uygulamasının temellerini atmaya çalıştık. İlk amacımız if,else, sonsuz döngü, değişken dönüşümleri, input almak gibi işlevleri yapabilmek. Kodumuz olabildiğince kirli durumda. Daha iyi hale getirmek için gereklilikleri ortaya koymaya çalışıyoruz. Derste işlediğimiz örnek özelinde aşağıdaki temadan esinlendiğimizi söyleyebiliriz.
 
@@ -7,14 +7,15 @@ Bu derste bir önceki derste yaptıklarımızın üstüne koyarak bir ToDo uygul
 ## Uygulamanın Handikapları
 
 - Her şeyi main içerisinde yapıyoruz.
+- Yeniden kullanılabilirlik (Reusability) yok.
 - Çok fazla if,else bloğu var.
 - Kod tekrarları fazla.
 - Görev bilgileri sadece değişkenlerde tutuluyor.
 
-## Sonraki Derse Hedefler
+## Sonraki Derste Hedefler
 
-- Görev bilgilerinin nesnel olarak tutulmasını sağlamalıyız.
-- Girilen görevleri bir listeye(diziye alıp) program yaşamı boyunca saklayabilmeliyiz.
+- Görev bilgilerinin nesnel olarak tutulmasını sağlamak.
+- Girilen görevleri bir listeye(diziye alıp) program yaşamı boyunca saklamak.
 
 ## Sözlük
 
@@ -23,6 +24,7 @@ Bu derste bir önceki derste yaptıklarımızın üstüne koyarak bir ToDo uygul
 - User Story: Genellikle çevik metodolojilerde sıklıkla kullanılır. Ürün sahibi ya da iş sahibi elindeki feature'dan ne beklediğini açıkça belirtir. Örneğin, "Müşteri olarak ana ekrana girdiğimde arama kutucuğuna ürün adını yazdığımca önerilerin otomatik olarak çıkmasını istiyorum" gibisinden. Bunun biraz daha detaylı ve iyi ifadesi programcıya kodlamayı nasıl yapacağına dair fikirler verir, bunla ilgili ipuçları barındırır.
 - Agile metodolojiler: Günümüz iş modellerinin çoğu Waterfall yerine Agile(Çevik) metodolojilerle geliştirilmektedir. En yaygın kullanılanları arasında Kanban ve Scrum vardır.
 - Oyun motorlarında her kareyi ele alan hep bir sonsuz döngü vardır.
+- Dönem derslerini şu an için aynı Solution altında topluyoruz. Eklediğimiz tüm C# projelerini bu Solution içerisine alabiliriz. Bir solution genelde aynı alana(domain) ait birden fazla projeyi içerebilir.
 
 ## Yardımcı Linkler
 
@@ -37,6 +39,10 @@ dotnet build
 
 # uygulamayı çalıştırmak için
 dotnet run
+
+# bu projeyi soluiton'a eklemek için akademi klasöründeyken
+# aşağıdaki komutu çalıştırmak yeterlidir
+dotnet sln add Lesson_02/Projects/ToDoApp/
 ```
 
 ## Araştırsak İyi Olur

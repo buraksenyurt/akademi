@@ -98,7 +98,7 @@ class Program
                 }
 
                 Console.WriteLine("Tebrikler. Görev sisteme yazıldı");
-                Console.WriteLine($"{id} - {title}({taskSize}) - {duration} {durationType}");
+                Console.WriteLine($"{id} - {title}({taskSize}) - {duration} {durationType}");                
             }
         }
 

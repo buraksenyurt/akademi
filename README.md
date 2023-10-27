@@ -4,3 +4,4 @@ Sektör kampüste projesi kapsamında **ESOGU - C# ile Programlama** seçmeli de
 
 - [x] **Lesson_00 :** .Net çalışma ortamının tanıtımı, C# ile ilgili genel bilgileri, ortamın hazırlanması ve Hello World uygulmasının yazılması.
 - [x] **Lesson_01 :** Temel veri tiplerinin tanımıtı, değişken kullanımları, terminalden girdi alınması ve dönüştürme istisnaları.
+- [x] **Lesson_02 :** Terminalden girdi alma, doğru tiplere dönüştürme, enum sabitleri, sonsuz döngü ve basit if-else yapıları ile ilk sınıf(class) tasarımı.
