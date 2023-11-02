@@ -4,7 +4,7 @@ Bir varlığı kod tarafında nasıl temsil edebileceğimizi öğrenmeye devam e
 
 Bu arada derste gelen bir soru üzerine metinsel bir ifadenin içinden kodsal anlamı olan çıktılar üretmek adına nasıl bir yol izleyebileceğimizi tartıştık. 
 
-![interpreting.png](../../Lesson_00/Documents/client_server.png)
+![interpreting.png](interpreting.png)
 
 ## Sözlük
 
