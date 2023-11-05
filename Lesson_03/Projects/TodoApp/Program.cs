@@ -3,7 +3,7 @@
 class Program
 {
     static void Main(string[] args)
-    {
+    {        
         Task firstTask = new Task(); // Burada firstTask isimli Task sınıfı(class) türünden bir nesne örneği(object instance) oluşturduk.
         // firstTask.Id = 1; // #1 burası derleme zamanında 'Task.Id' is inaccessible due to its protection level hatasını verir.
         firstTask.Title = "Program içerisindeki sınıfları kütüphaneye(library) taşı";
@@ -45,7 +45,7 @@ class Program
 
         var thirdTask = new Task
         {
-            Title = "Projedeji switch bloklarını if bloğuna çevir.",
+            Title = "Projedeki switch bloklarını if bloğuna çevir.",
             TaskSize = TaskSize.M,
             Duration = 6,
             DurationType = DurationType.Hour,
@@ -103,7 +103,7 @@ class Program
 class Task
 {
     int Id { get; set; } // bu private bir alan olduğundan #1 daki kod işletilemez.
-    public string Title { get; set; }
+    public string Title { get; set; } = string.Empty;
     public DurationType DurationType { get; set; }
     public byte Duration { get; set; }
     public TaskSize TaskSize { get; set; } // Auto Property

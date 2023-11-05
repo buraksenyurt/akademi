@@ -22,6 +22,10 @@ dotnet build
 dotnet run
 ```
 
+## Çalışma Zamanı
+
+_Derste işlenen kodların çıktısı eklenir_
+
 ## Araştırsak iyi Olur
 
 _Dersten sonra öğrencilerin araştırması için verilen konular buraya yazılır_
@@ -29,3 +33,7 @@ _Dersten sonra öğrencilerin araştırması için verilen konular buraya yazıl
 ## Evde Çalışmak için Atıştırmalıklar
 
 _Meraklısına evde çalışması için verilecek örnekler buraya yazılır_
+
+## Kazanımlar
+
+_Ders konularından edinilmesi beklenen kazanımlar maddeler halinde listelenir_

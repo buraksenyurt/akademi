@@ -34,6 +34,12 @@ dotnet build
 dotnet run
 ```
 
+## Çalışma Zamanı
+
+Derste işlenen kodların çalışma zamanı çıktısı aşağıdaki gibidir.
+
+![runtime.png](runtime.png)
+
 ## Araştırsak iyi Olur
 
 - Bir ifadenin kod tarafından yorumlanması. Örneğin terminalden **"5 saat"** ya da **"işi 2 gün içinde bitirebilirim"** yazdığımızda, bu cümlelerden işin süresini ve süresinin tipini bulabilir miyiz?
@@ -48,3 +54,10 @@ dotnet run
 ## Ödev (Bu ödev ders geçme notuna doğrudan etki eder)
 
 - TodoApp kodlarından esinlenerek, sevdiğimiz kitapların bilgisini taşıyan bir sınıf tasarlayın. Bu sıfına ait kod içerisinde en az 3 nesne örneği oluşturun. Book isimli sınıfta bir kitaba ait, isim, yazar(lar), fiyat, sayfa sayısı, kategori bilgilerini taşıyan özellikler(properties) yer alsın. Kitaba belli bir oranda indirim uygulayan bir metot olsun. Main içerisinde tanımladığımız ne kadar kitap varsa hepsine aynı oranda indirim uygulayacak bir başka metot daha geliştirin. Bu metod Book sınıfı içerisinde olmamalı. 
+
+## Kazanımlar
+
+- Sınıf tasarlama, nesne örnekleri oluşturma
+- Auto Property ve Readonly özellik kullanımları
+- Nesne metotlarının yazılması ve kullanımı
+- Temel seviyede dizi tanımlama, dizi elemanları üzerinde döngüsel ilerleme

@@ -45,6 +45,12 @@ dotnet run
 dotnet sln add Lesson_02/Projects/ToDoApp/
 ```
 
+## Çalışma Zamanı
+
+Bu derste işlenen kodların çıktısı aşağıdaki gibidir.
+
+![runtime.png](runtime.png)
+
 ## Araştırsak İyi Olur
 
 - if else bloğu yerine switch bloğu ile nasıl ilerleriz. Lütfen kodun içerisindeki TODO kısmına bakınız.
@@ -52,3 +58,10 @@ dotnet sln add Lesson_02/Projects/ToDoApp/
 ## Evde Çalışmak için Atıştırmalıklar
 
 - Bu dersteki örnekten esinlenerek kitaplarınız için bir program yazmayı deneyebilirsiniz. Ekrandan kitaba ait bir takım bilgileri alıp bunları doğru türdeki değişkenlerde saklayan ve sonucu ekrana bastıran, kullanıcının istediği kadar kitap girebildiği bir süreç tasarlayabilirsiniz. Bonus olarak kitap ve yazar arasındaki olası çoklu ilişkiyi(many-to-many relation) şu ana kadar gördüğümüz enstrümanlarla tesis edip edemeyeceğimizi araştırabilirsiniz.
+
+## Kazanımlar
+
+- while döngü yapısı ve sonsuz döngü oluşturarak sürekli girdi almak
+- temel koşullu ifadelerin kullanımı (if,else)
+- Tipler arası dönüştürmede olası hatalar ve TryParse kullanımı ile güvenli dönüşümler
+- İlkel seviyede sınıf (class) tanımlaması ve gerçek hayat kavramlarının kodsal temsili

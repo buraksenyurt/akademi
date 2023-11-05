@@ -27,6 +27,12 @@ C# ile yazılan bir kodun çalışma zamanına kadarki serüveninden yüzeysel o
 - SPA _(Single Page Application)_
 - MD Markdown formatındaki dosyalardır. Şu an okumakta olduğunuz dosya bu formattadır. Github gibi ortamlarda sıklıkla kullanılır. Ayrıca Rust dilinin tüm dokümantasyonu ve yardım baloncukları Markdown formatındadır.
 
+## Örnek Çalışma Zamanı
+
+Bu derste yazılan kodların çıktısı aşağıdaki gibidir.
+
+![runtime.png](runtime.png)
+
 ## Yardımcı Linkler
 
 Ders sırasında baktığımız yardımcı linkler aşağıdaki gibidir.
@@ -61,3 +67,10 @@ git clone https://github.com/buraksenyurt/akademi
 - Internet ve Intranet arasındaki farklar nelerdir? 500 kelimeyi geçemeyecek şekilde açıklayınız.
 - Sistemlerimize .Net yüklenmeli. Ayrıca geliştirme IDE'si olarak Visual Studio Code.
 - Olmayanlar kendilerine bir github hesabı açmalılar.
+
+## Kazanımlar
+
+- C# programlama dili ve .Net platformu hakkında temel bilgiler.
+- Geliştirme ortamları ve araçları hakkında bilgiler.
+- dotnet terminal aracına ait bazı komutlar.
+- github ortamı ve kod paylaşımı hakkında bilgiler.

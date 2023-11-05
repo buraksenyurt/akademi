@@ -42,7 +42,20 @@ dotnet run
 dotnet sln add Lesson_01/Projects/ShopApp/
 ```
 
+## Çalışma Zamanı
+
+Bu derste işlenen örnek kodların çalışma zamanı çıktısı aşağıdaki gibidir.
+
+![runtime.png](runtime.png)
+
 ## Araştırsak İyi Olur
 
 - .Net primitive veri tipleri hangileridir, değer aralıkları nedir, keyword karşılıkları nasıldır bir bakalım.
 - Birkaç veri tipinin max, min değer aralıklarını ekrana yazdıran basit bir terminal uygulaması geliştirmeye çalışalım.
+
+## Kazanımlar
+
+- Stack ve Heap bellek bölgeleri
+- Değişken tanımlama ve kullanımı ile temel veri türleri
+- Enum veri türünün basit kullanımı
+- Terminalden girdi okuma ve yazdırma işlemleri
