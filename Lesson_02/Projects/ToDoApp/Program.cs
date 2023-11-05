@@ -9,7 +9,7 @@ class Program
         // Görev No #3 Bu sefe İngilizce sınavından A1 seviyesinde derece yapacağım
 
         // İçerikteki özellikler: Zaman, benzersiz görev numaraları, ne yapılacağı bilgisi, koşula bağlı hedefler
-        var taskId = 1;
+        //var taskId = 1;
         var title = "C# çalışmak";
         var duration = 3;
         var durationType = DurationType.Hour;
@@ -28,7 +28,7 @@ class Program
 
             // Girilen bilgiyi ToUpper fonksiyonu ile büyük harfe çeviriyoruz
 
-            if (title.ToUpper() == "Q") // tek tırnak içerisinde yazılan karakterler char tipindendir
+            if (title?.ToUpper() == "Q") // tek tırnak içerisinde yazılan karakterler char tipindendir
             {
                 Console.WriteLine("Görüşmek üzere kendine iyi bak");
                 break; // Q girilmişse break komutu döngüden çıkılmasını sağlar.
@@ -51,50 +51,50 @@ class Program
                 //TODO@Everyone Aşağıdaki if...else yapısı yerine switch bloğu kullanabilir miyiz?
                 Console.WriteLine("Süre türü nedir? (H)our, (D)ay, (M)onth, (Y)ear");
                 var durationTypeInput = Console.ReadLine();
-                if (durationTypeInput.ToUpper() == "H")
+                if (durationTypeInput?.ToUpper() == "H")
                 {
                     durationType = DurationType.Hour;
                 }
-                else if (durationTypeInput.ToUpper() == "D")
+                else if (durationTypeInput?.ToUpper() == "D")
                 {
                     durationType = DurationType.Day;
                 }
-                else if (durationTypeInput.ToUpper() == "M")
+                else if (durationTypeInput?.ToUpper() == "M")
                 {
                     durationType = DurationType.Month;
                 }
-                else if (durationTypeInput.ToUpper() == "Y")
+                else if (durationTypeInput?.ToUpper() == "Y")
                 {
                     durationType = DurationType.Year;
                 }
                 else
                 {
                     Console.WriteLine("Geçerli bir süre türü girmedin");
-                    continue;
+                    continue; // Sonraki iterasyondan devam et.
                 }
 
                 Console.WriteLine("İşin büyüklüğü sizce nedir? (S)mal, (M)edium, (L)arge, (X)Large");
                 var taskSizeInput = Console.ReadLine();
-                if (taskSizeInput.ToUpper() == "S")
+                if (taskSizeInput?.ToUpper() == "S")
                 {
                     taskSize = TaskSize.S;
                 }
-                else if (taskSizeInput.ToUpper() == "M")
+                else if (taskSizeInput?.ToUpper() == "M")
                 {
                     taskSize = TaskSize.M;
                 }
-                else if (taskSizeInput.ToUpper() == "L")
+                else if (taskSizeInput?.ToUpper() == "L")
                 {
                     taskSize = TaskSize.L;
                 }
-                else if (taskSizeInput.ToUpper() == "X")
+                else if (taskSizeInput?.ToUpper() == "X")
                 {
                     taskSize = TaskSize.XL;
                 }
                 else
                 {
                     Console.WriteLine("Girdiğin iş büyüklüğü geçerli değil");
-                    continue;
+                    continue; // Sonraki iterasyondan devam et
                 }
 
                 Console.WriteLine("Tebrikler. Görev sisteme yazıldı");
@@ -102,6 +102,7 @@ class Program
             }
         }
 
+        // Aşağıdaki for döngüsü de sonsuz bir döngüdür.
         // for(;;){
 
         // }
@@ -135,7 +136,7 @@ enum TaskState{
 class Task
 {
     public int Id { get; set; } 
-    public string Title { get; set; }
+    public string Title { get; set; } = string.Empty;
     public DurationType DurationType { get; set; }
     public byte Duration { get; set; }
     public TaskSize TaskSize { get; set; }
