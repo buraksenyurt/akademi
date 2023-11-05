@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson_00", "Lesson_00", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{3C072978-6A2B-4230-BFC8-2C850B2E5DAB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hello_world_2", "Lesson_00\Projects\hello_world_2\hello_world_2.csproj", "{E6B15056-81B6-4FE4-8CF1-B8A27478DE6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld2", "Lesson_00\Projects\HelloWorld2\HelloWorld2.csproj", "{E6B15056-81B6-4FE4-8CF1-B8A27478DE6D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hello_world", "Lesson_00\Projects\hello_world\hello_world.csproj", "{BD44FE88-EB28-447B-B077-41BA18D115E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld", "Lesson_00\Projects\HelloWorld\HelloWorld.csproj", "{BD44FE88-EB28-447B-B077-41BA18D115E3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson_01", "Lesson_01", "{D36489D6-84D2-40B6-8D46-AEA23C9DC58C}"
 EndProject
