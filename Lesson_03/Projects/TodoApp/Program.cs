@@ -174,6 +174,7 @@ enum DurationType
 {
     Hour,
     Day,
+    Week,
     Month,
     Year
 }
