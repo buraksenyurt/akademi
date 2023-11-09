@@ -1,18 +1,20 @@
-# Lesson_04 : _İşlenen Konuları Özetleyen Bir Başlık Gelir_
+# Lesson_04 : Sınıf Kütüphaneleri ve Birim Testler
 
-_Derste işlenen konularla ilgili özet bilgi gelir_
+Bu derste bir solution içerisinde yer alabilecek proje yapılarından, Kanban board'a konu olan POCO türlerinin ayrı bir sınıf kütüphanesinde konuşlandırılmasından, task yönetimi ile ilgili yeni bir kütüphane oluşturup buna ait birim testlerin nasıl ele alınabileceğinden bahsettik. Yüksek kalitede, bakım maliyeti düşük, iş biriminin çeşitli kabul kriterlerini karışalayan ve code coverage değerleri yüksek çıktılarda birim testlerin önemine vurgu yaptık. Çok basit manada ilk birim test metotlarımızı yazmayı da denedik. Bir solution içerisindeki temel yapı taşları ile, namesace örgüsü ve iç enstrümanlarını da aşağıdaki grafikle özetlemeye çalıştık.
+
+![solution_structure.png](solution_structure.png)
 
 ## Sözlük
 
-- sln : Bir .net solution dosyasıdır. Solution dosyaları içerisinde birden fazla proje yer alabilir. Bu projeler sln dosyası içerisinde de bildirilir.
-- csproj : Bir .net projesine ait bilgiler içeren dosyadır. Örneğin projenin referans ettiği diğer kütüphaneler veya nuget paketlerinin bildirimleri, .net framework sürümü, null değer kullanılıp kullanılmayacağı vb bilgiler bu dosya içerisinde yer alır.
-- POCO(Plain Old CLR Objects) : Sadece property/field barındıran herhangi bir işlevsellik içermeyen sınıflardır.
-- Birim Test(Unit Test): Yazdığımı metotların belirli kriterlere göre doğru şekilde çalıştığından emin olmak için kabul kriterlerine istinaden test metotlarının yazılması gerekir. Test metotları birim test olarak da bilinir.
+- **sln :** Bir .net solution dosyasıdır. Bir solution içerisinde birden fazla proje yer alabilir. Bu projeler sln dosyası içerisinde de bildirilir.
+- **csproj :** Bir .net projesine ait bilgiler içeren dosyadır. Örneğin projenin referans ettiği diğer kütüphaneler veya nuget paketlerinin bildirimleri, .net framework sürümü, null değer kullanılıp kullanılmayacağı vb bilgiler bu dosya içerisinde yer alır.
+- **POCO(Plain Old CLR Objects)** : Sadece property/field barındıran herhangi bir işlevsellik içermeyen sınıflardır.
+- **Birim Test(Unit Test) :** Yazdığımı metotların belirli kriterlere göre doğru şekilde çalıştığından emin olmak için kabul kriterlerine istinaden test metotlarının yazılması gerekir. Test metotları birim test olarak da bilinir.
 
 ## Yardımcı Linkler
 
-- VS Code tarafında .net projeleri ile çalışırken yardımcı olacak bir eklenti -> https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit 
-- .Net eko sisteminin paket yönetim hizmeti Nuget'tir -> https://www.nuget.org/ Bir çok konuda çözüm sunan paketlere nuget repolarından erişebilir ve projelerde kullanabiliriz.
+- VS Code tarafında .Net projeleri ile çalışırken yardımcı olacak pek çok eklenti var. Bunlarda birisi de [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit). 
+- .Net eko sisteminin paket yönetim hizmeti Nuget'tir ve [şu adresten](https://www.nuget.org/) erişilebilir. Bir çok konuda çözüm sunan paketlere nuget repolarından erişebilir ve projelerde kullanabiliriz. Örneğin RabbitMQ, Entity Framework, JSON gibi ile işlerle uğraşırken tekerleği yeniden icat etmek yerine bu alanlara özel yazılmış Nuget paketlerinden faydalanılabilir. Bazı firmalar kendi nuget repolarını açar ve internal kütüphanelerini bu repolarda tutarak geliştirmeler yapar.
 
 ## Kullandığımız Komutlar
 
@@ -60,13 +62,18 @@ dotnet add reference ../Entity/Entity.csproj
 # proje veya çözümü derlemek için
 dotnet build
 
-# çalıştırmak için
-dotnet run
+# Solution içerisindeki testleri çalıştırmak için
+dotnet test
+
+# testle ilgili detay bilgiyi console'a yazdırmak için
+dotnet test -l "console;verbosity=normal"
 ```
 
 ## Çalışma Zamanı
 
-_Derste işlenen kodların çıktısı eklenir_
+Derste ilk birim test metotlarımızı TaskManager sınıfı üzerinden incelemeye çalıştık. Geldiğimiz nokta itibariyle aşağıdaki sonuçları elde ettik.
+
+![test_runtime.png](test_runtime.png)
 
 ## Araştırsak iyi Olur
 
@@ -75,8 +82,10 @@ _Derste işlenen kodların çıktısı eklenir_
 
 ## Evde Çalışmak için Atıştırmalıklar
 
-- Fibonacci sayı dizisini yazdıran bir metot ve bu metodun birim testini içeren bir proje geliştirebilirsiniz. Fibonacci serisi 0, 1, 1, 2, 3, 5, 8, 13, 21 şeklinde ilerleyen sayı dizisidir. Metodunuz belirli sayı kadar seriyi yazdıracak şekilde tasarlanmalı. Yani 50 değerini verirsek Fibonacci serisinin ilk 50 sayısını yazdırmalı. Test metodu da yazılacağından geriye n tane Fibonacci sayısını içeren bir dizi döndüren metot yazarsanız doğru bir yaklaşım olacaktır.
+- Fibonacci sayı dizisini yazdıran bir metot ve bu metodun birim testini içeren bir örnek geliştirebilirsiniz. Fibonacci serisi 0, 1, 1, 2, 3, 5, 8, 13, 21 şeklinde ilerleyen sayı dizisidir. Altın oranla arasında yakın bir ilişki vardır ve bu sebeple doğada da izlerine rastlanır diyebiliriz. Detaylar için [Math Is Fun](https://www.mathsisfun.com/numbers/fibonacci-sequence.html) adresine bakabilirsiniz. Metodunuz belirli sayı kadar seriyi yazdıracak şekilde tasarlanmalı. Yani 50 değerini verirsek Fibonacci serisinin ilk 50 sayısını yazdırmalı. Test metodu da yazılacağından geriye n tane Fibonacci sayısını içeren bir dizi döndüren metot yazarsanız doğru bir yaklaşım olacaktır.
 
 ## Kazanımlar
 
-_Ders konularından edinilmesi beklenen kazanımlar maddeler halinde listelenir_
+- Solution iskeleti, namespace kavramı ve içeriği hakkında temel bilgiler.
+- Birim test nedir, nasıl yazılır, hangi ihtiyaçları karşılamak için kullanılır.
+- Yapıcı metot *(Constructor)* nedir, hangi amaçlarla kullanılır, aşırı yüklenmiş *(Overloaded)* versiyonları ne işe yarar?
