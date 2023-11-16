@@ -44,28 +44,45 @@ public class TaskManager
     // Belli bir Id değerine sahip Task nesnesinin bulunması için kullanılır.
     public Entity.Task GetTask(Guid taskId)
     {
-        return null;
+        return _tasks.SingleOrDefault(t=>t.Id==taskId);
+        // foreach (var task in _tasks)
+        // {
+        //     if (task.Id.Equals(taskId))
+        //     {
+        //         return task;
+        //     }
+        // }
+        // return null;
     }
 
     // Bu metot içerideki _tasks dizisinin belirtilen durumdaki elemanlarının sayısını döndürür.
     // Böylece kaç tane işlemde olan task var, ya da kaç tane tamamlanmış task var gibi soruların cevaplarını alabiliriz.
     public int GetTaskCount(TaskState taskState)
     {
-        int count = 0;
-        foreach (var task in _tasks)
-        {
-            if (task.State == taskState)
-            {
-                count++;
-            }
-        }
-
-        return count;
+        return _tasks.Where(t => t.State == taskState).Count(); // Örnek bir LINQ sorgusu. Aşağıdaki kod satırları yerine kullanılabilir        
+        // int count = 0;
+        // foreach (var task in _tasks)
+        // {
+        //     if (task.State == taskState)
+        //     {
+        //         count++;
+        //     }
+        // }
+        // return count;
     }
 
     // Aşağıdaki metot belli bir state altındaki Task nesnelerinin dizisini döndürür
     public List<Entity.Task> GetTasks(TaskState taskState)
     {
-        return _tasks;
+        return _tasks.Where(t => t.State == taskState).ToList();
+        // var resultSet = new List<Entity.Task>();
+        // foreach (var task in _tasks)
+        // {
+        //     if (task.State == taskState)
+        //     {
+        //         resultSet.Add(task);
+        //     }
+        // }
+        // return resultSet;
     }
 }
