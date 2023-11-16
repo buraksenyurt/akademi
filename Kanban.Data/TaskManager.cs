@@ -42,7 +42,7 @@ public class TaskManager
         return newTask.Id;
     }
     // Belli bir Id değerine sahip Task nesnesinin bulunması için kullanılır.
-    public Entity.Task GetTask(Guid taskId)
+    public Entity.Task? GetTask(Guid taskId)
     {
         return _tasks.SingleOrDefault(t=>t.Id==taskId);
         // foreach (var task in _tasks)
