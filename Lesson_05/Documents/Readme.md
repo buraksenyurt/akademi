@@ -1,8 +1,6 @@
 # Lesson_05 : Generic List Kullanımı ve Daha Çok Test
 
-Bu derste TaskManager sınıfının metotlarına ait birim testleri tamamlamaya çalıştık. Bu sırada kodu iyileştirdik. Ayrıca task nesnelerini bellekte tutmak için Array yerine generic List tipinden yararlandık. Ders sonunda vardığımız noktada çalışma zamanı çıktımız aşağıdaki gibidir.
-
-![runtime.png](../runtime.png)
+Bu derste TaskManager sınıfının metotlarına ait birim testleri tamamlamaya çalıştık. Bu sırada kodu iyileştirdik. Ayrıca task nesnelerini bellekte tutmak için Array yerine generic List tipinden yararlandık.
 
 ## Sözlük
 
@@ -35,7 +33,9 @@ dotnet test
 
 ## Çalışma Zamanı
 
-_Derste işlenen kodların çıktısı eklenir_
+Ders boyunca amacımız olası kabul kriterlerine göre test metotlarını tamamlamak ve TaskManager sınıfının planlanan metotlarının doğru çalıştığından emin olmaktı.
+
+![runtime.png](../runtime.png)
 
 ## Araştırsak iyi Olur
 

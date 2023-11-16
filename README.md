@@ -7,7 +7,7 @@ Sektör kampüste projesi kapsamında **ESOGU - C# ile Programlama** seçmeli de
 - [x] **[Lesson_02 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_02)** Terminalden girdi alma, doğru tiplere dönüştürme, enum sabitleri, sonsuz döngü ve basit if-else yapıları ile ilk sınıf(class) tasarımı.
 - [x] **[Lesson_03 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_03)** Sınıf tasarlama, nesne örnekleme, sınıf metotlarını kullanma, basit dizi(array) tanımlaması ve foreach kullanımı.
 - [x] **[Lesson_04 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_04)** Sınıf kütüphaneleri, solution yapısı, referans etme ve birim testler.
-- [ ] **Lesson_05 :**
+- [x] **[Lesson_05 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_05)** Daha çok birim test ve generic List kullanımı ile basit LINQ metotlarının uygulanması.
 - [ ] **Lesson_06 :**
 - [ ] **Lesson_07 :**
 - [ ] **Lesson_08 :**
