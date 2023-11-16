@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Kanban.Data\Kanban.Data.csproj" />
-    <ProjectReference Include="..\Entity\Entity.csproj" />
+    <ProjectReference Include="..\Kanban.Entity\Kanban.Entity.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using Entity;
+﻿using Kanban.Entity;
 
 namespace Kanban.Data;
 

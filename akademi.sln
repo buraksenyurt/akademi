@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{E8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp", "Lesson_03\Projects\TodoApp\TodoApp.csproj", "{BAF73D96-B5CA-4C14-B5EA-B219637087E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{BFE24DDB-B03E-4F1E-880B-D1B59235ED69}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Entity", "Kanban.Entity\Kanban.Entity.csproj", "{BFE24DDB-B03E-4F1E-880B-D1B59235ED69}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson_04", "Lesson_04", "{521BED53-2C68-429F-9CB6-F531D4BC15E9}"
 EndProject

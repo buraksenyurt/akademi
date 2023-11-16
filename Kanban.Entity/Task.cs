@@ -1,4 +1,4 @@
-﻿namespace Entity;
+﻿namespace Kanban.Entity;
 
 public class Task
 {

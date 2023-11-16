@@ -1,6 +1,6 @@
 ﻿namespace KanbanApp;
 
-using Entity;
+//using Kanban.Entity;
 
 class Program
 {
