@@ -9,7 +9,9 @@ public class TaskManager
         _tasks, Entity kütüphanesindeki Task türünden bir dizidir.
         private olarak tanımlanmıştır, dolayısıyla sadece TaskManager sınıfının kendi metotları tarafından kullanılabilir.
     */
-    private Entity.Task[] _tasks;
+    //private Entity.Task[] _tasks;
+    // Yeni modelimizde Task nesnelerini generic List tipi ile tutmaktayız
+    private List<Entity.Task> _tasks;
 
     /*
         Aşağıdaki metot bir yapıcı metoddur(constructor)
@@ -21,32 +23,49 @@ public class TaskManager
         belirleyebilirsiniz.
 
     */
-    public TaskManager(int taskCount)
+    // public TaskManager(int taskCount)
+    // {
+    //     _tasks = new Entity.Task[taskCount];
+    // }
+    // TaskManager sınıfının varsayılan yapıcı metodu(Default Constructor) çalıştığında
+    // _tasks isimli değişkene ait generic List koleksiyonu da örneklenir.
+    public TaskManager()
     {
-        _tasks = new Entity.Task[taskCount];
+        _tasks = new List<Entity.Task>();
     }
 
-    // İçerideki task disizine yeni bir eleman eklemek için kullanılan fonksiyon
+    // İçerideki task deposuna yeni bir eleman eklemek için kullanılan fonksiyon
     // Parametre olarak Task nesnesi alır, ekleme işlemini yapar ve geriye eklenen task için üretilen benzersiz id değerini döndürür.
-    public int Add(Entity.Task newTask)
+    public Guid Add(Entity.Task newTask)
     {
-        return 0;
+        _tasks.Add(newTask);
+        return newTask.Id;
     }
     // Belli bir Id değerine sahip Task nesnesinin bulunması için kullanılır.
-    public Entity.Task GetTask(int taskId){
+    public Entity.Task GetTask(Guid taskId)
+    {
         return null;
     }
 
-    // Bu metot içerideki _tasks dizisinin belirtilen durumdaki elemanlarının sayısını döndürür
-    // Böylece kaç tane işlemde olan task var, ya da kaç tane tamamlanmış task var gibi soruların cevaplarını alabiliriz
+    // Bu metot içerideki _tasks dizisinin belirtilen durumdaki elemanlarının sayısını döndürür.
+    // Böylece kaç tane işlemde olan task var, ya da kaç tane tamamlanmış task var gibi soruların cevaplarını alabiliriz.
     public int GetTaskCount(TaskState taskState)
     {
-        return _tasks.Length;
+        int count = 0;
+        foreach (var task in _tasks)
+        {
+            if (task.State == taskState)
+            {
+                count++;
+            }
+        }
+
+        return count;
     }
 
     // Aşağıdaki metot belli bir state altındaki Task nesnelerinin dizisini döndürür
-    public Entity.Task[] GetTasks(TaskState taskState)
+    public List<Entity.Task> GetTasks(TaskState taskState)
     {
-        return Array.Empty<Entity.Task>();
+        return _tasks;
     }
 }
