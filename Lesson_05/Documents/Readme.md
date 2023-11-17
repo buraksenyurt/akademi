@@ -1,6 +1,8 @@
 # Lesson_05 : Generic List Kullanımı ve Daha Çok Test
 
-Bu derste TaskManager sınıfının metotlarına ait birim testleri tamamlamaya çalıştık. Bu sırada kodu iyileştirdik. Ayrıca task nesnelerini bellekte tutmak için Array yerine generic List tipinden yararlandık.
+Bu derste önceki derste başladığımız ve genel olarak bir Kanban bordunun basit yönetimi için gerekli metotları sunan TaskManager sınıfının birim testlerini tamamlamaya çalıştık. Testleri ilk çalıştırmalarda Fail durumuna düşürüp sonrasında Success durumuna gelecek şekilde düzenledik. Ardından kodu build warning mesajları ve VS Code önerileri doğrultusunda iyileştirmeye çalıştık. Bir nebze Red Green Blue tekniği ile ilerledik. Red-Green-Refactor olarak da adlandırılan ve TDD'nin önemli bir parçası olan bu teknikle ilgili [şu adreste](https://www.codecademy.com/article/tdd-red-green-refactor) oldukça güzel bir kaynak da yer alıyor. 
+
+Dersin bu kısmına gelen kadar veri serilerini tutmak için elimizde Array türü bulunuyordu. Bu derste boyutları dinamik olarak değişebilen, tür güvenli generic koleksiyonlardan yararlanmaya çalıştık. Bu amaçla Task nesnelerini bir List koleksiyonunda depoladık. İlerleyen derslerdeki hedeflerimizden birisi de, Task bilgilerini fiziki bir depolama ortamından okumak ve yine bu ortama yazmak. İlk akla gelen veritabanı olmakla birlikte dosya girdi çıktı işlemlerinin de öğrenilmesi için Comma Seperated File türünde dosyalardan yararlanmayı planlıyoruz.
 
 ## Sözlük
 

@@ -1,4 +1,4 @@
-# Lesson_06 : _İşlenen Konuları Özetleyen Bir Başlık Gelir_
+# Lesson_07 : _İşlenen Konuları Özetleyen Bir Başlık Gelir_
 
 _Derste işlenen konularla ilgili özet bilgi gelir_
 
