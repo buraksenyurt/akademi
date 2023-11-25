@@ -8,7 +8,7 @@ Sektör kampüste projesi kapsamında **ESOGU - C# ile Programlama** seçmeli de
 - [x] **[Lesson_03 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_03)** Sınıf tasarlama, nesne örnekleme, sınıf metotlarını kullanma, basit dizi(array) tanımlaması ve foreach kullanımı.
 - [x] **[Lesson_04 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_04)** Sınıf kütüphaneleri, solution yapısı, referans etme ve birim testler.
 - [x] **[Lesson_05 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_05)** Daha çok birim test ve generic List kullanımı ile basit LINQ metotlarının uygulanması.
-- [ ] **Ara Sınav :** 20 soruluk ara sınav. Toplam süre 60 dakika. Bugüne kadar işlenen konuları kapsamakta. Sorular eşit puanda değil ve çoktan seçmeli.
+- [x] **[Ara Sınav :](https://github.com/buraksenyurt/akademi/tree/main/Quiz)** 20 soruluk ara sınav. Toplam süre 60 dakika. Bugüne kadar işlenen konuları kapsamakta. Sorular eşit puanda değil ve çoktan seçmeli. Quiz isimli klasörden soruları içeren PDF dokümanına erişilebilir.
 - [ ] **Lesson_06 :**
 - [ ] **Lesson_07 :**
 - [ ] **Lesson_08 :**
