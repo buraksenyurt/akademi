@@ -53,7 +53,16 @@ Derste işlenen kodların çalışma zamanı çıktısı aşağıdaki gibidir.
 
 ## Ödev (Bu ödev ders geçme notuna doğrudan etki eder)
 
-- TodoApp kodlarından esinlenerek, sevdiğimiz kitapların bilgisini taşıyan bir sınıf tasarlayın. Bu sıfına ait kod içerisinde en az 3 nesne örneği oluşturun. Book isimli sınıfta bir kitaba ait, isim, yazar(lar), fiyat, sayfa sayısı, kategori bilgilerini taşıyan özellikler(properties) yer alsın. Kitaba belli bir oranda indirim uygulayan bir metot olsun. Main içerisinde tanımladığımız ne kadar kitap varsa hepsine aynı oranda indirim uygulayacak bir başka metot daha geliştirin. Bu metod Book sınıfı içerisinde olmamalı. 
+TodoApp kodlarından esinlenerek, sevdiğimiz kitapların bilgisini taşıyan bir sınıf tasarlayın. Bu sıfına ait kod içerisinde en az 3 nesne örneği oluşturun. Book isimli sınıfta bir kitaba ait, isim, yazar(lar), fiyat, sayfa sayısı, kategori bilgilerini taşıyan özellikler(properties) yer alsın. Kitaba belli bir oranda indirim uygulayan bir metot olsun. Main içerisinde tanımladığımız ne kadar kitap varsa hepsine aynı oranda indirim uygulayacak bir başka metot daha geliştirin. Bu metod Book sınıfı içerisinde olmamalı.
+
+|Kriter                  | Açıklama                           |
+|------------------------|------------------------------------|
+|**Platform:**           |Bağımsız (Windows/Linux/MacOS)      |
+|**Son Teslim Süresi:**  |Dönem sonuna kadar                  |
+|**Kabul Kriterleri:**   |Yazılan kodun çalıştırılabilir olması ve istenen fonksiyonellikleri sunması gerekmektedir.|
+|**Ulaştırma Şekli:**    |Dosya olarak ulaştırılabilir. Portale yüklenebilir.|
+|**Bonus:**              |Github adresinden ödev paylaşımı ve yapılanların Readme.md dosyasında anlatılması ekstra 20 puan anlamına gelir.|
+|**Geçme Notuna Etkisi:**| %10                                |
 
 ## Kazanımlar
 
