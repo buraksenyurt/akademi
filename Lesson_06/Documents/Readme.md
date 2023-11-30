@@ -19,11 +19,15 @@ bu cümle ile WorkItem tablosunda yer alan kayıtlardan saatlik olanları ilk ö
 
 ## Sözlük
 
-_Derste telafuz edilen anahtar kelimeler veya dikkate değer konular birer cümle ile özetlenir_
+- **Preprocessor Directives** *(# ile başlayan ifadeler)* : Derleme zamanına geçmeyen # işareti ile başlayan ifadelerdir. En çok kullanılanlardan birisi region , endregion dır. Kod okunurluğunu artırır ancak yine de büyük kod bloklarından kaçınmak gerekir. Aski halde Cognitive Complexity değerleri yüksek kodlar oluşabilir.
+- **Delegate tipi :** Bir metodu işaret edebilen tiplerdir. Bu sayede olaylar (event) tanımlanabilir ve hatta metotlara parametre olarak fonksiyonlar taşınabilir.
+- **Lambda operatör ( => ):** Delegate tipinden değişkenleri alan metot parametrelerinde sıklıkla kullanılır. Metoda parametre olarak bir kod bloğunun geçirilmesini sağlar. 
+- **Overload Method :** Aynı isimli yazılmış ama parametre yapıları farklı olan metotlar için kullanılan terimdir. Farklı parametrelerle farklı isimlerde n adet metot yazmak yerine aynı isimde olup farklı parametre imzaları içeren metotlar olarak düşünülebilir.
+- **Extension Method :** Var olan tipleri iç yapılarına müdahale etmeden genişletebilmemize imkan sağlar. 
 
 ## Yardımcı Linkler
 
-_Ders sırasında uğradığımız sayfalar varsa linkleri paylaşılır_
+- Derste gelen bir soru from ile başlayan LINQ sorgusunun SQL gibi veri tabanlarına yönlendirilip yönlendirilemeyeceği üzerine idi. Bu noktada ORM _(Object Relational Mapping)_ araçlarından ve Entity Framework' ten kısaca bahsettik. EF ile ilgili basit bir öğretiye [şu adresten](https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli) bakabilirsiniz. Ayrıca daha fazla LINQ sorgusu yazmak isterseniz [bu adresten](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/standard-query-operators-overview) bilgi alabilirsiniz.
 
 ## Kullandığımız Komutlar
 
@@ -39,7 +43,9 @@ dotnet run
 
 ## Çalışma Zamanı
 
-_Derste işlenen kodların çıktısı eklenir_
+Programımızın son noktadaki çalışma zamanı çıktısı aşağıdaki gibidir.
+
+![runtime.png](runtime.png)
 
 ## Araştırsak iyi Olur
 
