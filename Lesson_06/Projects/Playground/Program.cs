@@ -8,19 +8,22 @@ class Program
         Aşağıdaki üç metoda baktığımızda ne görüyoruz ?
         Bu üç metodda WorkItem tipinden parametre alıyor ve geriye bool değer döndürüyor.
         Bu üç metodun işini yapacak tek bir metod yazabilir miyim?
+
+        Tanımladığımız temsilci tipi (delegate), GetWorkItems' ın yeni versiyonu ve lambda operatörü sayesinde
+        aşağıdaki gibi metotlar tanımlamamıza gerek kalmadı.
     */
-    static bool IsHighPriority(WorkItem workItem)
-    {
-        return workItem.Priority == Priority.High;
-    }
-    static bool IsHourDuration(WorkItem workItem)
-    {
-        return workItem.DurationType == Duration.Hour;
-    }
-    static bool IsStandardAndDay(WorkItem workItem)
-    {
-        return workItem.Priority == Priority.Standard && workItem.DurationType == Duration.Day;
-    }
+    // static bool IsHighPriority(WorkItem workItem)
+    // {
+    //     return workItem.Priority == Priority.High;
+    // }
+    // static bool IsHourDuration(WorkItem workItem)
+    // {
+    //     return workItem.DurationType == Duration.Hour;
+    // }
+    // static bool IsStandardAndDay(WorkItem workItem)
+    // {
+    //     return workItem.Priority == Priority.Standard && workItem.DurationType == Duration.Day;
+    // }
     static void Main(string[] args)
     {
         Manager workItemManager = new();
@@ -44,6 +47,22 @@ class Program
         Console.WriteLine("\nLarge olup Title bilgisi 60 karakterden uzun olanlar");
         var query_4 = workItemManager.GetWorkItems(wi => wi.Size == Size.L && wi.Title.Length > 60);
         WriteToConsole(query_4);
+
+        // .Net içerisinde LINQ metotlarını kullanarak da yukarıdaki gibi ve daha gelişmiş sorguları nesne dizileri üzerine yapabiliriz
+        // LINQ içerisinde var olan pek çok tip için genişletme metotlar vardır (Where, singleOrDefault, Count, Select, OrderBy vb)
+        var workItems = workItemManager.GetWorkItems();
+        Console.WriteLine("\n***O harfi ile başlayan işlerin süre türüne göre sıralı listesi***");
+        var query_5 = workItems.Where(wi => wi.Title.StartsWith('O')).OrderBy(wi => wi.DurationType).ToList();
+        WriteToConsole(query_5);
+
+        // Yukarıdaki sorgunun benzeri aşağıdaki gibi de yazılabilir.
+        Console.WriteLine("\n***O harfi ile başlayan işlerin süre türüne göre sıralı listesi(LINQ ifadesi ile)***");
+        var query_6 = from wi in workItems
+                      where wi.Title.StartsWith('O')
+                      orderby wi.DurationType
+                      select wi; // burada isimsiz tip de döndürebiliriz (Anonymous Type)
+
+        WriteToConsole(query_6.ToList());
 
         #region Önceki sürüm
 
