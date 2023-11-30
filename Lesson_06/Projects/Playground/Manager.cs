@@ -108,4 +108,32 @@ public class Manager
     {
         return _workItems.Where(t => t.State == state).ToList();
     }
+
+    // Bir metoda parametre olarak fonksiyon geçebilmek
+    // GetWorkItems metodunun aşırı yüklenmiş(overload) aşağıdaki versiyonu
+    // SearchWorkItem delegate tipinden parametreler alır.
+    // Bu delegate türü bir metodu işaret edebildiğinde GetWorkItems metoduna
+    // parametre olarak fonksiyon taşıyabiliriz.
+    public List<WorkItem> GetWorkItems(SearchWorkItem searchWorkItem)
+    {
+        // İçerideki tüm listeyi dolaş
+        var result = new List<WorkItem>();
+        foreach (var wi in _workItems)
+        {
+            // Parametre olarak gelen fonksiyonu o anki wi nesne örneği ile çalıştır            
+            if (searchWorkItem(wi))
+            {
+                // true dönüyorsa result listesine ekle
+                result.Add(wi);
+            }
+        }
+
+        // elde edilen result listesini geri döndür
+        return result;
+    }
 }
+
+// Aşağıda bir temsilci tipi yer alıyor. Bir temsili ile tarif ettiği şablona uyan metodları
+// çalışma zamanında referans edebiliriz.
+// Aşağıdaki tarifte WorkItem türünden parametre alıp bool değer döndüren metotları işaret edebileceğimizi belirttik.
+public delegate bool SearchWorkItem(WorkItem workItem);
