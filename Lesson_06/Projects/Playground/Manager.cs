@@ -76,6 +76,14 @@ public class Manager
             DurationType = Duration.Month,
             Size = Size.XL,
         });
+        _workItems.Add(new WorkItem
+        {
+            Title = "Oda arkadaşına programlama dili öğretmeye başla.",
+            Duration = 7,
+            DurationType = Duration.Day,
+            Size = Size.L,
+            Priority = Priority.High
+        });
 
         #endregion
     }

@@ -6,7 +6,6 @@ public enum State
     Completed,
     Undone
 }
-
 public enum Size
 {
     S,
@@ -14,13 +13,11 @@ public enum Size
     L,
     XL
 }
-
 public enum Priority
 {
     High,
     Standard,
 }
-
 public enum Duration
 {
     Hour,
