@@ -63,6 +63,8 @@ Bu derste işlenen örneğe benzer bir uygulama yazılıp üzerinden farklı LIN
 - Satışta olmayan ürünlerin listelenmesi
 - Satışta olan ve bellir bir kategorideki ürünlere %10 indirim uygulatılması
 
+**İşinizi kolaylaştırmak için veri setinin hazırlanmasında ChatGPT' den yararlanılan console uygulaması Projects klasörü altına Exercise ismiyle eklenmiştir.**
+
 ## Kazanımlar
 
 - Temel döngü enstrümanları ile nesne dizilerini sorgulamak
