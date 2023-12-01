@@ -827,4 +827,3 @@ namespace Warehouse
 |  17   |   A  	 |
 |  18   |   D  	 |
 |  19   |   D  	 |
-|  20   |   A  	 |
