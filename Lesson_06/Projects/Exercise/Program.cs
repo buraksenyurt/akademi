@@ -45,7 +45,7 @@ static class Program
 
         list.AddRange(new List<Product>
             {
-                new Product { ProductId = 1, Name = "Abbey Road - The Beatles", UnitPrice = 29.99m, StockQuantity = 25, OnSale = false, Category = recordCategory  },
+                new() { ProductId = 1, Name = "Abbey Road - The Beatles", UnitPrice = 29.99m, StockQuantity = 25, OnSale = false, Category = recordCategory  },
                 new Product { ProductId = 2, Name = "Moonlight Sonata - Beethoven", UnitPrice = 22.50m, StockQuantity = 30, OnSale = false, Category = recordCategory },
                 new Product { ProductId = 3, Name = "The Nutcracker Suite - Tchaikovsky", UnitPrice = 24.75m, StockQuantity = 20, OnSale = true, Category = recordCategory },
                 new Product { ProductId = 4, Name = "Kind of Blue - Miles Davis", UnitPrice = 27.99m, StockQuantity = 15, OnSale = true, Category = recordCategory },
@@ -103,7 +103,6 @@ static class Program
                 new Product { ProductId = 32, Name = "Nikon D850", UnitPrice = 2799.95m, StockQuantity = 8, OnSale = true, Category = camerasCategory },
                 new Product { ProductId = 33, Name = "Sony Alpha a7 III", UnitPrice = 1999.50m, StockQuantity = 12, OnSale = true, Category = camerasCategory }
             });
-
 
         return list;
     }
