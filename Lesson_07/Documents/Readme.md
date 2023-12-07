@@ -1,14 +1,17 @@
-# Lesson_07 : _İşlenen Konuları Özetleyen Bir Başlık Gelir_
+# Lesson_07 : Genişletme Metotları ve Event Kullanımı
 
-_Derste işlenen konularla ilgili özet bilgi gelir_
+Derste iki konuyu basit şekilde ele almaya çalıştık. Birisi önceki dersten öğrendiğimiz delegate tipinin event'ler ile kullanılması. Bir diğeri de yine LINQ sorgulama metotlarından aşina olduğumuz genişletme metotları (Extension Methods) 
 
-## Sözlük
+Genişletmek metotları sayesinde var olan tiplerin içeriğini değiştirmeden yeni fonksiyonellikler kazanması sağlanabilir. Örneğin Int32 tipine IsLessThan, IsGreaterThan veya String türüne WriteLovely gibi normalde built-in olarak gelmeyen yeni fonksiyonellikleri, genişletme metotları ile tesis edebiliriz. Bu özellikle projelerde referans alarak kullandığımız harici kütüphanelere yeni fonksiyonellikler kazandırmak açısından da önemli bir enstrümandır.
 
-_Derste telafuz edilen anahtar kelimeler veya dikkate değer konular birer cümle ile özetlenir_
+Bu derste işlediğimiz konulardan bir diğeride delegate tipleri ile birlikte ele alınan event'ler. Nesnelere event alanları ekleyerek, belli aksiyonlar karşısından object user'ların farklı süreçleri işletmesi sağlanabilir. Örneğin stok bilgilerini tuttuğumuz bir nesne modelinde stok miktarının belli bir değerin altına inmesi bir olayla ilişkilendirilebilir. Olaylar gerçekleştiğinde, kendileri ile ilişkilendirilen delegate tiplerinin işaret ettiği türden metotların çalıştırılması söz konusu olur. Bu metotlar nesne olayın abone olan enstrümanlar tarafından kullanılır.
 
 ## Yardımcı Linkler
 
-_Ders sırasında uğradığımız sayfalar varsa linkleri paylaşılır_
+- [C# 3.0: Derinlemesine Extension Method Kavramı](https://www.buraksenyurt.com/post/C-3-0-Derinlemesine-Extension-Method-Kavramc4b1-bsenyurt-com-dan)
+- [Çerezlik Algoritmalar ve Extension Methodlar](https://www.buraksenyurt.com/post/Cerezlik-Algoritmalar-ve-Extension-Methodlar)
+- [Temsilciler (Delegates) Kavramına Giriş](https://www.buraksenyurt.com/post/Temsilciler-(Delegates)-Kavram%C4%B1na-Giris-bsenyurt-com-dan)
+- [C# Temelleri - Olayları(Events) Kavramak](https://www.buraksenyurt.com/post/C-Temelleri-Olaylar%C4%B1(Events)-Kavramak-bsenyurt-com-dan)
 
 ## Kullandığımız Komutlar
 
@@ -24,16 +27,17 @@ dotnet run
 
 ## Çalışma Zamanı
 
-_Derste işlenen kodların çıktısı eklenir_
+UsingExtensions ve UsingEvents isimli programlara ait çalışma zamanı görüntüleri aşağıdaki gibidir.
 
-## Araştırsak iyi Olur
+![runtime_1.png](runtime_1.png)
 
-_Dersten sonra öğrencilerin araştırması için verilen konular buraya yazılır_
+![runtime_2.png](runtime_2.png)
 
 ## Evde Çalışmak için Atıştırmalıklar
 
-_Meraklısına evde çalışması için verilecek örnekler buraya yazılır_
+Bu dersteki fonksiyonları test etmek amacıyla bir birim test projesi oluşturup üzerinde farklı kabul kriterlerini deneyebiliriz.
 
 ## Kazanımlar
 
-_Ders konularından edinilmesi beklenen kazanımlar maddeler halinde listelenir_
+- Nesnelere event bildirimleri ile yeni işlevsellikler kazandırmak
+- Var olan tiplerin içeriğini değiştirmeden genişletme metotları ile zenginleştirebilmek
