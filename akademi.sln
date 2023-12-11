@@ -57,6 +57,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingEvents", "Lesson_07\Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingExtensions", "Lesson_07\Projects\UsingExtensions\UsingExtensions.csproj", "{9D36F36B-41A6-474F-97F8-F5F00FC3C8D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Extensions", "Kanban.Extensions\Kanban.Extensions.csproj", "{772E1FAD-6F5C-4040-85C6-81A275FCCDE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Extensions.Tests", "Kanban.Extensions.Tests\Kanban.Extensions.Tests.csproj", "{03273F68-483B-48AA-9593-8E7E977DCC92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +119,14 @@ Global
 		{9D36F36B-41A6-474F-97F8-F5F00FC3C8D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D36F36B-41A6-474F-97F8-F5F00FC3C8D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D36F36B-41A6-474F-97F8-F5F00FC3C8D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{772E1FAD-6F5C-4040-85C6-81A275FCCDE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{772E1FAD-6F5C-4040-85C6-81A275FCCDE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{772E1FAD-6F5C-4040-85C6-81A275FCCDE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{772E1FAD-6F5C-4040-85C6-81A275FCCDE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03273F68-483B-48AA-9593-8E7E977DCC92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03273F68-483B-48AA-9593-8E7E977DCC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03273F68-483B-48AA-9593-8E7E977DCC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03273F68-483B-48AA-9593-8E7E977DCC92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

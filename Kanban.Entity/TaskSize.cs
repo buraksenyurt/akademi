@@ -5,6 +5,7 @@ namespace Kanban.Entity
         S,
         M,
         L,
-        XL
+        XL,
+        NA
     }
 }
