@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices;
 using Kanban.Entity;
 
 namespace Kanban.Extensions.Tests;
@@ -28,9 +27,23 @@ public class StringExtensionsTests
     [InlineData("large", TaskSize.L)]
     [InlineData("xl", TaskSize.XL)]
     [InlineData("xlarge", TaskSize.XL)]
+    [InlineData("what did you say?", TaskSize.NA)]
     public void Should_string_Convert_To_Available_Size_Task(string value, TaskSize expected)
     {
         var actual = value.ToTaskSize();
+        Assert.Equal(actual, expected);
+    }
+
+    [Theory]
+    [InlineData('h', DurationType.Hour)]
+    [InlineData('d', DurationType.Day)]
+    [InlineData('w', DurationType.Week)]
+    [InlineData('m', DurationType.Month)]
+    [InlineData('y', DurationType.Year)]
+    [InlineData('x', DurationType.NA)]
+    public void Should_char_Convert_To_Available_Duration_Type(char value, DurationType expected)
+    {
+        var actual = value.ToDurationType();
         Assert.Equal(actual, expected);
     }
 }

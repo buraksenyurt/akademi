@@ -12,7 +12,7 @@ public class TaskManagerTests
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.M,
         };
         var expected = TaskState.Todo;
@@ -33,14 +33,14 @@ public class TaskManagerTests
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.M,
         });
         taskManager.Add(new Entity.Task
         {
             Title = "Odayı temizle.",
             Duration = 1,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.S
         });
         var actual = taskManager.GetTaskCount(TaskState.Todo);
@@ -56,7 +56,7 @@ public class TaskManagerTests
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.M,
         };
         task1.ChangeState();
@@ -66,7 +66,7 @@ public class TaskManagerTests
         {
             Title = "Odayı temizle.",
             Duration = 1,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.S
         });
         var actual = taskManager.GetTaskCount(TaskState.InProgress);
@@ -81,7 +81,7 @@ public class TaskManagerTests
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.M,
         };
         var expected = TaskState.Todo;
@@ -96,14 +96,14 @@ public class TaskManagerTests
         {
             Title = "Odayı temizle.",
             Duration = 1,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.S
         });
         var task1 = new Entity.Task
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.M,
         };
         task1.ChangeState();
@@ -122,7 +122,7 @@ public class TaskManagerTests
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.M
         });
         var expected = 36;
@@ -137,14 +137,14 @@ public class TaskManagerTests
         {
             Title = "Odayı temizle.",
             Duration = 1,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.S
         });
         var task1 = new Entity.Task
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.M,
         };
         taskManager.Add(task1);
@@ -161,14 +161,14 @@ public class TaskManagerTests
         {
             Title = "Odayı temizle.",
             Duration = 1,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.S
         });
         var task1 = new Entity.Task
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
-            DurationType = Duration.Hour,
+            DurationType = DurationType.Hour,
             TaskSize = TaskSize.M,
         };
         taskManager.Add(task1);

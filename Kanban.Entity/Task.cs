@@ -4,7 +4,7 @@ public class Task
 {
     public Guid Id { get; } // Readonly
     public string Title { get; set; } = string.Empty;
-    public Duration DurationType { get; set; }
+    public DurationType DurationType { get; set; }
     public byte Duration { get; set; }
     public TaskSize TaskSize { get; set; }
     private TaskState _state;

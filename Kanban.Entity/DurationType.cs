@@ -1,11 +1,12 @@
 namespace Kanban.Entity
 {
-    public enum Duration
+    public enum DurationType
     {
         Hour,
         Day,
         Week,
         Month,
-        Year
+        Year,
+        NA
     }
 }

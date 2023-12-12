@@ -14,4 +14,16 @@ public static class StringExtensions
             _ => TaskSize.NA,
         };
     }
+    public static DurationType ToDurationType(this char input)
+    {
+        return input switch
+        {
+            'h' => DurationType.Hour,
+            'd' => DurationType.Day,
+            'w' => DurationType.Week,
+            'm' => DurationType.Month,
+            'y' => DurationType.Year,
+            _ => DurationType.NA
+        };
+    }
 }
