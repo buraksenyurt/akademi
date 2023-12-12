@@ -1,10 +1,12 @@
 # Lesson_07 : Genişletme Metotları ve Event Kullanımı
 
-Derste iki konuyu basit şekilde ele almaya çalıştık. Birisi önceki dersten öğrendiğimiz delegate tipinin event'ler ile kullanılması. Bir diğeri de yine LINQ sorgulama metotlarından aşina olduğumuz genişletme metotları (Extension Methods) 
+Derste iki konuyu basit şekilde ele almaya çalıştık. İlki önceki dersten öğrendiğimiz delegate tipinin event nesneleri ile kullanılması. İkincisi ise yine LINQ _(Language INtegrated Query)_ sorgulama metotlarından aşina olduğumuz genişletme metotları _(Extension Methods)_
 
-Genişletmek metotları sayesinde var olan tiplerin içeriğini değiştirmeden yeni fonksiyonellikler kazanması sağlanabilir. Örneğin Int32 tipine IsLessThan, IsGreaterThan veya String türüne WriteLovely gibi normalde built-in olarak gelmeyen yeni fonksiyonellikleri, genişletme metotları ile tesis edebiliriz. Bu özellikle projelerde referans alarak kullandığımız harici kütüphanelere yeni fonksiyonellikler kazandırmak açısından da önemli bir enstrümandır.
+Genişletme metotları sayesinde var olan önceden tanımlanmış tiplere, içeriklerini değiştirmeye gerek kalmadan yeni fonksiyonellikler kazandırabiliriz. Örneğin Int32 tipine IsLessThan, IsGreaterThan veya String türüne WriteLovely gibi normalde built-in olarak gelmeyen yeni işlevsellikleri, genişletme metotları ile tesis edebiliriz. Bu, özellikle projelerde referans alarak kullandığımız harici kütüphanelere yeni fonksiyonellikler kazandırmak açısından da önemli bir enstrümandır.
 
-Bu derste işlediğimiz konulardan bir diğeride delegate tipleri ile birlikte ele alınan event'ler. Nesnelere event alanları ekleyerek, belli aksiyonlar karşısından object user'ların farklı süreçleri işletmesi sağlanabilir. Örneğin stok bilgilerini tuttuğumuz bir nesne modelinde stok miktarının belli bir değerin altına inmesi bir olayla ilişkilendirilebilir. Olaylar gerçekleştiğinde, kendileri ile ilişkilendirilen delegate tiplerinin işaret ettiği türden metotların çalıştırılması söz konusu olur. Bu metotlar nesne olayın abone olan enstrümanlar tarafından kullanılır.
+Bu derste işlediğimiz konulardan bir diğeri de delegate tipleri ile birlikte ele alınan event nesneleri. Nesnelere event alanları ekleyerek, belli aksiyonlar karşısında object user'ların farklı süreçleri işletmesi sağlanabilir. Örneğin stok bilgilerini tuttuğumuz bir nesne modelinde stok miktarının belli bir değerin altına inmesi bir olayla ilişkilendirilebilir. Ya da sistemimizde servislere gelen talepleri izleyen bir program giderek daha yavaş cevap üreten hizmetleri ele alan bir olayı kullanarak uyarı sistemlerini harekete geçirebilir, genel kesintileri önlemek için çeşitli tedbirleri işletebilir. 
+
+Basit anlamda olaylar gerçekleştiğinde, kendileri ile ilişkilendirilen delegate tiplerinin işaret ettiği türden metotların çalıştırılması söz konusu olur. Bu metotlar nesne olayına abone olan enstrümanlar tarafından kullanılır.
 
 ## Yardımcı Linkler
 
@@ -18,12 +20,23 @@ Bu derste işlediğimiz konulardan bir diğeride delegate tipleri ile birlikte e
 Ders boyunca terminalden yürüttüğümüz komutlar aşağıdaki gibidir.
 
 ```shell
+# projelerimizi eklemek için
+dotnet add console --use-program-main -o UsingEvents
+dotnet add console --use-program-main -o UsingExtensions
+
 # proje veya çözümü derlemek için
 dotnet build
 
 # çalıştırmak için
 dotnet run
+
+# testleri koşturmak için
+dotnet test
 ```
+
+## Araştırsak İyi Olur
+
+- Genişletme metotlarını yazmak için static sınıflar ve yine statik metotlar tanımladık. Normal bir sınıf ile static tanımlı sınıflar arasındaki farklar öğrenilebilir. Benzer şekilde static tanımlanmış bir metot ile normal bir metot arasında nasıl farklar olduğuna bakılabilir. Örneğin eğitim boyunca sık kullandığımız WriteLine metodu, Console sınıfı içinde tanımlanmış statik bir metottur. Bunun nasıl bir avantajı olabilir? _(İpucu; WriteLine metodunu çağırmak için Console sınfına ait bir nesne örnekliyor muyuz bakınız)_
 
 ## Çalışma Zamanı
 
