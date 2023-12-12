@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Extensions", "Kanban
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Extensions.Tests", "Kanban.Extensions.Tests\Kanban.Extensions.Tests.csproj", "{03273F68-483B-48AA-9593-8E7E977DCC92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Runtime", "Kanban.Runtime\Kanban.Runtime.csproj", "{8481C795-7E2E-45FF-95C4-1635F519694C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,14 @@ Global
 		{03273F68-483B-48AA-9593-8E7E977DCC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03273F68-483B-48AA-9593-8E7E977DCC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03273F68-483B-48AA-9593-8E7E977DCC92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8481C795-7E2E-45FF-95C4-1635F519694C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8481C795-7E2E-45FF-95C4-1635F519694C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8481C795-7E2E-45FF-95C4-1635F519694C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8481C795-7E2E-45FF-95C4-1635F519694C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{077C130E-1F8C-41CE-9090-8775909CC180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{077C130E-1F8C-41CE-9090-8775909CC180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{077C130E-1F8C-41CE-9090-8775909CC180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{077C130E-1F8C-41CE-9090-8775909CC180}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

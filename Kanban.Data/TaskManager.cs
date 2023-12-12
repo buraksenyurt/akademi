@@ -1,9 +1,23 @@
 ﻿using Kanban.Entity;
+using Kanban.Runtime;
 
 namespace Kanban.Data;
 
 public class TaskManager
 {
+    #region Events
+
+    /*
+        Olaylar konusuna dair örnek kodlar için eklenmiştir. Örneğin sisteme yeni bir oyun eklendiğinde,
+        NewTaskAdded isimli olay tetiklenir. Bu olaya abone olan taraflar(genellikle bu nesneyi kullanan istemcidir) 
+        olayla ilgili farklı işlemler yapabilir. Abonelerin ihtiyacı olabilecek ekstra bilgiler bir nesne üzerinden taşınabilir.
+        Bu senaryoda olayın adı NewTaskAdded, bu olayla ilgili EventHandler tipi NewTaskAddedEventHandler, olayla ilgili
+        detay bilgi taşıyan sınıf ise NewTaskAddedEventHandlerArgs türüdür.
+    */
+
+    public event NewTaskAddedEventHandler NewTaskAdded;
+
+    #endregion
     /*
         Şimdilik belli sayıda Task nesne örneğini tutacak şekilde bir array tanımladık
         _tasks, Entity kütüphanesindeki Task türünden bir dizidir.
@@ -11,7 +25,7 @@ public class TaskManager
     */
     //private Entity.Task[] _tasks;
     // Yeni modelimizde Task nesnelerini generic List tipi ile tutmaktayız
-    private List<Entity.Task> _tasks;
+    private readonly List<Entity.Task> _tasks;
 
     /*
         Aşağıdaki metot bir yapıcı metoddur(constructor)
@@ -39,12 +53,14 @@ public class TaskManager
     public Guid Add(Entity.Task newTask)
     {
         _tasks.Add(newTask);
-        return newTask.Id;
+        var taskId=newTask.Id;
+        NewTaskAdded?.Invoke(newTask, new NewTaskAddedEventArgs { TaskId = taskId });
+        return taskId;
     }
     // Belli bir Id değerine sahip Task nesnesinin bulunması için kullanılır.
     public Entity.Task? GetTask(Guid taskId)
     {
-        return _tasks.SingleOrDefault(t=>t.Id==taskId);
+        return _tasks.SingleOrDefault(t => t.Id == taskId);
         // foreach (var task in _tasks)
         // {
         //     if (task.Id.Equals(taskId))

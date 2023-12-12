@@ -176,6 +176,45 @@ public class TaskManagerTests
         Assert.True(actual == null);
     }
 
+    [Fact]
+    public void Added_New_Task_Triggered_An_Event_If_Subscribed()
+    {
+        TaskManager taskManager = new();
+        var eventTriggered = false;
+        taskManager.NewTaskAdded += (source, eventArgs) =>
+        {
+            eventTriggered = true;
+        };
+        var task1 = new Entity.Task
+        {
+            Title = "Arkadaşlarına hediye etmek üzere okuduklarından 10 kitap ayır",
+            Duration = 3,
+            DurationType = DurationType.Hour,
+            TaskSize = TaskSize.S,
+        };
+        taskManager.Add(task1);
+        var expected = true;
+        Assert.Equal(expected, eventTriggered);
+    }
+
+    [Fact]
+    public void Added_New_Task_Do_Not_Triggered_An_Event_If_Not_Exist()
+    {
+        TaskManager taskManager = new();
+        var eventTriggered = false;
+        var task1 = new Entity.Task
+        {
+            Title = "Arkadaşlarına hediye etmek üzere okuduklarından 10 kitap ayır",
+            Duration = 3,
+            DurationType = DurationType.Hour,
+            TaskSize = TaskSize.S,
+        };
+        taskManager.Add(task1);
+        var expected = false;
+        Assert.Equal(expected, eventTriggered);
+    }
+
+
     [Fact(Skip = "Geçici olarak devre dışı")]
     public void Add_Existing_Task_Returns_Zero_Id_Test()
     {
