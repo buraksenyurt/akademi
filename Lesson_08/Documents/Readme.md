@@ -32,7 +32,11 @@ dotnet run
 
 ## Çalışma Zamanı
 
-Programa ait çalışma zamanı çıktısı aşağıdaki gibidir.
+Programa ait çalışma zamanı çıktıları aşağıdaki gibidir.
+
+![runtime_01.png](runtime_01.png)
+
+![runtime_02.png](runtime_02.png)
 
 ## Araştırsak iyi Olur
 
