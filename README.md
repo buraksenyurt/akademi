@@ -10,7 +10,8 @@ Sektör kampüste projesi kapsamında **ESOGU - C# ile Programlama** seçmeli de
 - [x] **[Lesson_05 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_05)** Daha çok birim test ve generic List kullanımı ile basit LINQ metotlarının uygulanması.
 - [x] **[Ara Sınav :](https://github.com/buraksenyurt/akademi/tree/main/Quiz)** 20 soruluk ara sınav. Toplam süre 60 dakika. Bugüne kadar işlenen konuları kapsamakta. Sorular eşit puanda değil ve çoktan seçmeli. Quiz isimli klasörden soruları içeren PDF dokümanına erişilebilir.
 - [x] **[Lesson_06 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_06)** LINQ metotlarının iç dinamiğini anlamak için temsilcileri, genişletme metotlarını, fonksiyonel programlama paradigmasını tanımak.
-- [ ] **[Lesson_07 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_07) :** Genişletme fonksiyonları ile tipleri zenginleştirmek ve nesnelere olay metotları _(Event Handlers)_ hazırlamak.
-- [ ] **Lesson_08 :**
+- [x] **[Lesson_07 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_07) :** Genişletme fonksiyonları ile tipleri zenginleştirmek ve nesnelere olay metotları _(Event Handlers)_ hazırlamak.
+- [x] **[Lesson_08 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_08) :** Temel Dosya Yazma/Okuma İşlemleri ve Exception Handling
 - [ ] **Lesson_09 :**
 - [ ] **Lesson_10 :**
+- [ ] **Lesson_11 :**
