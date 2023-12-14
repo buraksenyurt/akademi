@@ -28,7 +28,9 @@ class Program
 }
 /*
     Algebra statik tanımlamış bir sınıftır. Bu nedenle kullanmak için
-    nesne örneği üretmeye gerek yoktur.
+    nesne örneği üretmeye gerek yoktur. Statik metotlarda nesne örneğine (object instance)
+    ihtiyaç duymadan çalışabilen metotlardır.
+    
     Yani;
 
     Algebra einstein = new Algebra();
