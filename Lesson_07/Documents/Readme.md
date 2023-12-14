@@ -55,4 +55,5 @@ Bu dersteki fonksiyonları test etmek amacıyla bir birim test projesi oluşturu
 ## Kazanımlar
 
 - Nesnelere event bildirimleri ile yeni işlevsellikler kazandırmak
+- Static sınıflar ve statik metotların kullanımı
 - Var olan tiplerin içeriğini değiştirmeden genişletme metotları ile zenginleştirebilmek
