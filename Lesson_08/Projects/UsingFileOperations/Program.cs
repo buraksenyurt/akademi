@@ -6,20 +6,21 @@ class Program
 {
     static void Main()
     {
-        // Console.WriteLine("Hatırlamak isteğin notları yazabilirsin? Çıkmak için Exit yazın.");
-        // StringBuilder sBuilder = new StringBuilder();
-        // while (true)
-        // {
-        //     Console.WriteLine("Notunu yazar mısın?");
-        //     var note = Console.ReadLine();
-        //     Console.WriteLine($"'{note}' yazdın.");
-        //     if (note.ToLower() == "exit")
-        //     {
-        //         WriteDataWithStream(sBuilder.ToString());
-        //         break;
-        //     }
-        //     sBuilder.AppendLine(note);
-        // }
+        Console.WriteLine("Hatırlamak isteğin notları yazabilirsin? Çıkmak için Exit yazın.");
+        StringBuilder sBuilder = new();
+        while (true)
+        {
+            Console.WriteLine("Notunu yazar mısın?");
+            var note = Console.ReadLine();
+            Console.WriteLine($"'{note}' yazdın.");
+            if (note.ToLower() == "exit")
+            {
+                WriteDataWithStream(sBuilder.ToString());
+                break;
+            }
+            if (!string.IsNullOrEmpty(note))
+                sBuilder.AppendLine(note);
+        }
 
         Console.WriteLine("İçeriğini görmek istediğiniz dosya adını yazın");
         var sourceFile = Path.Combine(Environment.CurrentDirectory, Console.ReadLine());
