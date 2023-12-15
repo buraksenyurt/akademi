@@ -5,11 +5,9 @@ public class UsageTest
     [Fact]
     public void Main_Arguments_Length_Is_Invalid_Test()
     {
-        Converter converter = new();
-        var actual = converter.CheckArguments(Array.Empty<string>());
+        var actual = Converter.CheckArguments(Array.Empty<string>());
         var expected = new Response { IsError = true, Message = ResponseMessages.InvalidArgument };
-        Assert.Equal(expected.IsError, actual.IsError);
-        Assert.Equal(expected.Message, actual.Message);
+        Assert.Equal(expected, actual);
     }
 
     [Fact]
@@ -18,11 +16,9 @@ public class UsageTest
         var dummyFile = Path.Combine(Environment.CurrentDirectory, "somefile.txt");
         File.Create(dummyFile);
 
-        Converter converter = new();
-        var actual = converter.CheckArguments(new string[] { dummyFile, "TargetFile.dat", "Base64Encoded" });
+        var actual = Converter.CheckArguments(new string[] { dummyFile, "TargetFile.dat", "Base64Encoded" });
         var expected = new Response { IsError = false, Message = ResponseMessages.EverythingIsOk };
-        Assert.Equal(expected.IsError, actual.IsError);
-        Assert.Equal(expected.Message, actual.Message);
+        Assert.Equal(expected, actual);
 
         File.Delete(dummyFile);
     }
@@ -33,11 +29,9 @@ public class UsageTest
     [InlineData("     ")]
     public void Target_Format_Is_Invalid_Test(string targetFormat)
     {
-        Converter converter = new();
-        var actual = converter.CheckArguments(new string[] { "SourceFile.txt", "TargetFile.dat", targetFormat });
+        var actual = Converter.CheckArguments(new string[] { "SourceFile.txt", "TargetFile.dat", targetFormat });
         var expected = new Response { IsError = true, Message = ResponseMessages.InvalidTargetFormat };
-        Assert.Equal(expected.IsError, actual.IsError);
-        Assert.Equal(expected.Message, actual.Message);
+        Assert.Equal(expected, actual);
     }
 
     [Theory]
@@ -49,11 +43,9 @@ public class UsageTest
         var dummyFile = Path.Combine(Environment.CurrentDirectory, "somefile.txt");
         File.Create(dummyFile);
 
-        Converter converter = new();
-        var actual = converter.CheckArguments(new string[] { dummyFile, "TargetFile.dat", targetFormat });
+        var actual = Converter.CheckArguments(new string[] { dummyFile, "TargetFile.dat", targetFormat });
         var expected = new Response { IsError = false, Message = ResponseMessages.EverythingIsOk };
-        Assert.Equal(expected.IsError, actual.IsError);
-        Assert.Equal(expected.Message, actual.Message);
+        Assert.Equal(expected, actual);
 
         File.Delete(dummyFile);
     }
@@ -61,10 +53,8 @@ public class UsageTest
     [Fact]
     public void Source_File_Does_Not_Exists_Test()
     {
-        Converter converter = new();
-        var actual = converter.CheckArguments(new string[] { "ThisFileDoesNotExists.nan", "TargetFile.dat", "Base64Encoded" });
+        var actual = Converter.CheckArguments(new string[] { "ThisFileDoesNotExists.nan", "TargetFile.dat", "Base64Encoded" });
         var expected = new Response { IsError = true, Message = ResponseMessages.SourceFileDoesNotExist };
-        Assert.Equal(expected.IsError, actual.IsError);
-        Assert.Equal(expected.Message, actual.Message);
+        Assert.Equal(expected, actual);
     }
 }
