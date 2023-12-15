@@ -2,7 +2,7 @@
 
 namespace Transformer;
 
-class Program
+static class Program
 {
     static void Main(string[] args)
     {
@@ -10,6 +10,10 @@ class Program
         if (argsCheck.IsError)
         {
             Console.WriteLine(argsCheck.Message);
+            Console.WriteLine(@"
+                Sample Usages
+                *************
+                sourceFile targetFile OnlyBytes|Base64Encoded|Zipped");
             return;
         }
         var targetFormat = Enum.Parse(typeof(TargetFormat), args[2]);
@@ -29,7 +33,7 @@ class Program
     }
 }
 
-public class Converter
+public static class Converter
 {
     public static Response CheckArguments(string[] args)
     {
