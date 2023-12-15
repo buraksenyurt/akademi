@@ -71,6 +71,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingFileOperations", "Less
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformer", "Lesson_08\Projects\Transformer\Transformer.csproj", "{327A714C-CBED-4CBB-B734-91E53D664429}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformer.Tests", "Lesson_08\Projects\Transformer.Tests\Transformer.Tests.csproj", "{E316FF5F-E1CA-43CA-9AF0-94F867A9CC62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{327A714C-CBED-4CBB-B734-91E53D664429}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{327A714C-CBED-4CBB-B734-91E53D664429}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{327A714C-CBED-4CBB-B734-91E53D664429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E316FF5F-E1CA-43CA-9AF0-94F867A9CC62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E316FF5F-E1CA-43CA-9AF0-94F867A9CC62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E316FF5F-E1CA-43CA-9AF0-94F867A9CC62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E316FF5F-E1CA-43CA-9AF0-94F867A9CC62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -178,6 +184,7 @@ Global
 		{6CFFB1D1-E48D-4712-A8D9-EC0FE7D47F13} = {BBDAEC56-387E-4B39-9C5B-C03583537CE4}
 		{61F82AC5-4F41-45DC-92EC-C5F0A3B76F79} = {6CFFB1D1-E48D-4712-A8D9-EC0FE7D47F13}
 		{327A714C-CBED-4CBB-B734-91E53D664429} = {6CFFB1D1-E48D-4712-A8D9-EC0FE7D47F13}
+		{E316FF5F-E1CA-43CA-9AF0-94F867A9CC62} = {6CFFB1D1-E48D-4712-A8D9-EC0FE7D47F13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6EDC358-2123-4182-9A8F-84C3473E6905}
