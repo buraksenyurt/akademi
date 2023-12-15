@@ -69,6 +69,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{6C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingFileOperations", "Lesson_08\Projects\UsingFileOperations\UsingFileOperations.csproj", "{61F82AC5-4F41-45DC-92EC-C5F0A3B76F79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformer", "Lesson_08\Projects\Transformer\Transformer.csproj", "{327A714C-CBED-4CBB-B734-91E53D664429}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{61F82AC5-4F41-45DC-92EC-C5F0A3B76F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61F82AC5-4F41-45DC-92EC-C5F0A3B76F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61F82AC5-4F41-45DC-92EC-C5F0A3B76F79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{327A714C-CBED-4CBB-B734-91E53D664429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{327A714C-CBED-4CBB-B734-91E53D664429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{327A714C-CBED-4CBB-B734-91E53D664429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{327A714C-CBED-4CBB-B734-91E53D664429}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -171,6 +177,7 @@ Global
 		{9D36F36B-41A6-474F-97F8-F5F00FC3C8D9} = {46E1CB92-A0F0-450D-9DAB-D45C3EF3229E}
 		{6CFFB1D1-E48D-4712-A8D9-EC0FE7D47F13} = {BBDAEC56-387E-4B39-9C5B-C03583537CE4}
 		{61F82AC5-4F41-45DC-92EC-C5F0A3B76F79} = {6CFFB1D1-E48D-4712-A8D9-EC0FE7D47F13}
+		{327A714C-CBED-4CBB-B734-91E53D664429} = {6CFFB1D1-E48D-4712-A8D9-EC0FE7D47F13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6EDC358-2123-4182-9A8F-84C3473E6905}
