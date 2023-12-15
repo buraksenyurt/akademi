@@ -6,7 +6,7 @@ public class UsageTest
     public void Main_Arguments_Length_Is_Invalid_Test()
     {
         var actual = Converter.CheckArguments(Array.Empty<string>());
-        var expected = new Response { IsError = true, Message = ResponseMessages.InvalidArgument };
+        var expected = new Response { IsError = true, Message = Messages.InvalidArgument };
         Assert.Equal(expected, actual);
     }
 
@@ -17,7 +17,7 @@ public class UsageTest
         File.Create(dummyFile);
 
         var actual = Converter.CheckArguments(new string[] { dummyFile, "TargetFile.dat", "Base64Encoded" });
-        var expected = new Response { IsError = false, Message = ResponseMessages.EverythingIsOk };
+        var expected = new Response { IsError = false, Message = Messages.EverythingIsOk };
         Assert.Equal(expected, actual);
 
         File.Delete(dummyFile);
@@ -30,7 +30,7 @@ public class UsageTest
     public void Target_Format_Is_Invalid_Test(string targetFormat)
     {
         var actual = Converter.CheckArguments(new string[] { "SourceFile.txt", "TargetFile.dat", targetFormat });
-        var expected = new Response { IsError = true, Message = ResponseMessages.InvalidTargetFormat };
+        var expected = new Response { IsError = true, Message = Messages.InvalidTargetFormat };
         Assert.Equal(expected, actual);
     }
 
@@ -44,7 +44,7 @@ public class UsageTest
         File.Create(dummyFile);
 
         var actual = Converter.CheckArguments(new string[] { dummyFile, "TargetFile.dat", targetFormat });
-        var expected = new Response { IsError = false, Message = ResponseMessages.EverythingIsOk };
+        var expected = new Response { IsError = false, Message = Messages.EverythingIsOk };
         Assert.Equal(expected, actual);
 
         File.Delete(dummyFile);
@@ -54,7 +54,7 @@ public class UsageTest
     public void Source_File_Does_Not_Exists_Test()
     {
         var actual = Converter.CheckArguments(new string[] { "ThisFileDoesNotExists.nan", "TargetFile.dat", "Base64Encoded" });
-        var expected = new Response { IsError = true, Message = ResponseMessages.SourceFileDoesNotExist };
+        var expected = new Response { IsError = true, Message = Messages.SourceFileDoesNotExist };
         Assert.Equal(expected, actual);
     }
 }
