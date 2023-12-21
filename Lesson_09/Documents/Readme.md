@@ -6,9 +6,15 @@ Ancak çok büyük boyutlu verilerin depolanmasında tek alternatif bu tip çöz
 
 Bu dersteki amaçlarımızdan birisi Kanban tahtamızdaki verileri bellekte tutan generic koleksiyon içeriğini dosya sistemine yazmak ve yine bu dosya sisteminden okuyarak kullanabilmektir. Bu amaçla .Net'in işleri kolaylaştıran sınıflarını kullanarak veriyi bir dosya sistemine farklı formatlarda nasıl yazabileceğimizi inceleyerek işe başlayacağız. Bir diğer amacımız da yazma/okuma işlemlerini üstlenen bileşenlerin artmasının ortaya çıkaracağı kod kirliliğini görmek ve bunun önüne geçmek için bağımlılıkları nasıl tersine çevirebileceğimizi anlamaktır. Bu ihtiyaçlar nesne yönelimli dil paradigmasının önemli öğelerinden olan interface türü ile nesne sözleşmelerinin hazırlanması ve nasıl kullanılıp ne gibi problemleri çözdüğünün anlaşılması açısından da bize bir zemin hazırlamaktadır.
 
+İster dosya sistemi olsun, ister dağıtık sistemlerdeki uzak metot çağrıları olsun ya da makineler arasındaki haberleşme olsun verinin farklı formatlarda ele alınması mümkündür. Bunlardan bazıları aşağıdaki grafikte görüldüğü gibidir ve ders sırasında genel özelliklerinden bahsedilmiştir.
+
+![data_types.png](data_types.png)
+
 ## Sözlük
 
-_Derste telafuz edilen anahtar kelimeler veya dikkate değer konular birer cümle ile özetlenir_
+- Çeşitli veri formatı türlerinden bahsettik. XML _(eXtensible Markup Language)_, JSON _(Javascript Object Notation)_, BSON _(Binary Javascript Object Notation)_ , CSV _(Comma-Seperated Values)_
+- RDBMS _(Relational Database Management Systems)_
+- Message Exchange Patterns
 
 ## Yardımcı Linkler
 
