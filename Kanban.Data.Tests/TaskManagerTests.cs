@@ -219,4 +219,78 @@ public class TaskManagerTests
     public void Add_Existing_Task_Returns_Zero_Id_Test()
     {
     }
+
+    [Fact]
+    public void Save_All_Tasks_To_CSV_File_Return_True_Test()
+    {
+        TaskManager taskManager = new();
+        taskManager.Add(new Entity.Task
+        {
+            Title = "Odayı temizle.",
+            Duration = 1,
+            DurationType = DurationType.Hour,
+            TaskSize = TaskSize.S
+        });
+        var task1 = new Entity.Task
+        {
+            Title = "Final sınavı için hazırlık yapmalısın",
+            Duration = 6,
+            DurationType = DurationType.Hour,
+            TaskSize = TaskSize.M,
+        };
+        taskManager.Add(task1);
+        task1.ChangeState();
+        var task2 = new Entity.Task
+        {
+            Title = "Denizler Altında 20bin Fersah kitabının özeti çıkartılacak",
+            Duration = 3,
+            DurationType = DurationType.Month,
+            TaskSize = TaskSize.XL,
+        };
+        taskManager.Add(task2);
+        task2.ChangeState();
+        task2.ChangeState();
+        var actual = taskManager.Save("Board");
+        var expected = true;
+        Assert.Equal(expected, actual);
+
+        // Assert.True(actual);
+
+        // Assert.True(taskManager.Save("Board"));
+    }
+
+    [Fact]
+    public void Save_All_Tasks_To_CSV_File_Return_False_Test()
+    {
+        TaskManager taskManager = new();
+        taskManager.Add(new Entity.Task
+        {
+            Title = "Odayı temizle.",
+            Duration = 1,
+            DurationType = DurationType.Hour,
+            TaskSize = TaskSize.S
+        });
+        var task1 = new Entity.Task
+        {
+            Title = "Final sınavı için hazırlık yapmalısın",
+            Duration = 6,
+            DurationType = DurationType.Hour,
+            TaskSize = TaskSize.M,
+        };
+        taskManager.Add(task1);
+        task1.ChangeState();
+        var task2 = new Entity.Task
+        {
+            Title = "Denizler Altında 20bin Fersah kitabının özeti çıkartılacak",
+            Duration = 3,
+            DurationType = DurationType.Month,
+            TaskSize = TaskSize.XL,
+        };
+        taskManager.Add(task2);
+        task2.ChangeState();
+        task2.ChangeState();
+        var actual = taskManager.Save("\0");
+        var expected = false;
+        Assert.Equal(expected, actual);
+    }
 }
