@@ -152,8 +152,8 @@ public class TaskManager
             foreach (var task in _tasks)
             {
                 // Herbir Task nesne örneği için arada pipe işareti olan bir metin katarı oluşturduk
-                // QUESTION @buraksenyurt line bilgisini oluşturmanın daha pratik bir yolu olabilir mi?
-                var line = $"{task.Id}|{task.Title}|{task.TaskSize}|{task.Duration}|{task.DurationType}|{task.State}";
+                var line = task.ToString(); // ToString metodunu override ettiğimiz için aralara | konulan bir içeriği kolayca elde edebiliriz.
+                //var line = $"{task.Id}|{task.Title}|{task.TaskSize}|{task.Duration}|{task.DurationType}|{task.State}";
                 // Oluşan line değeri stringBuilder'a satır olarak eklenir
                 stringBuilder.AppendLine(line);
             }
@@ -162,7 +162,7 @@ public class TaskManager
         }
         catch (Exception excp)
         {
-            // QUESTION @buraksenyurt Burada alınan exception ne yapılır?
+            // QUESTION Burada alınan exception ne yapılmalıdır?
             return false;
         }
 

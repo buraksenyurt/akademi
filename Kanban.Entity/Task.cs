@@ -59,4 +59,9 @@ public class Task
                 break;
         }
     }
+
+    public override string ToString()
+    {
+        return $"{Id}|{Title}|{TaskSize}|{Duration}|{DurationType}|{State}";
+    }
 }
