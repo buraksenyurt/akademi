@@ -12,6 +12,8 @@ Sektör kampüste projesi kapsamında **ESOGU - C# ile Programlama** seçmeli de
 - [x] **[Lesson_06 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_06)** LINQ metotlarının iç dinamiğini anlamak için temsilcileri, genişletme metotlarını, fonksiyonel programlama paradigmasını tanımak.
 - [x] **[Lesson_07 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_07) :** Genişletme fonksiyonları ile tipleri zenginleştirmek ve nesnelere olay metotları _(Event Handlers)_ hazırlamak.
 - [x] **[Lesson_08 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_08) :** Temel Dosya Yazma/Okuma İşlemleri ve Exception Handling
-- [ ] **Lesson_09 :**
+- [ ] **[Lesson_09 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_09)** Nesne Verilerini Depolama Biçimleri ve Koleksiyonların Fiziki Ortama Yazılıp/Okunması
 - [ ] **Lesson_10 :**
 - [ ] **Lesson_11 :**
+- [ ] **Final Sınavı :**
+  
