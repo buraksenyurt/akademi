@@ -47,6 +47,38 @@ public class TaskManager
     public TaskManager()
     {
         _tasks = new List<Entity.Task>();
+        Load("Board");
+    }
+
+    private void Load(string fileName)
+    {
+        try
+        {
+            var filePath = Path.Combine(Environment.CurrentDirectory, $"{fileName}.csv");
+            // filePath ile belirtilen dosya içeriğini satır olarak okur
+            var lines = File.ReadAllLines(filePath);
+            // her bir satırı el al
+            foreach (var line in lines)
+            {
+                // Her bir satırı | işaretine göre ayır
+                var columns = line.Split('|');
+                // Her bir satır içinde bir Task nesnesi örneklenir
+                Entity.Task newTask = new(Guid.Parse(columns[0]))
+                {
+                    Title = columns[1],
+                    TaskSize = (TaskSize)Enum.Parse(typeof(TaskSize), columns[2]), // Parse object döndüğünde açık bir şekilde (TaskSize) ile dönüştürme yapılması gerekir.
+                    Duration = Convert.ToByte(columns[3]),
+                    DurationType = Enum.Parse<DurationType>(columns[4]),
+                    State = Enum.Parse<TaskState>(columns[5])
+                };
+                // Oluşturulan yeni Task nesnesi koleksiyona eklenir
+                _tasks.Add(newTask);
+            }
+        }
+        catch (Exception excp)
+        {
+
+        }
     }
 
     // İçerideki task deposuna yeni bir eleman eklemek için kullanılan fonksiyon

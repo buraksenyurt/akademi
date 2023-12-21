@@ -14,15 +14,29 @@ public class Task
         {
             return _state;
         }
+        set
+        {
+            _state = value;
+        }
     }
     /*
         Bir Task nesne örneğinin diğerlerinden ayrışması noktasında benzersi Guid değerlerinden yararlanabilir.
         Id dışardına değiştirilemeyen ama bir Task örneği oluşturduğumuzda varsayılan yapıcı tarafından
         otmatik üretilen Guid türünden özelliktir.
     */
-    public Task()
+    public Task(Guid? id)
     {
-        Id = Guid.NewGuid();
+        // Guid? tanımındaki ? türün nullable olduğunu gösterir
+        // Yani ya bir değeri vardır ya da tanımsız anlamına da gelebilen Null' dür.
+        // Bir veri kaynağından okunan Task nesnesinin o kaynaktaki Guid değerini kullanması için bu if bloğu eklendi
+        if (id.HasValue)
+        {
+            Id = id.Value;
+        }
+        else
+        {
+            Id = Guid.NewGuid();
+        }
         //Console.WriteLine($"Task nesnesi için {Id} üretildi.");
         _state = TaskState.Todo;
     }

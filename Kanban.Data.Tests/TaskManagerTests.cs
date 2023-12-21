@@ -8,7 +8,7 @@ public class TaskManagerTests
     [Fact]
     public void Change_Task_State_Works_Test()
     {
-        var task = new Entity.Task
+        var task = new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
@@ -29,14 +29,14 @@ public class TaskManagerTests
     public void Create_TaskManager_Returns_Filled_Task_List_Test()
     {
         TaskManager taskManager = new TaskManager();
-        taskManager.Add(new Entity.Task
+        taskManager.Add(new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
             DurationType = DurationType.Hour,
             TaskSize = TaskSize.M,
         });
-        taskManager.Add(new Entity.Task
+        taskManager.Add(new Entity.Task(null)
         {
             Title = "Odayı temizle.",
             Duration = 1,
@@ -52,7 +52,7 @@ public class TaskManagerTests
     public void Get_TaskManager_InProgress_State_Count_Test()
     {
         TaskManager taskManager = new();
-        var task1 = new Entity.Task
+        var task1 = new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
@@ -62,7 +62,7 @@ public class TaskManagerTests
         task1.ChangeState();
         taskManager.Add(task1);
 
-        taskManager.Add(new Entity.Task
+        taskManager.Add(new Entity.Task(null)
         {
             Title = "Odayı temizle.",
             Duration = 1,
@@ -77,7 +77,7 @@ public class TaskManagerTests
     [Fact]
     public void Initiated_Task_In_Todo_State_Test()
     {
-        var task1 = new Entity.Task
+        var task1 = new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
@@ -92,14 +92,14 @@ public class TaskManagerTests
     public void Get_TaskManager_InProgress_State_List_Test()
     {
         TaskManager taskManager = new TaskManager();
-        taskManager.Add(new Entity.Task
+        taskManager.Add(new Entity.Task(null)
         {
             Title = "Odayı temizle.",
             Duration = 1,
             DurationType = DurationType.Hour,
             TaskSize = TaskSize.S
         });
-        var task1 = new Entity.Task
+        var task1 = new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
@@ -118,7 +118,7 @@ public class TaskManagerTests
     public void Add_New_Task_Returns_Valid_Id_Test()
     {
         TaskManager taskManager = new TaskManager();
-        var actual = taskManager.Add(new Entity.Task
+        var actual = taskManager.Add(new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
@@ -133,14 +133,14 @@ public class TaskManagerTests
     public void Get_Task_Test()
     {
         TaskManager taskManager = new TaskManager();
-        taskManager.Add(new Entity.Task
+        taskManager.Add(new Entity.Task(null)
         {
             Title = "Odayı temizle.",
             Duration = 1,
             DurationType = DurationType.Hour,
             TaskSize = TaskSize.S
         });
-        var task1 = new Entity.Task
+        var task1 = new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
@@ -157,14 +157,14 @@ public class TaskManagerTests
     public void Get_Indefined_Task_Returns_Null_Test()
     {
         TaskManager taskManager = new TaskManager();
-        taskManager.Add(new Entity.Task
+        taskManager.Add(new Entity.Task(null)
         {
             Title = "Odayı temizle.",
             Duration = 1,
             DurationType = DurationType.Hour,
             TaskSize = TaskSize.S
         });
-        var task1 = new Entity.Task
+        var task1 = new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
             Duration = 3,
@@ -185,7 +185,7 @@ public class TaskManagerTests
         {
             eventTriggered = true;
         };
-        var task1 = new Entity.Task
+        var task1 = new Entity.Task(null)
         {
             Title = "Arkadaşlarına hediye etmek üzere okuduklarından 10 kitap ayır",
             Duration = 3,
@@ -202,7 +202,7 @@ public class TaskManagerTests
     {
         TaskManager taskManager = new();
         var eventTriggered = false;
-        var task1 = new Entity.Task
+        var task1 = new Entity.Task(null)
         {
             Title = "Arkadaşlarına hediye etmek üzere okuduklarından 10 kitap ayır",
             Duration = 3,
@@ -224,14 +224,14 @@ public class TaskManagerTests
     public void Save_All_Tasks_To_CSV_File_Return_True_Test()
     {
         TaskManager taskManager = new();
-        taskManager.Add(new Entity.Task
+        taskManager.Add(new Entity.Task(null)
         {
             Title = "Odayı temizle.",
             Duration = 1,
             DurationType = DurationType.Hour,
             TaskSize = TaskSize.S
         });
-        var task1 = new Entity.Task
+        var task1 = new Entity.Task(null)
         {
             Title = "Final sınavı için hazırlık yapmalısın",
             Duration = 6,
@@ -240,7 +240,7 @@ public class TaskManagerTests
         };
         taskManager.Add(task1);
         task1.ChangeState();
-        var task2 = new Entity.Task
+        var task2 = new Entity.Task(null)
         {
             Title = "Denizler Altında 20bin Fersah kitabının özeti çıkartılacak",
             Duration = 3,
@@ -263,14 +263,14 @@ public class TaskManagerTests
     public void Save_All_Tasks_To_CSV_File_Return_False_Test()
     {
         TaskManager taskManager = new();
-        taskManager.Add(new Entity.Task
+        taskManager.Add(new Entity.Task(null)
         {
             Title = "Odayı temizle.",
             Duration = 1,
             DurationType = DurationType.Hour,
             TaskSize = TaskSize.S
         });
-        var task1 = new Entity.Task
+        var task1 = new Entity.Task(null)
         {
             Title = "Final sınavı için hazırlık yapmalısın",
             Duration = 6,
@@ -279,7 +279,7 @@ public class TaskManagerTests
         };
         taskManager.Add(task1);
         task1.ChangeState();
-        var task2 = new Entity.Task
+        var task2 = new Entity.Task(null)
         {
             Title = "Denizler Altında 20bin Fersah kitabının özeti çıkartılacak",
             Duration = 3,
@@ -292,5 +292,13 @@ public class TaskManagerTests
         var actual = taskManager.Save("\0");
         var expected = false;
         Assert.Equal(expected, actual);
+    }
+
+    [Fact]
+    public void Load_Tasks_From_File_Test()
+    {
+        TaskManager taskManager = new();
+        var actual = taskManager.GetTaskCount(TaskState.Todo);
+        Assert.True(actual >= 1);
     }
 }
