@@ -37,7 +37,7 @@ _Dersten sonra öğrencilerin araştırması için verilen konular buraya yazıl
 
 ## Evde Çalışmak için Atıştırmalıklar
 
-_Meraklısına evde çalışması için verilecek örnekler buraya yazılır_
+- Task Manager sınıfındaki bazı fonksiyonlarda try...catch blokları kullanılmaktadır. Exception Handling konusunun önemli mevzularından birisi de bu hata bilgilerinin kullanılabilir şekilde kayıt altına alınmasıdır. Loglama işleminin amaçlarından birisi de budur. İstenirse bununla ilgili bir antrenman yapılabilir. .Net Platformunun kendi dahili loglama mekanizması da vardır ancak kendi loglama mekanizmamızı da TaskManager sınıfına entegre etmeyi deneyebiliriz. Burada önemli olan nokta TaskManager sınıfına asıl loglama işlerini yapan nesnelerin değil, bu nesneler için bir sözleşme _(contract)_ sunan arayüz _(interface)_ referanslarının geçilmesi gerektiğidir. Böylece TaskManager sınıfı loglama stratejisini uygulayan herhangi bir gerçek nesne örneği ile çalışabilir. Geliştiricinin TaskManager sınıfının kodunu değiştirmesine gerek kalmaz sadece istenen loglayıcı nesne örneği çalışma zamanında bu nesneye enjekte edilir ve kullanımına sunulur.
 
 ## Kazanımlar
 
