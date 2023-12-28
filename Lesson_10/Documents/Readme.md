@@ -12,7 +12,7 @@ Ders planındaki ikinci amacımız da yazma operasyonlarını format bağımsız
 
 - Constructor Injection ;
 - Mocking ;
-- Moq kütüphanesi
+- Moq kütüphanesi ;
 
 ## Yardımcı Linkler
 
@@ -31,6 +31,10 @@ dotnet test
 
 # çalıştırmak için
 dotnet run
+
+# test projesinde mock kütüphanesi olarak Moq paketinden yararlandık
+# test projesine yüklemek için
+dotnet add package Moq
 ```
 
 ## Çalışma Zamanı
@@ -41,7 +45,7 @@ Load metodunu Dependency Injection ile dışarıya aldıktan sonra testler başa
 
 ## Araştırsak iyi Olur
 
-_Dersten sonra öğrencilerin araştırması için verilen konular buraya yazılır_
+- Birim testlerde _(Unit Tests)_ nesnelerin mocklanması ile ilgili kaynaklara bakılabilir.
 
 ## Evde Çalışmak için Atıştırmalıklar
 
@@ -51,4 +55,5 @@ _Dersten sonra öğrencilerin araştırması için verilen konular buraya yazıl
 
 - Nesne bağımlılıklarını çözümlemek için interface türünden yararlanılması.
 - Interface türü ile çok biçimlilik ilkesinin uygulanması.
+- Birim testlerde fake nesneler kullanılması ve Moq paketi ile çalışmak.
   
