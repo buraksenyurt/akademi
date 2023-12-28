@@ -1,98 +1,8 @@
 using Kanban.Contracts;
 using Kanban.Entity;
+using Moq;
 
 namespace Kanban.Data.Tests;
-
-/*
-    Bu birim test sınıfındaki TaskManager nesneleri örneklenirken ihtiyaç duyulan Task listesi için
-    sahte bir ITaskLoader implementasyonu kullanmaktayız. Bu sayede task listesini sanki fiziki bir dosyadan 
-    okumuşuz gibi nesneyi başlatma şansına sahip oluyoruz.
-*/
-
-public class FakeTaskLoader
-    : ITaskLoader
-{
-    public IEnumerable<Entity.Task> GetTasks()
-    {
-        return new List<Entity.Task>{
-                new(null)
-                {
-                    Title = "Ara sınav için hazırlık yap",
-                    Duration = 3,
-                    DurationType = DurationType.Hour,
-                    TaskSize = TaskSize.M,
-                },
-                new(null)
-                {
-                    Title = "Odayı temizle.",
-                    Duration = 1,
-                    DurationType = DurationType.Hour,
-                    TaskSize = TaskSize.S
-                }
-        };
-    }
-}
-
-/*
-    Duruma göre ihtiyaç duyulan task listeleri farklılaştıkça buradaki Fake sınıfının sayısı da artabilir.
-    Bu çok istemediğimiz bir durum. Bunun için Mock kütüphanelerinden yararlanılabilir.
-*/
-
-public class FakeTaskLoaderWithState
-    : ITaskLoader
-{
-    public IEnumerable<Entity.Task> GetTasks()
-    {
-        var tasks = new List<Entity.Task>{
-                new(null)
-                {
-                    Title = "Ara sınav için hazırlık yap",
-                    Duration = 3,
-                    DurationType = DurationType.Hour,
-                    TaskSize = TaskSize.M,
-                },
-                new(null)
-                {
-                    Title = "Odayı temizle.",
-                    Duration = 1,
-                    DurationType = DurationType.Hour,
-                    TaskSize = TaskSize.S
-                }
-        };
-        tasks[0].ChangeState();
-        return tasks;
-    }
-}
-
-public class FakeTaskSaver
-    : ITaskSaver
-{
-    public SaveResponse Save(IEnumerable<Entity.Task> tasks)
-    {
-        return new SaveResponse
-        {
-            IsSuccess = true,
-            Exception = null,
-            Message = "Task listesi TaskData.csv dosyasına kaydedildi.",
-            SavedObjectCount = tasks.Count()
-        };
-    }
-}
-
-public class FakeTaskSaverInFail
-    : ITaskSaver
-{
-    public SaveResponse Save(IEnumerable<Entity.Task> tasks)
-    {
-        return new SaveResponse
-        {
-            IsSuccess = false,
-            Exception = new FileNotFoundException(),
-            Message = "Kaydetme işlemi başarısız",
-            SavedObjectCount = 0
-        };
-    }
-}
 
 // Bu birim test sınıfı TaskManager sınıfının metotlarına ait testleri içerir
 public class TaskManagerTests
@@ -120,8 +30,33 @@ public class TaskManagerTests
     [Fact]
     public void Create_TaskManager_Returns_Filled_Task_List_Test()
     {
-        ITaskLoader taskLoader = new FakeTaskLoader();
-        TaskManager taskManager = new(taskLoader);
+        /*
+            Bu sefer GetTasks metodunun dönmesi istenen içeriğini bir Mock nesnesi ile sağlıyoruz.
+            Önce Moq paketinden Mock<T> nesnesi örnekliyoruz.
+            GetTasks metodu için bir Setup kurguluyoruz ve buradan dönmesi istenen nesneyi belirliyoruz(taskList).
+            Son olarak ITaskLoader'a ihtiyaç duyan TaskManager sınıfının constructor metoduna mock nesnesini veriyoruz.
+        */
+        var taskLoaderMock = new Mock<ITaskLoader>();
+        var taskList = new List<Entity.Task>{
+                new(null)
+                {
+                    Title = "Ara sınav için hazırlık yap",
+                    Duration = 3,
+                    DurationType = DurationType.Hour,
+                    TaskSize = TaskSize.M,
+                },
+                new(null)
+                {
+                    Title = "Odayı temizle.",
+                    Duration = 1,
+                    DurationType = DurationType.Hour,
+                    TaskSize = TaskSize.S
+                }
+        };
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(taskList);
+        //ITaskLoader taskLoader = new FakeTaskLoader();
+        // TaskManager taskManager = new(taskLoader);
+        TaskManager taskManager = new(taskLoaderMock.Object);
         var actual = taskManager.GetTaskCount(TaskState.Todo);
         var expected = 2;
         Assert.Equal(expected, actual);
@@ -130,7 +65,28 @@ public class TaskManagerTests
     [Fact]
     public void Get_TaskManager_InProgress_State_Count_Test()
     {
-        TaskManager taskManager = new(new FakeTaskLoaderWithState());
+        var taskLoaderMock = new Mock<ITaskLoader>();
+        var tasks = new List<Entity.Task>{
+                new(null)
+                {
+                    Title = "Ara sınav için hazırlık yap",
+                    Duration = 3,
+                    DurationType = DurationType.Hour,
+                    TaskSize = TaskSize.M,
+                },
+                new(null)
+                {
+                    Title = "Odayı temizle.",
+                    Duration = 1,
+                    DurationType = DurationType.Hour,
+                    TaskSize = TaskSize.S
+                }
+        };
+        tasks[0].ChangeState();
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+
+        //TaskManager taskManager = new(new FakeTaskLoaderWithState());
+        TaskManager taskManager = new(taskLoaderMock.Object);
         var actual = taskManager.GetTaskCount(TaskState.InProgress);
         var expected = 1;
         Assert.Equal(expected, actual);
@@ -153,7 +109,26 @@ public class TaskManagerTests
     [Fact]
     public void Get_TaskManager_InProgress_State_List_Test()
     {
-        TaskManager taskManager = new(new FakeTaskLoaderWithState());
+        var taskLoaderMock = new Mock<ITaskLoader>();
+        var tasks = new List<Entity.Task>{
+                new(null)
+                {
+                    Title = "Ara sınav için hazırlık yap",
+                    Duration = 3,
+                    DurationType = DurationType.Hour,
+                    TaskSize = TaskSize.M,
+                },
+                new(null)
+                {
+                    Title = "Odayı temizle.",
+                    Duration = 1,
+                    DurationType = DurationType.Hour,
+                    TaskSize = TaskSize.S
+                }
+        };
+        tasks[0].ChangeState();
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        TaskManager taskManager = new(taskLoaderMock.Object);
         var actual = taskManager.GetTasks(TaskState.InProgress);
         Assert.True(actual.Count == 1);
     }
