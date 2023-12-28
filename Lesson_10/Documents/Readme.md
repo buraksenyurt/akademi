@@ -53,6 +53,10 @@ Dikkat edileceği üzere metod IComparer arayüzünü almaktadır. Bu arayüz ke
 
 ![plaground_runtime.png](playgroud_runtime.png)
 
+Interface kullanımı ile ilgili bir diğer örnekte ise bir nesne örneği üzerinde for each döngüsü kullanabilmek için IEnumerable arayüzünün nasıl kullanılabileceği incelenmektedir. Bu örnekte stok ürünlerini tutan bir nesne üzerinde for each ile ileri yönlü iterasyonun yapılabilmesi sağlanmıştır. for...each döngüsü kullanıldığı nesne üzerinde nasıl dolaşabileceğini bilmek için IEnumerable implementasyonlarını kullanır. Listeler, diziler gibi pek çok tür buna zaten sahiptir. Ancak kendi nesnemiz üzerinde bu tip bir iterasyon kurgulayabilmek için kendi IEnumerable uyarlamamız bu sınıfa entegre etmemiz gerekir.
+
+![plaground2_runtime.png](playgroud2_runtime.png)
+
 
 ## Araştırsak iyi Olur
 
