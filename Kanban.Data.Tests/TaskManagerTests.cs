@@ -136,7 +136,10 @@ public class TaskManagerTests
     [Fact]
     public void Add_New_Task_Returns_Valid_Id_Test()
     {
-        TaskManager taskManager = new(new FakeTaskLoader());
+        var taskLoaderMock = new Mock<ITaskLoader>();
+        var tasks = new List<Entity.Task>();
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        TaskManager taskManager = new(taskLoaderMock.Object);
         var actual = taskManager.Add(new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
@@ -151,7 +154,10 @@ public class TaskManagerTests
     [Fact]
     public void Get_Task_Test()
     {
-        TaskManager taskManager = new(new FakeTaskLoader());
+        var taskLoaderMock = new Mock<ITaskLoader>();
+        var tasks = new List<Entity.Task>();
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        TaskManager taskManager = new(taskLoaderMock.Object);
         var task1 = new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
@@ -168,7 +174,10 @@ public class TaskManagerTests
     [Fact]
     public void Get_Undefined_Task_Returns_Null_Test()
     {
-        TaskManager taskManager = new(new FakeTaskLoader());
+        var taskLoaderMock = new Mock<ITaskLoader>();
+        var tasks = new List<Entity.Task>();
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        TaskManager taskManager = new(taskLoaderMock.Object);
 
         var task1 = new Entity.Task(null)
         {
@@ -185,7 +194,11 @@ public class TaskManagerTests
     [Fact]
     public void Added_New_Task_Triggered_An_Event_If_Subscribed()
     {
-        TaskManager taskManager = new(new FakeTaskLoader());
+        var taskLoaderMock = new Mock<ITaskLoader>();
+        var tasks = new List<Entity.Task>();
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        TaskManager taskManager = new(taskLoaderMock.Object);
+
         var eventTriggered = false;
         taskManager.NewTaskAdded += (source, eventArgs) =>
         {
@@ -206,7 +219,11 @@ public class TaskManagerTests
     [Fact]
     public void Added_New_Task_Do_Not_Triggered_An_Event_If_Not_Exist()
     {
-        TaskManager taskManager = new(new FakeTaskLoader());
+        var taskLoaderMock = new Mock<ITaskLoader>();
+        var tasks = new List<Entity.Task>();
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        TaskManager taskManager = new(taskLoaderMock.Object);
+
         var eventTriggered = false;
         var task1 = new Entity.Task(null)
         {
@@ -229,7 +246,11 @@ public class TaskManagerTests
     [Fact]
     public void Save_All_Tasks_To_CSV_File_Return_Success_Test()
     {
-        TaskManager taskManager = new(new FakeTaskLoader());
+        var taskLoaderMock = new Mock<ITaskLoader>();
+        var tasks = new List<Entity.Task>();
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        TaskManager taskManager = new(taskLoaderMock.Object);
+
         taskManager.Add(new Entity.Task(null)
         {
             Title = "Odayı temizle.",
@@ -267,7 +288,11 @@ public class TaskManagerTests
     [Fact]
     public void Save_All_Tasks_To_CSV_File_Return_Fail_Test()
     {
-        TaskManager taskManager = new(new FakeTaskLoader());
+        var taskLoaderMock = new Mock<ITaskLoader>();
+        var tasks = new List<Entity.Task>();
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        TaskManager taskManager = new(taskLoaderMock.Object);
+
         taskManager.Add(new Entity.Task(null)
         {
             Title = "Odayı temizle.",
@@ -302,7 +327,25 @@ public class TaskManagerTests
     [Fact]
     public void Load_Tasks_From_File_Test()
     {
-        TaskManager taskManager = new(new FakeTaskLoader());
+        var taskLoaderMock = new Mock<ITaskLoader>();
+        var tasks = new List<Entity.Task>();
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        TaskManager taskManager = new(taskLoaderMock.Object);
+        taskManager.Add(new Entity.Task(null)
+        {
+            Title = "Odayı temizle.",
+            Duration = 1,
+            DurationType = DurationType.Hour,
+            TaskSize = TaskSize.S
+        });
+        var task1 = new Entity.Task(null)
+        {
+            Title = "Final sınavı için hazırlık yapmalısın",
+            Duration = 6,
+            DurationType = DurationType.Hour,
+            TaskSize = TaskSize.M,
+        };
+
         var actual = taskManager.GetTaskCount(TaskState.Todo);
         Assert.True(actual >= 1);
     }

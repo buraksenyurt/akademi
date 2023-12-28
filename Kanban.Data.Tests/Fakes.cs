@@ -71,7 +71,7 @@ public class FakeTaskSaver
         return new SaveResponse
         {
             IsSuccess = true,
-            Exception = null,
+            Exception = new Exception(),
             Message = "Task listesi TaskData.csv dosyasına kaydedildi.",
             SavedObjectCount = tasks.Count()
         };
