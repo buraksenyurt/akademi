@@ -106,5 +106,4 @@ class Gamer
     public string Nickname { get; set; } = "Anonymous";
     public double TotalPoint { get; set; }
     public bool IsActive { get; set; }
-
 }
