@@ -1,4 +1,4 @@
-using Kanban.Contracts;
+using Kanban.Contract;
 
 namespace Kanban.Data;
 public class JsonLoader

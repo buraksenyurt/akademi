@@ -1,5 +1,4 @@
-﻿using System.Text;
-using Kanban.Contracts;
+﻿using Kanban.Contract;
 using Kanban.Entity;
 using Kanban.Runtime;
 

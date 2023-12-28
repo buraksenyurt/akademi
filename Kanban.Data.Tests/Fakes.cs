@@ -1,4 +1,4 @@
-using Kanban.Contracts;
+using Kanban.Contract;
 using Kanban.Entity;
 
 namespace Kanban.Data.Tests;

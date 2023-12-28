@@ -81,6 +81,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Lesson_10\Pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground2", "Lesson_10\Projects\Playground2\Playground2.csproj", "{6B1ECD06-FDC2-4805-BD3B-7330101BA9C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Contract", "Kanban.Contract\Kanban.Contract.csproj", "{27778566-D1A5-4810-92C1-E997654F44BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,6 +177,10 @@ Global
 		{6B1ECD06-FDC2-4805-BD3B-7330101BA9C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B1ECD06-FDC2-4805-BD3B-7330101BA9C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B1ECD06-FDC2-4805-BD3B-7330101BA9C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27778566-D1A5-4810-92C1-E997654F44BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27778566-D1A5-4810-92C1-E997654F44BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27778566-D1A5-4810-92C1-E997654F44BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27778566-D1A5-4810-92C1-E997654F44BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

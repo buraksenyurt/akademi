@@ -2,8 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Kanban.Entity\Kanban.Entity.csproj" />
-    <ProjectReference Include="..\Kanban.Contract\Kanban.Contract.csproj" />
-    <ProjectReference Include="..\Kanban.Runtime\Kanban.Runtime.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

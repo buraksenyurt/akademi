@@ -57,7 +57,6 @@ Interface kullanımı ile ilgili bir diğer örnekte ise bir nesne örneği üze
 
 ![plaground2_runtime.png](playgroud2_runtime.png)
 
-
 ## Araştırsak iyi Olur
 
 - Birim testlerde _(Unit Tests)_ nesnelerin mocklanması ile ilgili kaynaklara bakılabilir.
@@ -73,4 +72,3 @@ Interface kullanımı ile ilgili bir diğer örnekte ise bir nesne örneği üze
 - Nesne bağımlılıklarını çözümlemek için interface türünden yararlanılması.
 - Interface türü ile çok biçimlilik ilkesinin uygulanması.
 - Birim testlerde fake nesneler kullanılması ve Moq paketi ile çalışmak.
-  
