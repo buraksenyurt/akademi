@@ -60,8 +60,18 @@ public class Task
         }
     }
 
+    /*
+        ToString metodu Object sınıfında tanımlanmış olan bir fonksiyondur.
+        virtual anahtar kelimesi ile tanımlanmıştır.
+        Virtual olan metotlar türeyen sınıflarda ezilip tekrardan yazılabilirler.
+        Bu şu anlama gelir. Türeyen nesne örneğinin ezilen metodu çağrıldığında değiştirilmiş olan versiyonu işletilir.
+        Örneğin Object sınıfındaki ToString metodu virtual tanımlanmıştır, varsayılan bir davranışı vardır eğer bir nesne
+        ToString metodunu ezerse(override) artık Object sınıfının ToString metodu değil ezilmiş olan versiyonu çağrılır.
+    */
     public override string ToString()
     {
+        // Object Nesne üstünde sağ tıklayın -> Go to definition'a basın ve System isim alanındaki Object sınıfının metod
+        // bildirimlerini inceleyin.
         return $"{Id}|{Title}|{TaskSize}|{Duration}|{DurationType}|{State}";
     }
 }
