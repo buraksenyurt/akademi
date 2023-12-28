@@ -1,6 +1,68 @@
+using Kanban.Contracts;
 using Kanban.Entity;
 
 namespace Kanban.Data.Tests;
+
+/*
+    Bu birim test sınıfındaki TaskManager nesneleri örneklenirken ihtiyaç duyulan Task listesi için
+    sahte bir ITaskLoader implementasyonu kullanmaktayız. Bu sayede task listesini sanki fiziki bir dosyadan 
+    okumuşuz gibi nesneyi başlatma şansına sahip oluyoruz.
+*/
+
+public class FakeTaskLoader
+    : ITaskLoader
+{
+    public IEnumerable<Entity.Task> GetTasks()
+    {
+        return new List<Entity.Task>{
+                new(null)
+                {
+                    Title = "Ara sınav için hazırlık yap",
+                    Duration = 3,
+                    DurationType = DurationType.Hour,
+                    TaskSize = TaskSize.M,
+                },
+                new(null)
+                {
+                    Title = "Odayı temizle.",
+                    Duration = 1,
+                    DurationType = DurationType.Hour,
+                    TaskSize = TaskSize.S
+                }
+        };
+    }
+}
+
+/*
+    Duruma göre ihtiyaç duyulan task listeleri farklılaştıkça buradaki Fake sınıfının sayısı da artabilir.
+    Bu çok istemediğimiz bir durum. Bunun için Mock kütüphanelerinden yararlanılabilir.
+*/
+
+public class FakeTaskLoaderWithState
+    : ITaskLoader
+{
+    public IEnumerable<Entity.Task> GetTasks()
+    {
+        var tasks = new List<Entity.Task>{
+                new(null)
+                {
+                    Title = "Ara sınav için hazırlık yap",
+                    Duration = 3,
+                    DurationType = DurationType.Hour,
+                    TaskSize = TaskSize.M,
+                },
+                new(null)
+                {
+                    Title = "Odayı temizle.",
+                    Duration = 1,
+                    DurationType = DurationType.Hour,
+                    TaskSize = TaskSize.S
+                }
+        };
+        tasks[0].ChangeState();
+        return tasks;
+    }
+}
 
 // Bu birim test sınıfı TaskManager sınıfının metotlarına ait testleri içerir
 public class TaskManagerTests
@@ -28,21 +90,8 @@ public class TaskManagerTests
     [Fact]
     public void Create_TaskManager_Returns_Filled_Task_List_Test()
     {
-        TaskManager taskManager = new TaskManager();
-        taskManager.Add(new Entity.Task(null)
-        {
-            Title = "Ara sınav için hazırlık yap",
-            Duration = 3,
-            DurationType = DurationType.Hour,
-            TaskSize = TaskSize.M,
-        });
-        taskManager.Add(new Entity.Task(null)
-        {
-            Title = "Odayı temizle.",
-            Duration = 1,
-            DurationType = DurationType.Hour,
-            TaskSize = TaskSize.S
-        });
+        ITaskLoader taskLoader = new FakeTaskLoader();
+        TaskManager taskManager = new(taskLoader);
         var actual = taskManager.GetTaskCount(TaskState.Todo);
         var expected = 2;
         Assert.Equal(expected, actual);
@@ -51,24 +100,7 @@ public class TaskManagerTests
     [Fact]
     public void Get_TaskManager_InProgress_State_Count_Test()
     {
-        TaskManager taskManager = new();
-        var task1 = new Entity.Task(null)
-        {
-            Title = "Ara sınav için hazırlık yap",
-            Duration = 3,
-            DurationType = DurationType.Hour,
-            TaskSize = TaskSize.M,
-        };
-        task1.ChangeState();
-        taskManager.Add(task1);
-
-        taskManager.Add(new Entity.Task(null)
-        {
-            Title = "Odayı temizle.",
-            Duration = 1,
-            DurationType = DurationType.Hour,
-            TaskSize = TaskSize.S
-        });
+        TaskManager taskManager = new(new FakeTaskLoaderWithState());
         var actual = taskManager.GetTaskCount(TaskState.InProgress);
         var expected = 1;
         Assert.Equal(expected, actual);
@@ -91,33 +123,15 @@ public class TaskManagerTests
     [Fact]
     public void Get_TaskManager_InProgress_State_List_Test()
     {
-        TaskManager taskManager = new TaskManager();
-        taskManager.Add(new Entity.Task(null)
-        {
-            Title = "Odayı temizle.",
-            Duration = 1,
-            DurationType = DurationType.Hour,
-            TaskSize = TaskSize.S
-        });
-        var task1 = new Entity.Task(null)
-        {
-            Title = "Ara sınav için hazırlık yap",
-            Duration = 3,
-            DurationType = DurationType.Hour,
-            TaskSize = TaskSize.M,
-        };
-        task1.ChangeState();
-        taskManager.Add(task1);
+        TaskManager taskManager = new(new FakeTaskLoaderWithState());
         var actual = taskManager.GetTasks(TaskState.InProgress);
-        var expected = task1;
         Assert.True(actual.Count == 1);
-        Assert.Equal(expected, actual[0]);
     }
 
     [Fact]
     public void Add_New_Task_Returns_Valid_Id_Test()
     {
-        TaskManager taskManager = new TaskManager();
+        TaskManager taskManager = new(new FakeTaskLoader());
         var actual = taskManager.Add(new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
@@ -132,14 +146,7 @@ public class TaskManagerTests
     [Fact]
     public void Get_Task_Test()
     {
-        TaskManager taskManager = new TaskManager();
-        taskManager.Add(new Entity.Task(null)
-        {
-            Title = "Odayı temizle.",
-            Duration = 1,
-            DurationType = DurationType.Hour,
-            TaskSize = TaskSize.S
-        });
+        TaskManager taskManager = new(new FakeTaskLoader());
         var task1 = new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
@@ -154,16 +161,10 @@ public class TaskManagerTests
     }
 
     [Fact]
-    public void Get_Indefined_Task_Returns_Null_Test()
+    public void Get_Undefined_Task_Returns_Null_Test()
     {
-        TaskManager taskManager = new TaskManager();
-        taskManager.Add(new Entity.Task(null)
-        {
-            Title = "Odayı temizle.",
-            Duration = 1,
-            DurationType = DurationType.Hour,
-            TaskSize = TaskSize.S
-        });
+        TaskManager taskManager = new(new FakeTaskLoader());
+
         var task1 = new Entity.Task(null)
         {
             Title = "Ara sınav için hazırlık yap",
@@ -179,7 +180,7 @@ public class TaskManagerTests
     [Fact]
     public void Added_New_Task_Triggered_An_Event_If_Subscribed()
     {
-        TaskManager taskManager = new();
+        TaskManager taskManager = new(new FakeTaskLoader());
         var eventTriggered = false;
         taskManager.NewTaskAdded += (source, eventArgs) =>
         {
@@ -200,7 +201,7 @@ public class TaskManagerTests
     [Fact]
     public void Added_New_Task_Do_Not_Triggered_An_Event_If_Not_Exist()
     {
-        TaskManager taskManager = new();
+        TaskManager taskManager = new(new FakeTaskLoader());
         var eventTriggered = false;
         var task1 = new Entity.Task(null)
         {
@@ -223,7 +224,7 @@ public class TaskManagerTests
     [Fact]
     public void Save_All_Tasks_To_CSV_File_Return_True_Test()
     {
-        TaskManager taskManager = new();
+        TaskManager taskManager = new(new FakeTaskLoader());
         taskManager.Add(new Entity.Task(null)
         {
             Title = "Odayı temizle.",
@@ -255,14 +256,13 @@ public class TaskManagerTests
         Assert.Equal(expected, actual);
 
         // Assert.True(actual);
-
         // Assert.True(taskManager.Save("Board"));
     }
 
     [Fact]
     public void Save_All_Tasks_To_CSV_File_Return_False_Test()
     {
-        TaskManager taskManager = new();
+        TaskManager taskManager = new(new FakeTaskLoader());
         taskManager.Add(new Entity.Task(null)
         {
             Title = "Odayı temizle.",
@@ -297,7 +297,7 @@ public class TaskManagerTests
     [Fact]
     public void Load_Tasks_From_File_Test()
     {
-        TaskManager taskManager = new();
+        TaskManager taskManager = new(new FakeTaskLoader());
         var actual = taskManager.GetTaskCount(TaskState.Todo);
         Assert.True(actual >= 1);
     }

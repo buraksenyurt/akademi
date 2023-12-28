@@ -11,12 +11,12 @@ namespace Kanban;
 public class CsvLoader
     : ITaskLoader
 {
-    public IEnumerable<Entity.Task> GetTasks(string fileName)
+    public IEnumerable<Entity.Task> GetTasks()
     {
-        var tasks=new List<Entity.Task>();
+        var tasks = new List<Entity.Task>();
         try
         {
-            var filePath = Path.Combine(Environment.CurrentDirectory, $"{fileName}.csv");
+            var filePath = Path.Combine(Environment.CurrentDirectory, "TaskData.csv");
             var lines = File.ReadAllLines(filePath);
             foreach (var line in lines)
             {

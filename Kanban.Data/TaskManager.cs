@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using Kanban.Contracts;
 using Kanban.Entity;
 using Kanban.Runtime;
 
@@ -44,9 +45,14 @@ public class TaskManager
     // }
     // TaskManager sınıfının varsayılan yapıcı metodu(Default Constructor) çalıştığında
     // _tasks isimli değişkene ait generic List koleksiyonu da örneklenir.
-    public TaskManager()
+    public TaskManager(ITaskLoader taskLoader)
     {
-        _tasks = new List<Entity.Task>();
+        /*
+            Yapıcı metodumuz ITaskLoader ile bu arayüzü implemente eden herhangibir nesneyi kullanabilir.
+            Bu şekilde bir nesne bağımlılığını dışarıdan içeriye enjekte edebiliriz. Depedency Injection.
+            SOLID yazılım prensiplerinin Dependency Inversion ilkesini sağlamak için kullanılan tekniktir.
+        */
+        _tasks = taskLoader.GetTasks().ToList();
         //Load("Board");
     }
 

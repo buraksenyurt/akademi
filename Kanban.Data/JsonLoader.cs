@@ -4,7 +4,7 @@ namespace Kanban.Data;
 public class JsonLoader
     : ITaskLoader
 {
-    public IEnumerable<Entity.Task> GetTasks(string fileName)
+    public IEnumerable<Entity.Task> GetTasks()
     {
         throw new NotImplementedException();
     }
