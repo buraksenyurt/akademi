@@ -147,38 +147,45 @@ public class TaskManager
     }
 
     /*
-        Save metodu dosyaya yazma işini üstlenen bir fonksiyon.
-        İşlemin başarılı olup olmadığı true veya false olarak dönülebileceği gibi
-        kendi tasarladığımız bir mesajı da (yani bir sınıfa ait nesne örneğini) dönebiliriz.
+        Bu sefer nesne bağımlılığı metot üzerinden enjekte edilmektedir.(Dependency Injection)
     */
-    //TODO @buraksenyurt TaskManager sınıfındaki metotların giriş ve çıkış nesneleri için sınıf tasarlayalım.
-    public bool Save(string fileName)
+    public SaveResponse Save(ITaskSaver taskSaver)
     {
-        try
-        {
-            var filePath = Path.Combine(Environment.CurrentDirectory, $"{fileName}.csv");
-            // Satır bazındaki veri içeriğin kolayca hazırlamak için StringBuilder kullandık
-            StringBuilder stringBuilder = new();
-            // Her bir Task nesne örneğini dolaşacağımız bir döngü başlattık
-            foreach (var task in _tasks)
-            {
-                // Herbir Task nesne örneği için arada pipe işareti olan bir metin katarı oluşturduk
-                var line = task.ToString(); // ToString metodunu override ettiğimiz için aralara | konulan bir içeriği kolayca elde edebiliriz.
-                //var line = $"{task.Id}|{task.Title}|{task.TaskSize}|{task.Duration}|{task.DurationType}|{task.State}";
-                // Oluşan line değeri stringBuilder'a satır olarak eklenir
-                stringBuilder.AppendLine(line);
-            }
-            File.WriteAllText(filePath, stringBuilder.ToString());
-            return true;
-        }
-        catch (Exception excp)
-        {
-            // QUESTION Burada alınan exception ne yapılmalıdır?
-            return false;
-        }
-
-        // // İlgili metodun henüz yazılmadığına dair çalışma zamanına bir istisna fırlatır
-        // // throw keyword'u ile bir Exception'ı bilinçli olarak çalışma zamanına fırlatabiliriz.
-        // throw new NotImplementedException();
+        return taskSaver.Save(_tasks);
     }
+
+    // /*
+    //     Save metodu dosyaya yazma işini üstlenen bir fonksiyon.
+    //     İşlemin başarılı olup olmadığı true veya false olarak dönülebileceği gibi
+    //     kendi tasarladığımız bir mesajı da (yani bir sınıfa ait nesne örneğini) dönebiliriz.
+    // */
+    // public bool Save(string fileName)
+    // {
+    //     try
+    //     {
+    //         var filePath = Path.Combine(Environment.CurrentDirectory, $"{fileName}.csv");
+    //         // Satır bazındaki veri içeriğin kolayca hazırlamak için StringBuilder kullandık
+    //         StringBuilder stringBuilder = new();
+    //         // Her bir Task nesne örneğini dolaşacağımız bir döngü başlattık
+    //         foreach (var task in _tasks)
+    //         {
+    //             // Herbir Task nesne örneği için arada pipe işareti olan bir metin katarı oluşturduk
+    //             var line = task.ToString(); // ToString metodunu override ettiğimiz için aralara | konulan bir içeriği kolayca elde edebiliriz.
+    //             //var line = $"{task.Id}|{task.Title}|{task.TaskSize}|{task.Duration}|{task.DurationType}|{task.State}";
+    //             // Oluşan line değeri stringBuilder'a satır olarak eklenir
+    //             stringBuilder.AppendLine(line);
+    //         }
+    //         File.WriteAllText(filePath, stringBuilder.ToString());
+    //         return true;
+    //     }
+    //     catch (Exception excp)
+    //     {
+    //         // QUESTION Burada alınan exception ne yapılmalıdır?
+    //         return false;
+    //     }
+
+    //     // // İlgili metodun henüz yazılmadığına dair çalışma zamanına bir istisna fırlatır
+    //     // // throw keyword'u ile bir Exception'ı bilinçli olarak çalışma zamanına fırlatabiliriz.
+    //     // throw new NotImplementedException();
+    // }
 }

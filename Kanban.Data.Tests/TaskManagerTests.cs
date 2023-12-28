@@ -64,6 +64,36 @@ public class FakeTaskLoaderWithState
     }
 }
 
+public class FakeTaskSaver
+    : ITaskSaver
+{
+    public SaveResponse Save(IEnumerable<Entity.Task> tasks)
+    {
+        return new SaveResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi TaskData.csv dosyasına kaydedildi.",
+            SavedObjectCount = tasks.Count()
+        };
+    }
+}
+
+public class FakeTaskSaverInFail
+    : ITaskSaver
+{
+    public SaveResponse Save(IEnumerable<Entity.Task> tasks)
+    {
+        return new SaveResponse
+        {
+            IsSuccess = false,
+            Exception = new FileNotFoundException(),
+            Message = "Kaydetme işlemi başarısız",
+            SavedObjectCount = 0
+        };
+    }
+}
+
 // Bu birim test sınıfı TaskManager sınıfının metotlarına ait testleri içerir
 public class TaskManagerTests
 {
@@ -222,7 +252,7 @@ public class TaskManagerTests
     }
 
     [Fact]
-    public void Save_All_Tasks_To_CSV_File_Return_True_Test()
+    public void Save_All_Tasks_To_CSV_File_Return_Success_Test()
     {
         TaskManager taskManager = new(new FakeTaskLoader());
         taskManager.Add(new Entity.Task(null)
@@ -251,16 +281,16 @@ public class TaskManagerTests
         taskManager.Add(task2);
         task2.ChangeState();
         task2.ChangeState();
-        var actual = taskManager.Save("Board");
+        var actual = taskManager.Save(new FakeTaskSaver());
         var expected = true;
-        Assert.Equal(expected, actual);
+        Assert.Equal(expected, actual.IsSuccess);
 
         // Assert.True(actual);
         // Assert.True(taskManager.Save("Board"));
     }
 
     [Fact]
-    public void Save_All_Tasks_To_CSV_File_Return_False_Test()
+    public void Save_All_Tasks_To_CSV_File_Return_Fail_Test()
     {
         TaskManager taskManager = new(new FakeTaskLoader());
         taskManager.Add(new Entity.Task(null)
@@ -289,9 +319,9 @@ public class TaskManagerTests
         taskManager.Add(task2);
         task2.ChangeState();
         task2.ChangeState();
-        var actual = taskManager.Save("\0");
-        var expected = false;
-        Assert.Equal(expected, actual);
+        var actual = taskManager.Save(new FakeTaskSaverInFail());
+        Assert.False(actual.IsSuccess);
+        Assert.Equal(new FileNotFoundException().Message, actual.Exception.Message);
     }
 
     [Fact]
