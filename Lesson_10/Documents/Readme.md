@@ -4,14 +4,15 @@ Bir önceki dersimizde Kanban borduna eklenen içeriklerin fiziki dosyaya **Comm
 
 ![build_failed.png](build_failed.png)
 
-
 Bu dersteki amacımız söz konusu hatalara neden olan problemi görmek, bu probleme ait nesne bağımlılığını çözmek için de **Interface** türünü tanımaktır. Özellikle nesne yönelimli dillerin temel prensiplerinden olan kalıtım _(Inhertiance)_ ve çok biçimlilik _(Polymorphism)_ ilkelerinin C# tarafında uygulanmasında da önemli bir role sahip olan Interface türü nesne bağımlılıklarını tersine çevirerek **loosely-coupled** kullanımların tesis edilmesinde de kullanılmaktadır. Bu sayede birim testlerin çalışması için gereken birçok bağımlılık kolaylıkla mock'lanabilir hale gelmektedir. Interface türlerinin kullanımı sadece OOP açısından değil, test edilebilirlik, yüksek kalitede kod, plug-in tabanlı ürünler geliştirilmesi açısından da önemlidir. Dersteki ana hedefimiz özellikle **Load** metodundaki **ReadAllLines** ile oluşan kaynak bağımlılığını metot dışına almak üzerine olacaktır.
 
 Ders planındaki ikinci amacımız da yazma operasyonlarını format bağımsız hale getirebilmektir. **Save** metodu ilk etapta sadece **CSV** formatında çıktı üretmek üzere tasarlanmıştır. Ancak verinin **JSON** veya **XML** gibi farklı formatlarda kaydedilmesi de söz konusu olabilir. Hatta **object user** bu formata kendisi de karar verebilmeli bunu yaparken **Save** metodunun içeriğini değiştirmesine gerek kalmamalıdır. Dolayısıyla hem yazma formatı hem de yazma işleminin gerçekleştirileceği hedef ortam **TaskManager** sınıfına dışarıdan verilebilmelidir. Tahmin edileceği üzere burada işi çözmek için **Interface** türünden yararlanılacak ve asıl işi yapan yazma operatörlerinin nesneye parametre olarak enjekte edilmesine odaklanılacaktır. Bu da dependency inversion prensibinin bir nevi uygulanış biçimidir.
 
 ## Sözlük
 
-_Derste telafuz edilen anahtar kelimeler veya dikkate değer konular birer cümle ile özetlenir_
+- Constructor Injection ;
+- Mocking ;
+- Moq kütüphanesi
 
 ## Yardımcı Linkler
 
@@ -34,7 +35,9 @@ dotnet run
 
 ## Çalışma Zamanı
 
-_Derste işlenen kodların çıktısı eklenir_
+Load metodunu Dependency Injection ile dışarıya aldıktan sonra testler başarılı bir şekilde tamamlanabilmiştir.
+
+![build_ok.png](build_ok.png)
 
 ## Araştırsak iyi Olur
 
