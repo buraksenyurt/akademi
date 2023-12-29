@@ -10,9 +10,32 @@ Ders planındaki ikinci amacımız da yazma operasyonlarını format bağımsız
 
 ## Sözlük
 
-- Constructor Injection ;
-- Mocking ;
-- Moq kütüphanesi ;
+- Constructor Injection; Nesne bağımlılıklarını tanımlamanın yollarından birisi, ilgili bağımlılığı kullanmak isteyen sınıfların yapıcı metotları üzerinden aktarılmalarıdır. Örneğin TaskManager sınıfını ayağa kaldırırken devrey giren yapıcı metot, Task listesini okumak için ITaskLoader arayüzünü implement etmiş gerçek bir nesne örneği bekler.
+- Mocking; Bazı durumlarda test metotlarında yapılmak istenen testi engelleyebilecek dış etkenler olabilir. Örneğin amacımız sadece state bilgisi değişen Task listelerini kontrol etmek ise, Task listesinin nereden yüklendiğini bir önemi yoktur. Ayrıca itiyaç duyulan task listesi dosya sisteminden, veri tabanından veya bir servisten çekiliyorsa bu ortamlara olan bağlantılar test projesi için geçerli olmayabilir. En iyi birim testler internet bağlantısı kapatılmış bilgisayarda koşulanlardır. Burada sanki bir veritabanından ya da fiziki bir kaynaktan Task listesi gelmiş gibi hareket edilebilir. Fakat bunun için ilk şart Task listesini yükleme işini üstlenen bileşenin bir bağımlılık _(dependency)_ olarak ele alınması ve TaskManager sınıfına bildirilmesidir. Bunun için arayüzden faydalandığımızı unutmayalım. İşin içerisinde arayüz ile soyutlanabilen bir bileşen varsa bu bileşen gerçekten ihtiyaç duyulan ortama bağlanmadan test için gerekli kümeyi hazırlayacak şekilde de kurgulanabilir. Bu genellikle fake nesne oluşturmak gibi düşünülebilir ve Mocking bu tekniklerinden birisidir.
+- Moq kütüphanesi; Mocking özelliklerini test projelerinde kolayca uygulayabilmemizi sağlar. Örneğin aşağıdaki kod parçasında olduğu gibi.
+
+```csharp
+[Fact]
+public void Add_New_Task_Returns_Valid_Id_Test()
+{
+    // Mocking
+    var taskLoaderMock = new Mock<ITaskLoader>();
+    var tasks = new List<Entity.Task>();
+    taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+    TaskManager taskManager = new(taskLoaderMock.Object);
+    // Mocking
+
+    var actual = taskManager.Add(new Entity.Task(null)
+    {
+        Title = "Final sınavı için hazırlık yap",
+        Duration = 3,
+        DurationType = DurationType.Hour,
+        TaskSize = TaskSize.M
+    });
+    var expected = 36;
+    Assert.Equal(actual.ToString().Length, expected);
+}
+```
 
 ## Yardımcı Linkler
 
