@@ -83,6 +83,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground2", "Lesson_10\Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Contract", "Kanban.Contract\Kanban.Contract.csproj", "{27778566-D1A5-4810-92C1-E997654F44BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground3", "Lesson_10\Projects\Playground3\Playground3.csproj", "{A5813E90-39F4-4B3F-9B83-8AEDCD54154E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -181,6 +183,10 @@ Global
 		{27778566-D1A5-4810-92C1-E997654F44BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27778566-D1A5-4810-92C1-E997654F44BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27778566-D1A5-4810-92C1-E997654F44BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5813E90-39F4-4B3F-9B83-8AEDCD54154E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5813E90-39F4-4B3F-9B83-8AEDCD54154E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5813E90-39F4-4B3F-9B83-8AEDCD54154E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5813E90-39F4-4B3F-9B83-8AEDCD54154E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -210,6 +216,7 @@ Global
 		{6E09FD80-E773-4062-AF94-86CE439C2544} = {9A52AC8C-87B1-4F5C-BDAD-EE99779EA9FB}
 		{3B0D7934-994C-48CB-8A13-CB728B9AFC43} = {6E09FD80-E773-4062-AF94-86CE439C2544}
 		{6B1ECD06-FDC2-4805-BD3B-7330101BA9C4} = {6E09FD80-E773-4062-AF94-86CE439C2544}
+		{A5813E90-39F4-4B3F-9B83-8AEDCD54154E} = {6E09FD80-E773-4062-AF94-86CE439C2544}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6EDC358-2123-4182-9A8F-84C3473E6905}
