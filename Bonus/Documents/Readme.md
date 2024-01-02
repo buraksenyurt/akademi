@@ -2,10 +2,11 @@
 
 Dönem boyunca ağırlıklı olarak C# programlama dilinin temel yetkinliklerinden ve nesne yönelimli kabiliyeterinden bahsetmeye çalıştık. Elbette C# ve .Net geliştirme ortamı çok büyük bir alana sahip ve her konuya değinme fırsatımız yok. Bazı konular eğitim müfredatı açısından bakıldığında ileri seviyede de kalabiliyor. Örneğin Reflection ve Nitelikler bu konu başlıkları arasında yer almakta. Bu amaçla oluşturulan klasörde kıyıda köşede kalmış ya da müfredatın genelinde çok derinlemesine işlenememiş konularla ilgili mini kod parçalarına yer veriliyor.
 
-- **params :**
-- **XML Comment Kullanımı :**
-- **Operator Overloading :**
+- **params :** Bazı metotlar gelen nesne sayısının kesin olarak bilinmediği parametrelere sahip olabilirler. Bu gibi durumlarda farklı versiyonlarda sayısız metot yazmak yerine tek bir metoda params ile n sayıda argüman gönderilmesi sağlanabilir. Bunun için dizi veya koleksiyon türleri de kullanılabilir elbette. params kullanımı .Net içerisinde de yaygındır. Örneğinde Console sınıfının WriteLine metodunda params kullanımı söz konusudur.
+- **XML Comment Kullanımı :** Yazdığımız enstrümanların kodlayıcı tarafından ne işe yaradığının anlaışması noktasında yardımcı olan dokümanların oluşturulmasında kullanılır. Bir nesne veya bir metot üzerine gelindiğinde IDE'de çıkan bilgi kutucukları XML Comment bilgilerinden yararlanır. Ayrıca yazılan kütüphaneler için yardım dokümantasyonlarının hazırlanmasında XML Comment'lerden yararlanılmaktadır. 
+- **Operator Overloading :** Programlama dili tarafından kullanılan built-in operatörler istenirse kendi nesnelerimiz için yeniden yazılabilirler. Dört işlem, karşılaştırma, unary gibi operatörler overload edilerek varsayılan davranışları dışında kodlamacı tarafından tarif edilen şekilde de programlanabilirler. 
+- **Custom Generic Types:** .Net 2.0 ile birlikte gelen generic mimari kodlamacılar tarafında sıklıkla kullanılır. Geliştirme ortamının tasarımı generic mimariyi yoğun şekilde kullanmaktadır. Kodlamacılar isterse kendi generic türlerini de yazabilirler.
 - **sealed sınıflar :**
-- **Custom Exception Types :**
+- **Custom Exception Types :** Çalışma zamanında oluşabilecek bazı hatalar istisna _(Exception)_ olarak nitelendirilir ve genellikle catch bloklarında yakalanarak program akışının beklenmedik şekilde sonlanmasının önüne geçilmeye çalışılır. Bazı senaryolarda programcılar türler için kendi Exception türlerini de tasarlarlar. Daha çok belli bir hata ile ilişkili belli bir istisna nesnesinin fırlatılması istenen özel senaryolarda kullanılması idealdir.
 - **Nitelik(Attribute) Kullanımı :**
 - **Reflection :**
