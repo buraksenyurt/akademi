@@ -37,7 +37,7 @@ public class TaskManagerTests
             Son olarak ITaskLoader'a ihtiyaç duyan TaskManager sınıfının constructor metoduna mock nesnesini veriyoruz.
         */
         var taskLoaderMock = new Mock<ITaskLoader>();
-        var taskList = new List<Entity.Task>{
+        var tasks = new List<Entity.Task>{
                 new(null)
                 {
                     Title = "Ara sınav için hazırlık yap",
@@ -53,7 +53,16 @@ public class TaskManagerTests
                     TaskSize = TaskSize.S
                 }
         };
-        taskLoaderMock.Setup(m => m.GetTasks()).Returns(taskList);
+
+        var response = new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(response);
         //ITaskLoader taskLoader = new FakeTaskLoader();
         // TaskManager taskManager = new(taskLoader);
         TaskManager taskManager = new(taskLoaderMock.Object);
@@ -83,7 +92,15 @@ public class TaskManagerTests
                 }
         };
         tasks[0].ChangeState();
-        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        var response = new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(response);
 
         //TaskManager taskManager = new(new FakeTaskLoaderWithState());
         TaskManager taskManager = new(taskLoaderMock.Object);
@@ -127,7 +144,15 @@ public class TaskManagerTests
                 }
         };
         tasks[0].ChangeState();
-        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        var response = new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(response);
         TaskManager taskManager = new(taskLoaderMock.Object);
         var actual = taskManager.GetTasks(TaskState.InProgress);
         Assert.True(actual.Count == 1);
@@ -138,7 +163,15 @@ public class TaskManagerTests
     {
         var taskLoaderMock = new Mock<ITaskLoader>();
         var tasks = new List<Entity.Task>();
-        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        var response = new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(response);
         TaskManager taskManager = new(taskLoaderMock.Object);
         var actual = taskManager.Add(new Entity.Task(null)
         {
@@ -156,7 +189,15 @@ public class TaskManagerTests
     {
         var taskLoaderMock = new Mock<ITaskLoader>();
         var tasks = new List<Entity.Task>();
-        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        var response = new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(response);
         TaskManager taskManager = new(taskLoaderMock.Object);
         var task1 = new Entity.Task(null)
         {
@@ -176,7 +217,15 @@ public class TaskManagerTests
     {
         var taskLoaderMock = new Mock<ITaskLoader>();
         var tasks = new List<Entity.Task>();
-        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        var response = new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(response);
         TaskManager taskManager = new(taskLoaderMock.Object);
 
         var task1 = new Entity.Task(null)
@@ -196,7 +245,15 @@ public class TaskManagerTests
     {
         var taskLoaderMock = new Mock<ITaskLoader>();
         var tasks = new List<Entity.Task>();
-        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        var response = new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(response);
         TaskManager taskManager = new(taskLoaderMock.Object);
 
         var eventTriggered = false;
@@ -221,7 +278,15 @@ public class TaskManagerTests
     {
         var taskLoaderMock = new Mock<ITaskLoader>();
         var tasks = new List<Entity.Task>();
-        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        var response = new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(response);
         TaskManager taskManager = new(taskLoaderMock.Object);
 
         var eventTriggered = false;
@@ -248,7 +313,15 @@ public class TaskManagerTests
     {
         var taskLoaderMock = new Mock<ITaskLoader>();
         var tasks = new List<Entity.Task>();
-        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        var response = new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(response);
         TaskManager taskManager = new(taskLoaderMock.Object);
 
         taskManager.Add(new Entity.Task(null)
@@ -290,7 +363,15 @@ public class TaskManagerTests
     {
         var taskLoaderMock = new Mock<ITaskLoader>();
         var tasks = new List<Entity.Task>();
-        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        var response = new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(response);
         TaskManager taskManager = new(taskLoaderMock.Object);
 
         taskManager.Add(new Entity.Task(null)
@@ -329,7 +410,15 @@ public class TaskManagerTests
     {
         var taskLoaderMock = new Mock<ITaskLoader>();
         var tasks = new List<Entity.Task>();
-        taskLoaderMock.Setup(m => m.GetTasks()).Returns(tasks);
+        var response = new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
+        taskLoaderMock.Setup(m => m.GetTasks()).Returns(response);
         TaskManager taskManager = new(taskLoaderMock.Object);
         taskManager.Add(new Entity.Task(null)
         {

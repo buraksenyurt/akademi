@@ -11,7 +11,7 @@ namespace Kanban;
 public class CsvLoader
     : ITaskLoader
 {
-    public IEnumerable<Entity.Task> GetTasks()
+    public LoadResponse GetTasks()
     {
         var tasks = new List<Entity.Task>();
         try
@@ -31,11 +31,25 @@ public class CsvLoader
                 };
                 tasks.Add(newTask);
             }
+            return new LoadResponse
+            {
+                IsSuccess = true,
+                Message = "Task listesi CSV dosyadan yüklendi.",
+                Exception = null,
+                LoadedObjectCount = tasks.Count,
+                Tasks = tasks
+            };
         }
         catch (Exception excp)
         {
-
+            return new LoadResponse
+            {
+                IsSuccess = false,
+                Message = excp.Message,
+                Exception = excp,
+                LoadedObjectCount = 0,
+                Tasks = null
+            };
         }
-        return tasks;
     }
 }

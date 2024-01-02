@@ -11,7 +11,7 @@ public interface ITaskSaver
 public class SaveResponse
 {
     public bool IsSuccess { get; set; }
-    public Exception Exception { get; set; }
+    public Exception? Exception { get; set; }
     public string Message { get; set; } = string.Empty;
     public int SavedObjectCount { get; set; }
 }

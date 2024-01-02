@@ -11,9 +11,9 @@ namespace Kanban.Data.Tests;
 public class FakeTaskLoader
     : ITaskLoader
 {
-    public IEnumerable<Entity.Task> GetTasks()
+    public LoadResponse GetTasks()
     {
-        return new List<Entity.Task>{
+        var tasks = new List<Entity.Task>{
                 new(null)
                 {
                     Title = "Ara sınav için hazırlık yap",
@@ -29,6 +29,14 @@ public class FakeTaskLoader
                     TaskSize = TaskSize.S
                 }
         };
+        return new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
     }
 }
 
@@ -40,7 +48,7 @@ public class FakeTaskLoader
 public class FakeTaskLoaderWithState
     : ITaskLoader
 {
-    public IEnumerable<Entity.Task> GetTasks()
+    public LoadResponse GetTasks()
     {
         var tasks = new List<Entity.Task>{
                 new(null)
@@ -59,7 +67,14 @@ public class FakeTaskLoaderWithState
                 }
         };
         tasks[0].ChangeState();
-        return tasks;
+        return new LoadResponse
+        {
+            IsSuccess = true,
+            Exception = null,
+            Message = "Task listesi başarıyla yüklendi",
+            LoadedObjectCount = tasks.Count,
+            Tasks = tasks
+        };
     }
 }
 

@@ -13,5 +13,14 @@ namespace Kanban.Contract;
 */
 public interface ITaskLoader
 {
-    IEnumerable<Entity.Task> GetTasks(); // Bu interface tipini uygulayanlar GetTasks isimli metodu ezmek(yazmak) zorundadır
+    LoadResponse GetTasks(); // Bu interface tipini uygulayanlar GetTasks isimli metodu ezmek(yazmak) zorundadır
+}
+
+public class LoadResponse
+{
+    public bool IsSuccess { get; set; }
+    public Exception? Exception { get; set; }
+    public string Message { get; set; } = string.Empty;
+    public int LoadedObjectCount { get; set; }
+    public IEnumerable<Entity.Task>? Tasks;
 }

@@ -51,7 +51,8 @@ public class TaskManager
             Bu şekilde bir nesne bağımlılığını dışarıdan içeriye enjekte edebiliriz. Depedency Injection.
             SOLID yazılım prensiplerinin Dependency Inversion ilkesini sağlamak için kullanılan tekniktir.
         */
-        _tasks = taskLoader.GetTasks().ToList();
+        var response = taskLoader.GetTasks();
+        _tasks = response.IsSuccess ? response.Tasks.ToList() : new List<Entity.Task>();
         //Load("Board");
     }
 
