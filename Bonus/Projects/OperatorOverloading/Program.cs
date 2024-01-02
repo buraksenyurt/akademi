@@ -6,7 +6,6 @@
 
     Bazı operatörler için ters operatörlerin de yüklenmesi gerekir. Örneğin < operatörünü override edersek > operatörünün de override edilmesi gerekir.
 */
-using System.Security.AccessControl;
 
 namespace OperatorOverloading;
 
