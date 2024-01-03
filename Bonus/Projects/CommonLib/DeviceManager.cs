@@ -31,7 +31,7 @@ public class Window
         Width = w;
         Height = h;
         Title = title;
-    }
+    }   
 
     public void Draw()
     {

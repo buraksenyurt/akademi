@@ -51,6 +51,23 @@ class Program
             }
         }
 
-        // Window nesnesi örnekleme ve metod çağırma işlevleri eklenecek
+        /*
+            Aşağıdaki kodda olanlar.
+
+            Window isimli sınıfa ait bir nesne örneğini runtime'da oluşturur.
+            Bunu yaparken overload edilmiş constructor parametreleri de gönderilir.
+            Ardından üretilen nesne örneğinin bazı özelliklerinin değerleri yine çalışma zamanında elde edilir.
+        */
+        var ctrArgs = new object[] { 10, 15, "Main Title" };
+        object instance = asmbly.CreateInstance("CommonLib.Window", false,
+                    BindingFlags.CreateInstance, null, ctrArgs, null, null);
+        if (instance != null)
+        {
+            var iType = instance.GetType();
+            var width = iType.GetProperty("Width").GetValue(instance);
+            var height = iType.GetProperty("Height").GetValue(instance);
+            var title = iType.GetProperty("Title").GetValue(instance);
+            Console.WriteLine($"W:{width},H:{height},Title:'{title}'");
+        }
     }
 }
