@@ -93,6 +93,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorOverloading", "Bonu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomExceptions", "Bonus\Projects\CustomExceptions\CustomExceptions.csproj", "{01F2D95A-ED6B-4AE4-AD84-5566A6765065}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingParams", "Bonus\Projects\UsingParams\UsingParams.csproj", "{4A7F22DA-6923-4058-9BAA-3A75CC940B3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -203,6 +205,10 @@ Global
 		{01F2D95A-ED6B-4AE4-AD84-5566A6765065}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01F2D95A-ED6B-4AE4-AD84-5566A6765065}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01F2D95A-ED6B-4AE4-AD84-5566A6765065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A7F22DA-6923-4058-9BAA-3A75CC940B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A7F22DA-6923-4058-9BAA-3A75CC940B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A7F22DA-6923-4058-9BAA-3A75CC940B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A7F22DA-6923-4058-9BAA-3A75CC940B3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -236,6 +242,7 @@ Global
 		{E5BC1AAC-BF49-437E-862A-2A8EC8ECBA3F} = {26310C7B-0CAB-4195-8165-0EAE5BC5F7D7}
 		{92F0607B-1ED2-4396-8159-7395B34B4543} = {E5BC1AAC-BF49-437E-862A-2A8EC8ECBA3F}
 		{01F2D95A-ED6B-4AE4-AD84-5566A6765065} = {E5BC1AAC-BF49-437E-862A-2A8EC8ECBA3F}
+		{4A7F22DA-6923-4058-9BAA-3A75CC940B3C} = {E5BC1AAC-BF49-437E-862A-2A8EC8ECBA3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6EDC358-2123-4182-9A8F-84C3473E6905}
