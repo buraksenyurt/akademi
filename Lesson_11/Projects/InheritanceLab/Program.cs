@@ -1,32 +1,33 @@
-﻿using System.Data;
-
-namespace InheritanceLab;
+﻿namespace InheritanceLab;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Warrior bran = new(5, 100, 25, new Weapon(WeaponType.Sword, 5));
-        Mage tirinity = new(7, 150, 1);
+        Warrior bran = new(5, 100, 25, "Bran Ironfist", new Weapon(WeaponType.Sword, 5));
+        Mage tirinity = new(7, 150, 1, "Tirinity");
+        Healer healer = new(1, 100, 1, "Gorath Arcanefury");
 
         tirinity.Attack(bran);
 
-        Console.WriteLine($"Mage, warrior'a saldırdı. Warrior'un şu anki sağlık durumu, {bran.Health}");
+        Console.WriteLine($"{tirinity.Name}, {bran.Name}'e saldırdı. {bran.Name} in şu anki sağlık durumu, {bran.Health}");
 
         tirinity.Mana = 10;
         tirinity.Attack(bran);
-        Console.WriteLine($"Mage dolan mana gücü ile tekrar saldırdı. Warrior'un şimdiki sağlık durumu, {bran.Health}");
+        Console.WriteLine($"{tirinity.Name} dolan mana gücü ile tekrar saldırdı. {bran.Name}'in şimdiki sağlık durumu, {bran.Health}");
+        healer.Heal(bran, 5);
+        Console.WriteLine($"{healer.Name}, {bran.Name} 'i iyileştirdi. Şimdi {bran.Name} in gücü, {bran.Health}");
 
         bran.Attack(tirinity);
-        Console.WriteLine($"Bran kılıcı ile büyücüye saldırdı. Büyücünün şimdiki sağlık durumu, {tirinity.Health}");
+        Console.WriteLine($"{bran.Name} kılıcı ile {tirinity.Name}'e saldırdı. {tirinity.Name} şimdiki sağlık durumu, {tirinity.Health}");
 
         var mordor = new GameSchene(80, 60);
-        mordor.AddCharacter(new Healer(1, 75, 1), 0, 0);
+        mordor.AddCharacter(new Healer(1, 75, 1, "Aelthas Sunweaver"), 0, 0);
         mordor.AddCharacter(tirinity, 3, 5);
         mordor.AddCharacter(bran, 6, 7);
-        mordor.AddCharacter(new Villager(5, 10), 10, 10);
-        mordor.AddCharacter(new Villager(5, 10), 11, 10);
-        mordor.AddCharacter(new Villager(5, 10), 12, 10);
+        mordor.AddCharacter(new Villager(5, 10, "Eldin Barleydrew"), 10, 10);
+        mordor.AddCharacter(new Villager(5, 10, "Mira Meadowfield"), 11, 10);
+        mordor.AddCharacter(new Villager(5, 10, "Tobas Greenhand"), 12, 10);
         mordor.Draw();
 
         // Bir Character nesnesini aşağıdaki gibi oluşturmanın program açısından bir anlamı yoktur.
@@ -84,14 +85,16 @@ public class GameSchene
 */
 public abstract class Character
 {
+    public string Name { get; set; }
     public int AttackPower { get; set; }
     public int Health { get; set; }
     // Aşağıdaki yapıcı metodu(constructor) yazıncan varsayılan constructor(default olan, parametresiz olan versiyonu)
     // devre dışı kalmaktadır.
-    public Character(int power, int health)
+    public Character(int power, int health, string name)
     {
         AttackPower = power;
         Health = health;
+        Name = name;
     }
     // public Character(){
 
@@ -125,8 +128,8 @@ public class Mage
     public int Mana { get; set; }
     // base(power,health) ile aslında üst sınıfın yapıcı metodunu çağırıyor
     // ve Mage yapıcı metoduna gelen değerleri oraya gönderiyoruz
-    public Mage(int power, int health, int mana)
-        : base(power, health)
+    public Mage(int power, int health, int mana, string name)
+        : base(power, health, name)
     {
         Mana = mana;
     }
@@ -151,7 +154,7 @@ public class Mage
     }
     public override void Draw()
     {
-        Console.WriteLine("Mage ekrana çizilir");
+        Console.WriteLine($"{Name} ekrana çizilir");
     }
 }
 
@@ -160,8 +163,8 @@ public class Warrior
 {
     public int Armor { get; set; }
     public Weapon EquipedWeapon { get; set; }
-    public Warrior(int power, int health, int armor, Weapon weapon)
-        : base(power, health)
+    public Warrior(int power, int health, int armor, string name, Weapon weapon)
+        : base(power, health, name)
     {
         Armor = armor;
         EquipedWeapon = weapon;
@@ -178,7 +181,7 @@ public class Warrior
     }
     public override void Draw()
     {
-        Console.WriteLine("Warrior ekrana çizilir");
+        Console.WriteLine($"{Name} ekrana çizilir");
     }
 }
 
@@ -190,13 +193,13 @@ public class Warrior
 public class Villager
     : Character
 {
-    public Villager(int power, int health)
-    : base(power, health)
+    public Villager(int power, int health, string name)
+        : base(power, health, name)
     {
     }
     public override void Draw()
     {
-        Console.WriteLine("Villager ekrana çizilir");
+        Console.WriteLine($"{Name} ekrana çizilir");
     }
 }
 
@@ -223,7 +226,7 @@ public class Weapon
 */
 public interface IHealable
 {
-    void Heal(int amount);
+    void Heal(Character target, int amount);
 }
 
 /*
@@ -234,14 +237,14 @@ public interface IHealable
 public class Healer
     : Mage, IHealable
 {
-    public Healer(int power, int health, int mana)
-        : base(power, health, mana)
+    public Healer(int power, int health, int mana, string name)
+        : base(power, health, mana, name)
     {
     }
 
-    public void Heal(int amount)
+    public void Heal(Character target, int amount)
     {
-        Health += amount;
+        target.Health += amount;
     }
 
     // public override void Draw()
