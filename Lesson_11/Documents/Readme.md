@@ -2,9 +2,18 @@
 
 Bu dersteki amacımız nesne yönelimli dillerin önemli bir özelliği olan kalıtım konusunu kısaca tanımak. Esasında bundan önceki derslerimizde Interface konusunu işlerken ve nesne bağımlılıklarını çözümlerken kalıtımın uyarlanma modellerinden birisini işledik. Hatta herkesin bir Object olduğu teorisinden yola çıkarken ToString metodunun ezildiği _(override)_ edildiği noktalarda da kalıtıma atıfta bulunduk. Elbette bu konuyu anlamanın en iyi yolu bir örnek üzerinden ilerlemekle mümkün olacaktır. Bu dersimizde bir oyun platformundaki karakterler üzerinde kalıtım _(inheritance)_ tekniklerini kullanarak nasıl modelleme yapabileceğimizi incelemeye çalışacağız.
 
+Konu anlatımımıza bir oyun içerisindeki karakterleri veya yapıları düşünerek başladık.
+
+![inheritance_01.png](inheritance_01.png)
+
+Burada oyun karakterleri ve binalara ilişkin çok basit bir analiz yer almakta. Bazı özellikler ve fonksiyonlar üst sınıflarda toplanabilir, bazı davranışlar ortaklaşa kullanılıp istenirse alt sınıflarda tekrarda yazılabilirler. Mage, Warrior ve Villager birer Character nesnesidir. House ve Casttle ise birer Building nesnesidir. Ayrıca Building ve Character birer Entity nesnesidir. Bu şekilde yaptığımı kalıtım kurgusu elbette farklılıklar gösterebilir.
+
+![inheritance_02.png](inheritance_02.png)
+
+
 ## Sözlük
 
-_Derste telafuz edilen anahtar kelimeler veya dikkate değer konular birer cümle ile özetlenir_
+- **Sanal Metotlar _(Virtual Methods)_ :** .Net içerisindeki herkes Object sınıfından türer. Object sınıfı içerisinde virtual olarak tanımlanmış bazı metotlar vardır. ToString, GetHashCode gibi. Bunlar varsayılan birer davranışa sahiptir ama istenirse kendi türlerimizde ezilebilirler. Aynı prensip kendi türetmelerimizde de söz konusudur.
 
 ## Yardımcı Linkler
 
