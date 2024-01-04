@@ -16,7 +16,7 @@ public class JsonLoader
                 IsSuccess = true,
                 Message = "Task listesi CSV dosyadan yüklendi.",
                 Exception = null,
-                LoadedObjectCount = tasks.Count,
+                LoadedObjectCount = tasks == null ? 0 : tasks.Count,
                 Tasks = tasks
             };
         }

@@ -52,7 +52,10 @@ public class TaskManager
             SOLID yazılım prensiplerinin Dependency Inversion ilkesini sağlamak için kullanılan tekniktir.
         */
         var response = taskLoader.GetTasks();
-        _tasks = response.IsSuccess ? response.Tasks.ToList() : new List<Entity.Task>();
+        if (response != null && response.Tasks != null)
+        {
+            _tasks = response.IsSuccess ? response.Tasks.ToList() : new List<Entity.Task>();
+        }
         //Load("Board");
     }
 

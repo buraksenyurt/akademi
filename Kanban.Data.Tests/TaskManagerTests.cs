@@ -402,7 +402,7 @@ public class TaskManagerTests
         task2.ChangeState();
         var actual = taskManager.Save(new FakeTaskSaverInFail());
         Assert.False(actual.IsSuccess);
-        Assert.Equal(new FileNotFoundException().Message, actual.Exception.Message);
+        Assert.Equal(new FileNotFoundException().Message, actual.Exception == null ? "" : actual.Exception.Message);
     }
 
     [Fact]
