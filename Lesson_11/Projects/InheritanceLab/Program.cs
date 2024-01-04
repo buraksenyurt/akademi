@@ -21,16 +21,21 @@ class Program
         Console.WriteLine($"Bran kılıcı ile büyücüye saldırdı. Büyücünün şimdiki sağlık durumu, {tirinity.Health}");
 
         var mordor = new GameSchene(80, 60);
+        mordor.AddCharacter(new Healer(1, 75, 1), 0, 0);
         mordor.AddCharacter(tirinity, 3, 5);
         mordor.AddCharacter(bran, 6, 7);
-        mordor.AddCharacter(new Healer(1, 75, 1), 0, 0);
         mordor.AddCharacter(new Villager(5, 10), 10, 10);
         mordor.AddCharacter(new Villager(5, 10), 11, 10);
         mordor.AddCharacter(new Villager(5, 10), 12, 10);
+        mordor.Draw();
 
         // Bir Character nesnesini aşağıdaki gibi oluşturmanın program açısından bir anlamı yoktur.
         // Bundan dolayı Character sınıfı abstract sınıf olarak da tasarlanabilir
-        var anonymous = new Character(10, 100);
+        // abstract sınıflar new operatörü ile örneklenemezler ve bu nedenle aşağıdaki gibi kullanılamazlar
+        // var anonymous = new Character(10, 100);
+        // ancak Character sınıfı abstract olsa da kendisinden türeyen nesnelerin örneklerini taşıyabilir
+        var character = tirinity;
+        character.Attack(bran); // yine Trinity sınıfındaki Attack metodu çalışır
     }
 }
 
@@ -65,7 +70,8 @@ public class GameSchene
             for (int j = 0; j < map.GetLength(1); j++)
             {
                 var currentCharacter = map[i, j];
-                // Karakteri ekrana çiz
+                // Tüm karakterler abstract draw metodunu zaten uygulamak zorundalar.
+                currentCharacter?.Draw();
             }
         }
     }
@@ -76,7 +82,7 @@ public class GameSchene
     Defend ve Attack fonksiyonları herkes için varsayılan bir çalışma şekline sahiptir.
     Ancak Attack metodu virtual tanımlandığından istenirse alt sınıflarda(türeyen sınıflarda) yeniden yazılabilir.
 */
-public class Character
+public abstract class Character
 {
     public int AttackPower { get; set; }
     public int Health { get; set; }
@@ -102,6 +108,14 @@ public class Character
     {
         target.Health -= AttackPower;
     }
+
+    /*
+        abstract sınıflar içinde tanımlanan abstract üyeler(metotlar, özellikler vs)
+        türeyen sınıflarda mutlaka ezilmek (override) zorundadır.
+        abstract üyeler diğer metotlar gibi iş yapan gövdelere sahip değildir.
+    */
+
+    public abstract void Draw();
 }
 
 // Mage is a Charackter
@@ -135,6 +149,10 @@ public class Mage
             base.Attack(target); // bu üst sınıfın (türediğimiz yer) Attack metodunu çağırır
         }
     }
+    public override void Draw()
+    {
+        Console.WriteLine("Mage ekrana çizilir");
+    }
 }
 
 public class Warrior
@@ -158,6 +176,10 @@ public class Warrior
         }
         target.Health -= totalDamage;
     }
+    public override void Draw()
+    {
+        Console.WriteLine("Warrior ekrana çizilir");
+    }
 }
 
 /*
@@ -171,6 +193,10 @@ public class Villager
     public Villager(int power, int health)
     : base(power, health)
     {
+    }
+    public override void Draw()
+    {
+        Console.WriteLine("Villager ekrana çizilir");
     }
 }
 
@@ -217,4 +243,9 @@ public class Healer
     {
         Health += amount;
     }
+
+    // public override void Draw()
+    // {
+    //     base.Draw();
+    // }
 }
