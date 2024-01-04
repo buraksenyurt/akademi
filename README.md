@@ -14,7 +14,7 @@ Sektör kampüste projesi kapsamında **ESOGU - C# ile Programlama** seçmeli de
 - [x] **[Lesson_08 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_08)** Temel Dosya Yazma/Okuma İşlemleri ve Exception Handling
 - [x] **[Lesson_09 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_09)** Nesne Verilerini Depolama Biçimleri ve Koleksiyonların Fiziki Ortama Yazılıp/Okunması
 - [x] **[Lesson_10 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_10)** Interface Kavramına Giriş ve Nesne Bağımlılıklarının Çözümlenmesi
-- [ ] **[Lesson_11 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_11)** Kalıtım Kavramı ve Örnek Üzerinden İncelenmesi
+- [x] **[Lesson_11 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_11)** Kalıtım Kavramı ve Örnek Üzerinden İncelenmesi
 - [ ] **[Lesson_12 :](https://github.com/buraksenyurt/akademi/tree/main/Lesson_12)** Kendi Generic Türlerimizi, Exception ve Attribute Sınıflarımızı Yazmak
 - [ ] **[Final Sınavı :](https://github.com/buraksenyurt/akademi/tree/main/FinalExam)** Yine 20 sorudan oluşan final sınavıdır. Toplam süre 75 dakika olarak planlanmıştır ve dönem boyu işlenen ders müfredatını kapsamaktadır. _(Sınav sonuçları girildikten sonra sorular ve cevapları eklenecektir)_
 - [ ] **[Bonus :](https://github.com/buraksenyurt/akademi/tree/main/bonus)** Kıyıda köşede kalmış olan, üzerinde çok fazla durulmamış ve müfredata ağır gelebilecek bazı konular için açılmış bölümdür.
