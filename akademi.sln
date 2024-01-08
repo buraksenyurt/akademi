@@ -107,6 +107,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{F1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritanceLab", "Lesson_11\Projects\InheritanceLab\InheritanceLab.csproj", "{1D10F5FA-5D8E-4B15-BCAC-8162F9B15E1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessGame", "Bonus\Projects\GuessGame\GuessGame.csproj", "{CBCAEC85-6883-4494-BB22-823F4BE5B868}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -237,6 +239,10 @@ Global
 		{1D10F5FA-5D8E-4B15-BCAC-8162F9B15E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D10F5FA-5D8E-4B15-BCAC-8162F9B15E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D10F5FA-5D8E-4B15-BCAC-8162F9B15E1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBCAEC85-6883-4494-BB22-823F4BE5B868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBCAEC85-6883-4494-BB22-823F4BE5B868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBCAEC85-6883-4494-BB22-823F4BE5B868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBCAEC85-6883-4494-BB22-823F4BE5B868}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -276,6 +282,7 @@ Global
 		{BCE2A1DB-EBBD-4B4E-BFF1-F84D79104EF1} = {E5BC1AAC-BF49-437E-862A-2A8EC8ECBA3F}
 		{F13A496F-4F16-40AB-A840-F49469DB0658} = {2B575982-2041-4534-982D-CA4AF3DD8889}
 		{1D10F5FA-5D8E-4B15-BCAC-8162F9B15E1C} = {F13A496F-4F16-40AB-A840-F49469DB0658}
+		{CBCAEC85-6883-4494-BB22-823F4BE5B868} = {E5BC1AAC-BF49-437E-862A-2A8EC8ECBA3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6EDC358-2123-4182-9A8F-84C3473E6905}
