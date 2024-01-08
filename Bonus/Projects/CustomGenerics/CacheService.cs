@@ -1,3 +1,5 @@
+using Database;
+
 namespace Cache;
 /*
     Aşağıda örnek bir geliştirici tanımlı generic sınıf şablonu yer almaktadır.
@@ -29,15 +31,4 @@ public class CacheService<T>
     {
         _cache[key] = value;
     }
-}
-
-public interface IEntity { }
-
-public class Announcment
-    : IEntity
-{
-    public int Id { get; set; }
-    public string Title { get; set; }
-    public string Content { get; set; }
-
 }
