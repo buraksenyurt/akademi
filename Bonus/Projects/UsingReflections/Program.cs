@@ -68,6 +68,20 @@ class Program
             var height = iType.GetProperty("Height").GetValue(instance);
             var title = iType.GetProperty("Title").GetValue(instance);
             Console.WriteLine($"W:{width},H:{height},Title:'{title}'");
+
+            /*
+                Runtime'da reflection kullanarak Property değerlerini okuyabileceğimiz gibi
+                onları set edebiliriz de. Aşağıdaki kod parçasında Window sınıfının
+                Width, Height, Title özellikleri set edilir.
+                
+                Ardından Window sınıfı içinde override edilmiş olan ToString metodu çağrılır.
+            */
+            iType.GetProperty("Width").SetValue(instance, Convert.ToInt32(width) + 1);
+            iType.GetProperty("Height").SetValue(instance, Convert.ToInt32(width) + 1);
+            iType.GetProperty("Title").SetValue(instance, "A new Hope");
+
+            var result = iType.GetMethod("ToString").Invoke(instance, null);
+            Console.WriteLine(result);
         }
     }
 }

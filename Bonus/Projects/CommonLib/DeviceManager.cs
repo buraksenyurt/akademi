@@ -31,10 +31,15 @@ public class Window
         Width = w;
         Height = h;
         Title = title;
-    }   
+    }
 
     public void Draw()
     {
         Console.WriteLine("Drawing");
+    }
+
+    public override string ToString()
+    {
+        return $"{Title} ({Width} X {Height})";
     }
 }
