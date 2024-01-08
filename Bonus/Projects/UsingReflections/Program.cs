@@ -77,7 +77,7 @@ class Program
                 Ardından Window sınıfı içinde override edilmiş olan ToString metodu çağrılır.
             */
             iType.GetProperty("Width").SetValue(instance, Convert.ToInt32(width) + 1);
-            iType.GetProperty("Height").SetValue(instance, Convert.ToInt32(width) + 1);
+            iType.GetProperty("Height").SetValue(instance, Convert.ToInt32(height) + 1);
             iType.GetProperty("Title").SetValue(instance, "A new Hope");
 
             var result = iType.GetMethod("ToString").Invoke(instance, null);
