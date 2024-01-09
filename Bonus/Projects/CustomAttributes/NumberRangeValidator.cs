@@ -31,9 +31,12 @@ public class ValidatorAttribute
 public class NumberRangeValidatorAttribute // Bu konudaki sınıf adları Attribute kelimesi ile biter
     : Attribute
 {
-    public uint MinValue { get; set; }
-    public uint MaxValue { get; set; }
-    public NumberRangeValidatorAttribute(uint min, uint max)
+    public int MinValue { get; set; }
+    public int MaxValue { get; set; }
+    public NumberRangeValidatorAttribute()
+        : this(1, 100)
+    { }
+    public NumberRangeValidatorAttribute(int min, int max)
     {
         if (min > max)
         {
