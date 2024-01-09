@@ -1,4 +1,5 @@
-﻿using Cache;
+﻿using Deppo;
+using Cache;
 using Database;
 using DataContext;
 
@@ -28,3 +29,10 @@ var repository = new Repository<Announcment>();
 repository.Add(anno1);
 var anno2 = repository.Get(1);
 Console.WriteLine(anno2.Title);
+
+var johnDoe = new Player { Id = 1, Name = "Johny Doey", Point = 7.56 };
+var middleLittle = new Player { Id = 2, Name = "Middle Little", Point = 5.52 };
+var calculator = new SmartCalc<Player, double>();
+
+var teamPoint = calculator.Sum(johnDoe, middleLittle);
+Console.WriteLine($"Total team point {teamPoint}");
