@@ -40,6 +40,7 @@ public void Add_New_Task_Returns_Valid_Id_Test()
 ## Yardımcı Linkler
 
 - [Asp.Net Core - Dependency Injection Türleri](https://www.buraksenyurt.com/post/asp-net-core-dependency-injection-turleri)
+- Interface Kullanımı ile İlgili Gerçek Hayat Örneklerinden Birisi,[Part 1](https://www.buraksenyurt.com/post/Fluent-Interface-Prensibi-ile-Daha-Okunabilir-Kod-Gelistirmek) , [Part 2](https://www.buraksenyurt.com/post/Fluent-Interface-Prensibi-ile-Daha-Okunabilir-Kod-Gelistirmek-2nci-Yarc4b1)
 
 ## Kullandığımız Komutlar
 
