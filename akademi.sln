@@ -113,6 +113,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomGenerics", "Bonus\Pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAttributes", "Bonus\Projects\CustomAttributes\CustomAttributes.csproj", "{411E44CF-C3C9-406E-9FCD-29F8EFCE2614}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALittleBitLINQ", "Bonus\Projects\ALittleBitLINQ\ALittleBitLINQ.csproj", "{CBBD29F2-F066-4935-B031-BFCDE51BBE21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -255,6 +257,10 @@ Global
 		{411E44CF-C3C9-406E-9FCD-29F8EFCE2614}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{411E44CF-C3C9-406E-9FCD-29F8EFCE2614}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{411E44CF-C3C9-406E-9FCD-29F8EFCE2614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBBD29F2-F066-4935-B031-BFCDE51BBE21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBBD29F2-F066-4935-B031-BFCDE51BBE21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBBD29F2-F066-4935-B031-BFCDE51BBE21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBBD29F2-F066-4935-B031-BFCDE51BBE21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -297,6 +303,7 @@ Global
 		{CBCAEC85-6883-4494-BB22-823F4BE5B868} = {E5BC1AAC-BF49-437E-862A-2A8EC8ECBA3F}
 		{7B9AF378-DF1C-412F-A0EB-7B7E71E52548} = {E5BC1AAC-BF49-437E-862A-2A8EC8ECBA3F}
 		{411E44CF-C3C9-406E-9FCD-29F8EFCE2614} = {E5BC1AAC-BF49-437E-862A-2A8EC8ECBA3F}
+		{CBBD29F2-F066-4935-B031-BFCDE51BBE21} = {E5BC1AAC-BF49-437E-862A-2A8EC8ECBA3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6EDC358-2123-4182-9A8F-84C3473E6905}
