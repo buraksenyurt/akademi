@@ -9,7 +9,7 @@ _Derste telafuz edilen anahtar kelimeler veya dikkate değer konular birer cüml
 ## Yardımcı Linkler
 
 - [Reflection Sınıfı İle Tiplerin Sırrı Ortaya Çıkıyor - 2003](https://www.buraksenyurt.com/post/Reflection-S%C4%B1n%C4%B1f%C4%B1-Ile-Tiplerin-S%C4%B1rr%C4%B1-Ortaya-C%C4%B1k%C4%B1yor-bsenyurt-com-dan)
-- [C# Temelleri : Nitelikleri(Attributes) Kavramak - 2007](https://www.buraksenyurt.com/post/C-Temelleri-Nitelikleri(Attributes)-Kavramak-bsenyurt-com-dan()
+- [C# Temelleri : Nitelikleri(Attributes) Kavramak - 2007](https://www.buraksenyurt.com/post/C-Temelleri-Nitelikleri(Attributes)-Kavramak-bsenyurt-com-dan)
 
 ## Kullandığımız Komutlar
 
