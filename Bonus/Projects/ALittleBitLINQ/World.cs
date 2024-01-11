@@ -145,15 +145,4 @@ public enum Order
     Descending
 }
 
-public enum Expertise
-{
-    AI,
-    Graphics,
-    LevelDesign,
-    Gameplay,
-    Physics,
-    Story
-
-}
-
 public record GameAndProgrammers(string Title, IEnumerable<string> Programmers);
