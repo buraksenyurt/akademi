@@ -21,7 +21,8 @@ class Program
         var someEmails = new string[] {
                 "john@doe.com"
                 , "john.doe@gmail.com"
-                , "some_email", "1234"
+                , "some_email"
+                , "1234"
                 , ""
                 ,"thresisnoEMAILaddressinthisroom"
             };
@@ -52,7 +53,7 @@ class Program
         string sampleScript = @"
             public class Calculator {
                 private double pi;
-                public double Sum(double x,double y) 
+                public double Sum(double x,double y)
                 { 
                     return x + y;
                 }                
@@ -67,6 +68,7 @@ class Program
 
             public interface IShape{
                 string Title { get; }
+                bool Check();
             }
         ";
         var methodNames = RegexUtility.FindMethodNames(sampleScript);

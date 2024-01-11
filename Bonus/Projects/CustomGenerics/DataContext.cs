@@ -21,7 +21,6 @@ public class Repository<T> : IRepository<T>
 
     public T Get(int id)
     {
-        // Assume each T has an Id property (not implemented here)
         return _items.FirstOrDefault(item => item.Id == id);
     }
 
@@ -29,4 +28,27 @@ public class Repository<T> : IRepository<T>
     {
         return _items;
     }
+}
+
+public class Category
+    : IEntity
+{
+    public int Id { get; set; }
+    public string Title { get; set; } = "NoName";
+    public IEnumerable<Product> Products { get; set; } = new List<Product>();
+    
+    public static int operator +(Category a, Category b)
+    {
+        return a.Products.Count() + b.Products.Count();
+    }
+}
+
+public class Product
+    : IEntity
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = "NoName";
+    public string code { get; set; }
+    public double ListPrice { get; set; }
+    public Category Category { get; set; }
 }

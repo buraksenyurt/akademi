@@ -11,17 +11,18 @@ class Program
     static void Main()
     {
         var total = Utility.DoubleSum(1, 3, 5, 7, 9);
-        Console.WriteLine(total);
+        Console.WriteLine($"1,3,5,7,9 için {total}");
 
-        Utility.DoubleSum(3, 5, 7, 11, 13, 17, 19);
-        Console.WriteLine(total);
+        total = Utility.DoubleSum(3, 5, 7, 11, 13, 17, 19, 21, 35);
+        Console.WriteLine($"3, 5, 7, 11, 13, 17, 19, 21, 35 için {total}");
 
         Utility.Writer("Bugün günlerden, ", DateTime.Now, "Main Program'da ", "Program.cs içerisindeyim.", true, Math.PI);
+        Utility.Writer("It's a", "rainy day", 4, "Degree");
 
         var perimeters = Utility.CalcPerimeters(new Rectangle(1, 5), new Rectangle(2.5, 6.3));
         foreach (var perimeter in perimeters)
         {
-            Console.WriteLine(perimeter);
+            Console.WriteLine($"Çevre bilgisi {perimeter}");
         }
     }
 }
@@ -32,9 +33,10 @@ class Program
 public class Utility
 {
     /// <summary>
-    /// N sayıda sayının karelerinin toplamını bulur
+    /// Bu fonksiyon N adet sayının 
+    /// karelerinin toplamını bulmak için kullanılabilir.
     /// </summary>
-    /// <param name="numbers">Sayılar</param>
+    /// <param name="numbers">Kareleri toplanacak olan sayılar dizisi</param>
     /// <returns>Kareler toplamı</returns>
     public static int DoubleSum(params int[] numbers)
     {
@@ -67,12 +69,9 @@ public class Utility
     }
 
     /// <summary>
-    /// Dörtgenlerin çevrelerini hesaplar
-    /// 
-    /// Parametre olarak gelen dörtgenlerin her birinin çevresini hesaplar,
-    /// bulunan değerleri dizide toplar.
+    /// Parametre olarak gelen dörtgenlerin her birinin çevresini hesaplar, bulunan değerleri bir dizide toplar.
     /// </summary>
-    /// <param name="rectangles">Çevre değerlerinin listesi</param>
+    /// <param name="rectangles">Çevre değerleri hesaplanacak dörtgenler listesi</param>
     /// <returns>Çevre değerlerinin listesi</returns>
     public static double[] CalcPerimeters(params Rectangle[] rectangles)
     {
