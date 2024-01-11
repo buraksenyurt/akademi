@@ -51,6 +51,10 @@ Reflection konusuna ait çalışma zamanı çıktısı.
 
 ![reflection.png](reflection.png)
 
+Reflection biraz daha ileri seviye bir konu ve başlangıçta .Net tip sistemi içindeki enstrümanları iyi bilmeyi gerektiriyor. Örneklerde kullandığımız hiyerarşi yapısını aşağıdaki çizelgede görebilirsiniz. Bu kavramları bildiğimiz takdirde Reflection enstrümanlarını kullanmamız oldukça kolay olacaktır.
+
+![reflection_design.png](reflection_design.png)
+
 Attribute kullanımına ait çalışma zamanı çıktısı.
 
 ![custom_attribute.png](custom_attribute.png)
