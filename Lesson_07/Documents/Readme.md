@@ -50,10 +50,10 @@ UsingExtensions ve UsingEvents isimli programlara ait çalışma zamanı görün
 
 Bu dersteki fonksiyonları test etmek amacıyla bir birim test projesi oluşturup üzerinde farklı kabul kriterlerini deneyebiliriz.
 
-**Not: Konuyla ilgili olarak Kanban.Extensions projesinde integer bir değeri TaskSize'a çeviren genişletme metodu eklenmiş ve testleri de Kanban.Extensions.Tests isimli projeye eklenmiştir. Çalışmanız sırasında bu projeyi de referans alabilirsiniz.**
+**Not: Konuyla ilgili olarak Kanban.Extensions projesinde integer bir değeri WorkItemSize'a çeviren genişletme metodu eklenmiş ve testleri de Kanban.Extensions.Tests isimli projeye eklenmiştir. Çalışmanız sırasında bu projeyi de referans alabilirsiniz.**
 
 ## Kazanımlar
 
 - Nesnelere event bildirimleri ile yeni işlevsellikler kazandırmak
 - Static sınıflar ve statik metotların kullanımı
-- Var olan tiplerin içeriğini değiştirmeden genişletme metotları ile zenginleştirebilmek
+- Var olan tiplerin içeriğini değiştirmeden genişletme metotları ile zenginleştirebilmek.

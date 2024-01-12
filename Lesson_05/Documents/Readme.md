@@ -1,14 +1,12 @@
 # Lesson_05 : Generic List Kullanımı ve Daha Çok Test
 
-Bu derste önceki derste başladığımız ve genel olarak bir Kanban bordunun basit yönetimi için gerekli metotları sunan TaskManager sınıfının birim testlerini tamamlamaya çalıştık. Testleri ilk çalıştırmalarda Fail durumuna düşürüp sonrasında Success durumuna gelecek şekilde düzenledik. Ardından kodu build warning mesajları ve VS Code önerileri doğrultusunda iyileştirmeye çalıştık. Bir nebze Red Green Blue tekniği ile ilerledik. Red-Green-Refactor olarak da adlandırılan ve TDD'nin önemli bir parçası olan bu teknikle ilgili [şu adreste](https://www.codecademy.com/article/tdd-red-green-refactor) oldukça güzel bir kaynak da yer alıyor. 
+Bu derste önceki derste başladığımız ve genel olarak bir Kanban bordunun basit yönetimi için gerekli metotları sunan WorkItemManager sınıfının birim testlerini tamamlamaya çalıştık. Testleri ilk çalıştırmalarda Fail durumuna düşürüp sonrasında Success durumuna gelecek şekilde düzenledik. Ardından kodu build warning mesajları ve VS Code önerileri doğrultusunda iyileştirmeye çalıştık. Bir nebze Red Green Blue tekniği ile ilerledik. Red-Green-Refactor olarak da adlandırılan ve TDD'nin önemli bir parçası olan bu teknikle ilgili [şu adreste](https://www.codecademy.com/article/tdd-red-green-refactor) oldukça güzel bir kaynak da yer alıyor. 
 
-Dersin bu kısmına gelen kadar veri serilerini tutmak için elimizde Array türü bulunuyordu. Bu derste boyutları dinamik olarak değişebilen, tür güvenli generic koleksiyonlardan yararlanmaya çalıştık. Bu amaçla Task nesnelerini bir List koleksiyonunda depoladık. İlerleyen derslerdeki hedeflerimizden birisi de, Task bilgilerini fiziki bir depolama ortamından okumak ve yine bu ortama yazmak. İlk akla gelen veritabanı olmakla birlikte dosya girdi çıktı işlemlerinin de öğrenilmesi için Comma Seperated File türünde dosyalardan yararlanmayı planlıyoruz.
+Dersin bu kısmına gelen kadar veri serilerini tutmak için elimizde Array türü bulunuyordu. Bu derste boyutları dinamik olarak değişebilen, tür güvenli generic koleksiyonlardan yararlanmaya çalıştık. Bu amaçla WorkItem nesnelerini bir List koleksiyonunda depoladık. İlerleyen derslerdeki hedeflerimizden birisi de, WorkItem bilgilerini fiziki bir depolama ortamından okumak ve yine bu ortama yazmak. İlk akla gelen veritabanı olmakla birlikte dosya girdi çıktı işlemlerinin de öğrenilmesi için Comma Seperated File türünde dosyalardan yararlanmayı planlıyoruz.
 
 ## Sözlük
 
-- **Generic Koleksiyonlar :** Stack *(LIFO yani Last in First Out ilkesine göre çalışır)* , Queue *(First In First Out ilkesine göre çalışır)* , List *(En genel nesne koleksiyonlarındandır)*, Dictionary *(Key-Value çiftleri şeklinde nesneleri tutar)*, HashSet *(Key-Value modeli gibi çalışan ama sıralamada hash değerlerini kullanan bir koleksiyon)* gibi popüler koleksiyon türleri söz konusudur. Generic koleksiyonlar normal koleksiyon türlerinden farklı olarak örneklenirken verilen tür ne ise onunla ilgili nesne örnekleri tutar. Buna göre örneğin **List< Product >** şeklinde bir generic liste tanımlarsak, List sınıfının tüm metotları Product tipi ile çalışabilir hale gelir. Bu önemlidir nitekim her ayrı tip için ayrı bir List sınıfı yazmak yerine .Net içinde generic tanımlanmış tek bir List sınıfı kullanılır.
-Örneğin aşağıdaki şekilde List sınıfının Add metodunun parametresi Entity.Task türündendir.
-![generics.png](../generics.png)
+- **Generic Koleksiyonlar :** Stack *(LIFO yani Last in First Out ilkesine göre çalışır)* , Queue *(First In First Out ilkesine göre çalışır)* , List *(En genel nesne koleksiyonlarındandır)*, Dictionary *(Key-Value çiftleri şeklinde nesneleri tutar)*, HashSet *(Key-Value modeli gibi çalışan ama sıralamada hash değerlerini kullanan bir koleksiyon)* gibi popüler koleksiyon türleri söz konusudur. Generic koleksiyonlar normal koleksiyon türlerinden farklı olarak örneklenirken verilen tür ne ise onunla ilgili nesne örnekleri tutar. Buna göre örneğin **List< Product >** şeklinde bir generic liste tanımlarsak, List sınıfının tüm metotları Product tipi ile çalışabilir hale gelir. Bu önemlidir nitekim her ayrı tip için ayrı bir List sınıfı yazmak yerine .Net içinde generic tanımlanmış tek bir List sınıfı kullanılır. List sınıfının Add metodunun parametresi WorkItem türündendir.
 - **Kendi generic türlerimizi de yazabiliriz.** Generic sınıflar, generic arayüzler, generic metotlar, generic temsilciler vb
 - Generic türlerde kıstaslar da *(Constraints)*  kullanılabilir. Yani generic tipin *(Genellikle < T > şeklinde ifade edilen)* belli kriterlere mutlaka uyması da sağlanabilir. Örneğin T mutlaka sınıf olmalı ya da T tipi mutlaka varsayılan yapıcı metoda sahip olmalı veya T tipi mutlaka belirtilen bir tipten türetilmiş olmalı.
 - **Guid :** Globally Unique Identifier
@@ -35,7 +33,7 @@ dotnet test
 
 ## Çalışma Zamanı
 
-Ders boyunca amacımız olası kabul kriterlerine göre test metotlarını tamamlamak ve TaskManager sınıfının planlanan metotlarının doğru çalıştığından emin olmaktı.
+Ders boyunca amacımız olası kabul kriterlerine göre test metotlarını tamamlamak ve WorkItemManager sınıfının planlanan metotlarının doğru çalıştığından emin olmaktı.
 
 ![runtime.png](../runtime.png)
 

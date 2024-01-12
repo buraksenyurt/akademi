@@ -1,6 +1,6 @@
 # Lesson_04 : Sınıf Kütüphaneleri ve Birim Testler
 
-Bu derste bir solution içerisinde yer alabilecek proje yapılarından, Kanban board'a konu olan POCO türlerinin ayrı bir sınıf kütüphanesinde konuşlandırılmasından, task yönetimi ile ilgili yeni bir kütüphane oluşturup buna ait birim testlerin nasıl ele alınabileceğinden bahsettik. Yüksek kalitede, bakım maliyeti düşük, iş biriminin çeşitli kabul kriterlerini karışalayan ve code coverage değerleri yüksek çıktılarda birim testlerin önemine vurgu yaptık. Çok basit manada ilk birim test metotlarımızı yazmayı da denedik. Bir solution içerisindeki temel yapı taşları ile, namesace örgüsü ve iç enstrümanlarını da aşağıdaki grafikle özetlemeye çalıştık.
+Bu derste bir solution içerisinde yer alabilecek proje yapılarından, Kanban board'a konu olan POCO türlerinin ayrı bir sınıf kütüphanesinde konuşlandırılmasından, work item yönetimi ile ilgili yeni bir kütüphane oluşturup buna ait birim testlerin nasıl ele alınabileceğinden bahsettik. Yüksek kalitede, bakım maliyeti düşük, iş biriminin çeşitli kabul kriterlerini karışalayan ve code coverage değerleri yüksek çıktılarda birim testlerin önemine vurgu yaptık. Çok basit manada ilk birim test metotlarımızı yazmayı da denedik. Bir solution içerisindeki temel yapı taşları ile, namesace örgüsü ve iç enstrümanlarını da aşağıdaki grafikle özetlemeye çalıştık.
 
 ![solution_structure.png](solution_structure.png)
 
@@ -13,7 +13,7 @@ Bu derste bir solution içerisinde yer alabilecek proje yapılarından, Kanban b
 
 ## Yardımcı Linkler
 
-- VS Code tarafında .Net projeleri ile çalışırken yardımcı olacak pek çok eklenti var. Bunlarda birisi de [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit). 
+- VS Code tarafında .Net projeleri ile çalışırken yardımcı olacak pek çok eklenti var. Bunlarda birisi de [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit).
 - .Net eko sisteminin paket yönetim hizmeti Nuget'tir ve [şu adresten](https://www.nuget.org/) erişilebilir. Bir çok konuda çözüm sunan paketlere nuget repolarından erişebilir ve projelerde kullanabiliriz. Örneğin RabbitMQ, Entity Framework, JSON gibi ile işlerle uğraşırken tekerleği yeniden icat etmek yerine bu alanlara özel yazılmış Nuget paketlerinden faydalanılabilir. Bazı firmalar kendi nuget repolarını açar ve internal kütüphanelerini bu repolarda tutarak geliştirmeler yapar.
 
 ## Kullandığımız Komutlar
@@ -71,7 +71,7 @@ dotnet test -l "console;verbosity=normal"
 
 ## Çalışma Zamanı
 
-Derste ilk birim test metotlarımızı TaskManager sınıfı üzerinden incelemeye çalıştık. Geldiğimiz nokta itibariyle aşağıdaki sonuçları elde ettik.
+Derste ilk birim test metotlarımızı WorkItemManager sınıfı üzerinden incelemeye çalıştık. Geldiğimiz nokta itibariyle aşağıdaki sonuçları elde ettik.
 
 ![test_runtime.png](test_runtime.png)
 
