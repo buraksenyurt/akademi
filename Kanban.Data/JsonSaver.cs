@@ -1,16 +1,18 @@
 using System.Text.Json;
 using Kanban.Contract;
+using Kanban.Entity;
 
 namespace Kanban.Data;
 
 public class JsonSaver
     : IWorkItemSaver
 {
-    public SaveResponse Save(IEnumerable<Entity.WorkItem> workItems)
+    public SaveResponse Save(IEnumerable<WorkItem> workItems)
     {
         try
         {
             var targetPath = Path.Combine(Environment.CurrentDirectory, "WorkItemData.json");
+            Console.WriteLine($"İçerik {targetPath} dosyasına kaydedilecek");
             var content = JsonSerializer.Serialize(workItems, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(targetPath, content);
             return new SaveResponse

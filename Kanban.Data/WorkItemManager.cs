@@ -52,9 +52,10 @@ public class WorkItemManager
             SOLID yazılım prensiplerinin Dependency Inversion ilkesini sağlamak için kullanılan tekniktir.
         */
         var response = loader.GetWorkItems();
-        if (response != null && response.WorkItems != null)
+        if (response != null)
         {
-            _workItems = response.IsSuccess ? response.WorkItems.ToList() : new List<WorkItem>();
+            Console.WriteLine($"Yükleme başarılı mı? {response.IsSuccess}");
+            _workItems = response.IsSuccess ? response.WorkItems.ToList() : [];
         }
         //Load("Board");
     }
@@ -134,7 +135,6 @@ public class WorkItemManager
         // return count;
     }
 
-    // Aşağıdaki metot belli bir state altındaki WorkItem nesnelerinin dizisini döndürür
     public List<WorkItem> GetWorkItems(WorkItemState workItemState)
     {
         return _workItems.Where(t => t.State == workItemState).ToList();
@@ -148,7 +148,7 @@ public class WorkItemManager
         // }
         // return resultSet;
     }
-
+    public List<WorkItem> GetWorkItems() => _workItems;
     /*
         Bu sefer nesne bağımlılığı metot üzerinden enjekte edilmektedir.(Dependency Injection)
     */
