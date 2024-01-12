@@ -1,6 +1,6 @@
 namespace Kanban.Entity
 {
-    public enum TaskState
+    public enum WorkItemState
     {
         Todo,
         InProgress,

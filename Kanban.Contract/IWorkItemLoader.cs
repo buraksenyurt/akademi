@@ -1,3 +1,5 @@
+using Kanban.Entity;
+
 namespace Kanban.Contract;
 /*
     Interface tipleri daha çok nesne bağımlılıklarını çözümlemek,
@@ -11,9 +13,9 @@ namespace Kanban.Contract;
     Interface türünün önemli özelliklerinden birisi, kendisini implemente eden nesne örneklerini taşıyabilmesidir.
     Bu duruma nesne yönelimli dillerde çok biçimlilik (Polymorphyszm) adı da verilir.
 */
-public interface ITaskLoader
+public interface IWorkItemLoader
 {
-    LoadResponse GetTasks(); // Bu interface tipini uygulayanlar GetTasks isimli metodu ezmek(yazmak) zorundadır
+    LoadResponse GetWorkItems(); // Bu interface tipini uygulayanlar GetWorkItems isimli metodu ezmek(yazmak) zorundadır
 }
 
 public class LoadResponse
@@ -22,5 +24,5 @@ public class LoadResponse
     public Exception? Exception { get; set; }
     public string Message { get; set; } = string.Empty;
     public int LoadedObjectCount { get; set; }
-    public IEnumerable<Entity.Task>? Tasks;
+    public IEnumerable<WorkItem>? WorkItems;
 }

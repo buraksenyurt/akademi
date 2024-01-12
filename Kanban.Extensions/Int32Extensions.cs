@@ -4,27 +4,27 @@ namespace Kanban.Extensions;
 
 public static class Int32Extensions
 {
-    public static TaskSize ConvertToTaskSize(this int value)
+    public static WorkItemSize ConvertToWorkItemSize(this int value)
     {
         if (value > 0 && value <= 5)
         {
-            return TaskSize.S;
+            return WorkItemSize.S;
         }
         else if (value > 5 && value <= 13)
         {
-            return TaskSize.M;
+            return WorkItemSize.M;
         }
         else if (value > 13 && value <= 20)
         {
-            return TaskSize.L;
+            return WorkItemSize.L;
         }
         else if (value > 20 && value <=80)
         {
-            return TaskSize.XL;
+            return WorkItemSize.XL;
         }
         else
         {
-            return TaskSize.NA;
+            return WorkItemSize.NA;
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace Kanban.Entity
 {
-    public enum TaskSize
+    public enum WorkItemSize
     {
         S,
         M,

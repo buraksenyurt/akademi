@@ -3,100 +3,100 @@ using Kanban.Entity;
 
 namespace Kanban.Data.Tests;
 /*
-    Bu birim test sınıfındaki TaskManager nesneleri örneklenirken ihtiyaç duyulan Task listesi için
-    sahte bir ITaskLoader implementasyonu kullanmaktayız. Bu sayede task listesini sanki fiziki bir dosyadan 
+    Bu birim test sınıfındaki WorkItemManager nesneleri örneklenirken ihtiyaç duyulan WorkItem listesi için
+    sahte bir IWorkItemLoader implementasyonu kullanmaktayız. Bu sayede WorkItem listesini sanki fiziki bir dosyadan 
     okumuşuz gibi nesneyi başlatma şansına sahip oluyoruz.
 */
 
-public class FakeTaskLoader
-    : ITaskLoader
+public class FakeWorkItemLoader
+    : IWorkItemLoader
 {
-    public LoadResponse GetTasks()
+    public LoadResponse GetWorkItems()
     {
-        var tasks = new List<Entity.Task>{
+        var workItems = new List<WorkItem>{
                 new(null)
                 {
                     Title = "Ara sınav için hazırlık yap",
                     Duration = 3,
                     DurationType = DurationType.Hour,
-                    TaskSize = TaskSize.M,
+                    WorkItemSize = WorkItemSize.M,
                 },
                 new(null)
                 {
                     Title = "Odayı temizle.",
                     Duration = 1,
                     DurationType = DurationType.Hour,
-                    TaskSize = TaskSize.S
+                    WorkItemSize = WorkItemSize.S
                 }
         };
         return new LoadResponse
         {
             IsSuccess = true,
             Exception = null,
-            Message = "Task listesi başarıyla yüklendi",
-            LoadedObjectCount = tasks.Count,
-            Tasks = tasks
+            Message = "Görev listesi başarıyla yüklendi",
+            LoadedObjectCount = workItems.Count,
+            WorkItems = workItems
         };
     }
 }
 
 /*
-    Duruma göre ihtiyaç duyulan task listeleri farklılaştıkça buradaki Fake sınıfının sayısı da artabilir.
+    Duruma göre ihtiyaç duyulan WorkItem listeleri farklılaştıkça buradaki Fake sınıfının sayısı da artabilir.
     Bu çok istemediğimiz bir durum. Bunun için Mock kütüphanelerinden yararlanılabilir.
 */
 
-public class FakeTaskLoaderWithState
-    : ITaskLoader
+public class FakeWorkItemLoaderWithState
+    : IWorkItemLoader
 {
-    public LoadResponse GetTasks()
+    public LoadResponse GetWorkItems()
     {
-        var tasks = new List<Entity.Task>{
+        var workItems = new List<WorkItem>{
                 new(null)
                 {
                     Title = "Ara sınav için hazırlık yap",
                     Duration = 3,
                     DurationType = DurationType.Hour,
-                    TaskSize = TaskSize.M,
+                    WorkItemSize = WorkItemSize.M,
                 },
                 new(null)
                 {
                     Title = "Odayı temizle.",
                     Duration = 1,
                     DurationType = DurationType.Hour,
-                    TaskSize = TaskSize.S
+                    WorkItemSize = WorkItemSize.S
                 }
         };
-        tasks[0].ChangeState();
+        workItems[0].ChangeState();
         return new LoadResponse
         {
             IsSuccess = true,
             Exception = null,
-            Message = "Task listesi başarıyla yüklendi",
-            LoadedObjectCount = tasks.Count,
-            Tasks = tasks
+            Message = "Görev listesi başarıyla yüklendi",
+            LoadedObjectCount = workItems.Count,
+            WorkItems = workItems
         };
     }
 }
 
-public class FakeTaskSaver
-    : ITaskSaver
+public class FakeWorkItemSaver
+    : IWorkItemSaver
 {
-    public SaveResponse Save(IEnumerable<Entity.Task> tasks)
+    public SaveResponse Save(IEnumerable<WorkItem> workItems)
     {
         return new SaveResponse
         {
             IsSuccess = true,
             Exception = new Exception(),
-            Message = "Task listesi TaskData.csv dosyasına kaydedildi.",
-            SavedObjectCount = tasks.Count()
+            Message = "Görev listesi WorkItemData.csv dosyasına kaydedildi.",
+            SavedObjectCount = workItems.Count()
         };
     }
 }
 
-public class FakeTaskSaverInFail
-    : ITaskSaver
+public class FakeWorkItemSaverInFail
+    : IWorkItemSaver
 {
-    public SaveResponse Save(IEnumerable<Entity.Task> tasks)
+    public SaveResponse Save(IEnumerable<WorkItem> workItems)
     {
         return new SaveResponse
         {

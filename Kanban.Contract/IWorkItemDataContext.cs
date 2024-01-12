@@ -1,3 +1,5 @@
+using Kanban.Entity;
+
 namespace Kanban.Contract;
 
 /*
@@ -6,8 +8,8 @@ namespace Kanban.Contract;
     Ancak design böyle olmak zorunda değildir. Aşağıdaki gibi de tasarlayabiliriz.
 */
 
-public interface ITaskDataContext
+public interface IWorkItemDataContext
 {
-    IEnumerable<Entity.Task> GetAll();
-    string Save(IEnumerable<Entity.Task> tasks);
+    IEnumerable<WorkItem> GetAll();
+    string Save(IEnumerable<WorkItem> workItems);
 }

@@ -4,40 +4,40 @@ using Kanban.Entity;
 namespace Kanban;
 
 /*
-    CsvLoader varsayılan olarak Task'ları bir dosyadan okuma görevini işler.
+    CsvLoader varsayılan olarak yapılacakları bir dosyadan okuma görevini işler.
     Bu CSV uzantılı bir dosyadır.
-    CsvLoader sınıfı ITaskLoader interface'inden türediği için bu arayüz tipinde belirtilen tüm metotları uygulamak zorundadır.
+    CsvLoader sınıfı IWorkItemLoader interface'inden türediği için bu arayüz tipinde belirtilen tüm metotları uygulamak zorundadır.
 */
 public class CsvLoader
-    : ITaskLoader
+    : IWorkItemLoader
 {
-    public LoadResponse GetTasks()
+    public LoadResponse GetWorkItems()
     {
-        var tasks = new List<Entity.Task>();
+        var workItems = new List<WorkItem>();
         try
         {
-            var filePath = Path.Combine(Environment.CurrentDirectory, "TaskData.csv");
+            var filePath = Path.Combine(Environment.CurrentDirectory, "WorkItemData.csv");
             var lines = File.ReadAllLines(filePath);
             foreach (var line in lines)
             {
                 var columns = line.Split('|');
-                Entity.Task newTask = new(Guid.Parse(columns[0]))
+                WorkItem newWorkItem = new(Guid.Parse(columns[0]))
                 {
                     Title = columns[1],
-                    TaskSize = (TaskSize)Enum.Parse(typeof(TaskSize), columns[2]),
+                    WorkItemSize = (WorkItemSize)Enum.Parse(typeof(WorkItemSize), columns[2]),
                     Duration = Convert.ToByte(columns[3]),
                     DurationType = Enum.Parse<DurationType>(columns[4]),
-                    State = Enum.Parse<TaskState>(columns[5])
+                    State = Enum.Parse<WorkItemState>(columns[5])
                 };
-                tasks.Add(newTask);
+                workItems.Add(newWorkItem);
             }
             return new LoadResponse
             {
                 IsSuccess = true,
-                Message = "Task listesi CSV dosyadan yüklendi.",
+                Message = "Görevler listesi CSV dosyadan yüklendi.",
                 Exception = null,
-                LoadedObjectCount = tasks.Count,
-                Tasks = tasks
+                LoadedObjectCount = workItems.Count,
+                WorkItems = workItems
             };
         }
         catch (Exception excp)
@@ -48,7 +48,7 @@ public class CsvLoader
                 Message = excp.Message,
                 Exception = excp,
                 LoadedObjectCount = 0,
-                Tasks = null
+                WorkItems = null
             };
         }
     }

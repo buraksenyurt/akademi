@@ -1,7 +1,9 @@
+using Kanban.Entity;
+
 namespace Kanban.Contract;
-public interface ITaskSaver
+public interface IWorkItemSaver
 {
-    SaveResponse Save(IEnumerable<Entity.Task> tasks);
+    SaveResponse Save(IEnumerable<WorkItem> workItems);
 }
 /*
     Kaydetme işlemi gibi operasyonlar geriye daha fazla bilgi dönebilir.

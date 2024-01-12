@@ -3,15 +3,15 @@ using Kanban.Entity;
 namespace Kanban.Extensions;
 public static class StringExtensions
 {
-    public static TaskSize ToTaskSize(this string input)
+    public static WorkItemSize ToWorkItemSize(this string input)
     {
         return input.ToLower() switch
         {
-            "s" or "small" => TaskSize.S,
-            "m" or "medium" => TaskSize.M,
-            "l" or "large" => TaskSize.L,
-            "xl" or "xlarge" => TaskSize.XL,
-            _ => TaskSize.NA,
+            "s" or "small" => WorkItemSize.S,
+            "m" or "medium" => WorkItemSize.M,
+            "l" or "large" => WorkItemSize.L,
+            "xl" or "xlarge" => WorkItemSize.XL,
+            _ => WorkItemSize.NA,
         };
     }
     public static DurationType ToDurationType(this char input)

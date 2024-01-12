@@ -1,6 +1,6 @@
 [
     {
-        "task": "Fizik Ödevini Tamamla",
+        "workItem": "Fizik Ödevini Tamamla",
         "size": "S",
         "duration": 3,
         "durationType": "Hours",
@@ -9,7 +9,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Matematik Sunumunu Hazırla",
+        "workItem": "Matematik Sunumunu Hazırla",
         "size": "M",
         "duration": 2,
         "durationType": "Days",
@@ -18,7 +18,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Kimya Laboratuvarı Raporunu Yaz",
+        "workItem": "Kimya Laboratuvarı Raporunu Yaz",
         "size": "M",
         "duration": 4,
         "durationType": "Hours",
@@ -27,7 +27,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Tarih Araştırması Yap",
+        "workItem": "Tarih Araştırması Yap",
         "size": "L",
         "duration": 5,
         "durationType": "Days",
@@ -36,7 +36,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Biyoloji Dersini İzle",
+        "workItem": "Biyoloji Dersini İzle",
         "size": "S",
         "duration": 2,
         "durationType": "Hours",
@@ -45,7 +45,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "İngilizce Öğrenim Materyali İncele",
+        "workItem": "İngilizce Öğrenim Materyali İncele",
         "size": "M",
         "duration": 3,
         "durationType": "Days",
@@ -54,7 +54,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Proje Önerisi Hazırla",
+        "workItem": "Proje Önerisi Hazırla",
         "size": "L",
         "duration": 7,
         "durationType": "Days",
@@ -63,7 +63,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Müzik Dinlemeyi İhmal Etme",
+        "workItem": "Müzik Dinlemeyi İhmal Etme",
         "size": "S",
         "duration": 1,
         "durationType": "Hours",
@@ -72,7 +72,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Sosyal Aktivite Planı Yap",
+        "workItem": "Sosyal Aktivite Planı Yap",
         "size": "M",
         "duration": 2,
         "durationType": "Days",
@@ -81,7 +81,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "İş Deneyimi Başvurusu Yap",
+        "workItem": "İş Deneyimi Başvurusu Yap",
         "size": "L",
         "duration": 3,
         "durationType": "Hours",
@@ -90,7 +90,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Araştırma Makalesi Yaz",
+        "workItem": "Araştırma Makalesi Yaz",
         "size": "M",
         "duration": 6,
         "durationType": "Days",
@@ -99,7 +99,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Spor Salonuna Git",
+        "workItem": "Spor Salonuna Git",
         "size": "S",
         "duration": 1,
         "durationType": "Hours",
@@ -108,7 +108,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Düzenli Kitap Okuma Alışkanlığı Edin",
+        "workItem": "Düzenli Kitap Okuma Alışkanlığı Edin",
         "size": "M",
         "duration": 3,
         "durationType": "Weeks",
@@ -117,7 +117,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Öğrenci Derneğine Katıl",
+        "workItem": "Öğrenci Derneğine Katıl",
         "size": "L",
         "duration": 2,
         "durationType": "Days",
@@ -126,7 +126,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Staj Başvurusu Yap",
+        "workItem": "Staj Başvurusu Yap",
         "size": "M",
         "duration": 4,
         "durationType": "Hours",
@@ -135,7 +135,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Programlama Ödevini Çöz",
+        "workItem": "Programlama Ödevini Çöz",
         "size": "S",
         "duration": 2,
         "durationType": "Hours",
@@ -144,7 +144,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Kampüs Turu Yap",
+        "workItem": "Kampüs Turu Yap",
         "size": "M",
         "duration": 1,
         "durationType": "Days",
@@ -153,7 +153,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Yabancı Dil Kursuna Kaydol",
+        "workItem": "Yabancı Dil Kursuna Kaydol",
         "size": "L",
         "duration": 5,
         "durationType": "Weeks",
@@ -162,7 +162,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Öğrenci Bursu Başvurusu Yap",
+        "workItem": "Öğrenci Bursu Başvurusu Yap",
         "size": "M",
         "duration": 2,
         "durationType": "Hours",
@@ -171,7 +171,7 @@
         "image": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVRIDbXBAQEAAAABIP6l6jsQpNquLPClk6CJ4Xv2HZP4VG6xv2QAAAAASUVORK5CYII="
     },
     {
-        "task": "Araştırma Projesi Hazırla",
+        "workItem": "Araştırma Projesi Hazırla",
         "size": "L",
         "duration": 10,
         "durationType": "Days",

@@ -1,20 +1,21 @@
 using System.Text;
 using Kanban.Contract;
+using Kanban.Entity;
 
 namespace Kanban.Data;
 
 public class CsvSaver
-    : ITaskSaver
+    : IWorkItemSaver
 {
-    public SaveResponse Save(IEnumerable<Entity.Task> tasks)
+    public SaveResponse Save(IEnumerable<WorkItem> workItems)
     {
         try
         {
-            var filePath = Path.Combine(Environment.CurrentDirectory, "TaskData.csv");
+            var filePath = Path.Combine(Environment.CurrentDirectory, "WorkItemData.csv");
             StringBuilder stringBuilder = new();
-            foreach (var task in tasks)
+            foreach (var wi in workItems)
             {
-                var line = task.ToString();
+                var line = wi.ToString();
                 stringBuilder.AppendLine(line);
             }
             File.WriteAllText(filePath, stringBuilder.ToString());
@@ -22,8 +23,8 @@ public class CsvSaver
             {
                 IsSuccess = true,
                 Exception = null,
-                Message = "Task listesi TaskData.csv dosyasına kaydedildi.",
-                SavedObjectCount = tasks.Count()
+                Message = "Görevler listesi WorkItemData.csv dosyasına kaydedildi.",
+                SavedObjectCount = workItems.Count()
             };
         }
         catch (Exception excp)

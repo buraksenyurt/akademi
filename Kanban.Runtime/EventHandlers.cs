@@ -1,9 +1,11 @@
+using Kanban.Entity;
+
 namespace Kanban.Runtime;
 
-public class NewTaskAddedEventArgs
+public class WorkItemAddedEventArgs
 {
-    public Guid TaskId { get; set; }
+    public Guid WorkItemId { get; set; }
     public DateTime Time { get; set; } = DateTime.Now;
 }
 
-public delegate void NewTaskAddedEventHandler(Entity.Task source, NewTaskAddedEventArgs eventArgs);
+public delegate void WorkItemAddedEventHandler(WorkItem source, WorkItemAddedEventArgs eventArgs);

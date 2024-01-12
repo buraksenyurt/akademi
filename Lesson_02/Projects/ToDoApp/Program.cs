@@ -9,11 +9,11 @@ class Program
         // Görev No #3 Bu sefe İngilizce sınavından A1 seviyesinde derece yapacağım
 
         // İçerikteki özellikler: Zaman, benzersiz görev numaraları, ne yapılacağı bilgisi, koşula bağlı hedefler
-        //var taskId = 1;
+        //var workItemId = 1;
         var title = "C# çalışmak";
         var duration = 3;
         var durationType = DurationType.Hour;
-        var taskSize = TaskSize.S; // T-Shirt Size tipinden büyüklük
+        var workItemSize = WorkItemSize.S; // T-Shirt Size tipinden büyüklük
 
         Console.WriteLine("Merhaba. Ben görev listesi yardımcın.");
         Console.WriteLine("Çıkmak için q/Q tuşlarına sonrasında Enter'a basın.");
@@ -74,22 +74,22 @@ class Program
                 }
 
                 Console.WriteLine("İşin büyüklüğü sizce nedir? (S)mal, (M)edium, (L)arge, (X)Large");
-                var taskSizeInput = Console.ReadLine();
-                if (taskSizeInput?.ToUpper() == "S")
+                var workItemSizeInput = Console.ReadLine();
+                if (workItemSizeInput?.ToUpper() == "S")
                 {
-                    taskSize = TaskSize.S;
+                    workItemSize = WorkItemSize.S;
                 }
-                else if (taskSizeInput?.ToUpper() == "M")
+                else if (workItemSizeInput?.ToUpper() == "M")
                 {
-                    taskSize = TaskSize.M;
+                    workItemSize = WorkItemSize.M;
                 }
-                else if (taskSizeInput?.ToUpper() == "L")
+                else if (workItemSizeInput?.ToUpper() == "L")
                 {
-                    taskSize = TaskSize.L;
+                    workItemSize = WorkItemSize.L;
                 }
-                else if (taskSizeInput?.ToUpper() == "X")
+                else if (workItemSizeInput?.ToUpper() == "X")
                 {
-                    taskSize = TaskSize.XL;
+                    workItemSize = WorkItemSize.XL;
                 }
                 else
                 {
@@ -98,7 +98,7 @@ class Program
                 }
 
                 Console.WriteLine("Tebrikler. Görev sisteme yazıldı");
-                Console.WriteLine($"{id} - {title}({taskSize}) - {duration} {durationType}");                
+                Console.WriteLine($"{id} - {title}({workItemSize}) - {duration} {durationType}");
             }
         }
 
@@ -115,33 +115,34 @@ enum DurationType
     Month,
     Year
 }
-enum TaskSize
+enum WorkItemSize
 {
     S,
     M,
     L,
     XL
 }
-enum TaskState{
+enum WorkItemState
+{
     Todo,
     InProgress,
     Completed,
     Undone
 }
 
-// Aslında uygulamanın ana konusu olan görev(Task) bir sınıf olarak tasarlanabilir.
+// Aslında uygulamanın ana konusu olan görev(WorkItem) bir sınıf olarak tasarlanabilir.
 // Aşağıdaki sınıfı hem okunabilir hem de yazılabilir tipte özellikleri var.
-// Id, Title, DurationType, Duration, TaskSize bir görev nesnesinin niteliklerini ifade eder. Auto Property formatında yazılmışlardır.
+// Id, Title, DurationType, Duration, WorkItemSize bir görev nesnesinin niteliklerini ifade eder. Auto Property formatında yazılmışlardır.
 // Burada sistem içinde dolaşıma tabii olacak kendi veri modelimizi tanımlamış oluyoruz.
-class Task
+class WorkItem
 {
-    public int Id { get; set; } 
+    public int Id { get; set; }
     public string Title { get; set; } = string.Empty;
     public DurationType DurationType { get; set; }
     public byte Duration { get; set; }
-    public TaskSize TaskSize { get; set; }
-    // Bir Task'ın güncel durumu(state bilgisi) her an okunabilir,
+    public WorkItemSize WorkItemSize { get; set; }
+    // Bir nesnenin güncel durumu(state bilgisi) her an okunabilir,
     // sadece belli bir aksiyon gerçekleştiğinde değiştirilebilir.
     // Bu yüzden read only tanımlanmıştır.
-    public TaskState State { get; } // Sadece get var ise bu read-only(yalnızca okunabilir) anlamındadır.
+    public WorkItemState State { get; } // Sadece get var ise bu read-only(yalnızca okunabilir) anlamındadır.
 }
