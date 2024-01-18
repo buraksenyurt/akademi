@@ -35,7 +35,7 @@ dotnet test
 
 Ders boyunca amacımız olası kabul kriterlerine göre test metotlarını tamamlamak ve WorkItemManager sınıfının planlanan metotlarının doğru çalıştığından emin olmaktı.
 
-![runtime.png](../runtime.png)
+![runtime.png](runtime.png)
 
 ## Araştırsak iyi Olur
 
